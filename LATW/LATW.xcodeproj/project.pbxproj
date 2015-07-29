@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4B682001B69856B0050A78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B681FF1B69856B0050A78E /* AppDelegate.swift */; };
+		B4B682021B69856B0050A78E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B682011B69856B0050A78E /* GameScene.swift */; };
+		B4B682041B69856B0050A78E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B4B682031B69856B0050A78E /* GameScene.sks */; };
+		B4B682061B69856B0050A78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B682051B69856B0050A78E /* Assets.xcassets */; };
+		B4B682091B69856B0050A78E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B682071B69856B0050A78E /* MainMenu.xib */; };
+		B4B682141B69856B0050A78E /* LATWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B682131B69856B0050A78E /* LATWTests.swift */; };
+		B4B6821F1B69856B0050A78E /* LATWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B6821E1B69856B0050A78E /* LATWUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4B682101B69856B0050A78E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4B681F41B69856B0050A78E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4B681FB1B69856B0050A78E;
+			remoteInfo = LATW;
+		};
+		B4B6821B1B69856B0050A78E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4B681F41B69856B0050A78E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4B681FB1B69856B0050A78E;
+			remoteInfo = LATW;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B4B681FC1B69856B0050A78E /* LATW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LATW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4B681FF1B69856B0050A78E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4B682011B69856B0050A78E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B4B682031B69856B0050A78E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B4B682051B69856B0050A78E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4B682081B69856B0050A78E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B4B6820A1B69856B0050A78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4B6820F1B69856B0050A78E /* LATWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LATWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4B682131B69856B0050A78E /* LATWTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATWTests.swift; sourceTree = "<group>"; };
+		B4B682151B69856B0050A78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4B6821A1B69856B0050A78E /* LATWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LATWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4B6821E1B69856B0050A78E /* LATWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATWUITests.swift; sourceTree = "<group>"; };
+		B4B682201B69856B0050A78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4B681F91B69856B0050A78E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4B6820C1B69856B0050A78E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4B682171B69856B0050A78E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4B681F31B69856B0050A78E = {
+			isa = PBXGroup;
+			children = (
+				B4B681FE1B69856B0050A78E /* LATW */,
+				B4B682121B69856B0050A78E /* LATWTests */,
+				B4B6821D1B69856B0050A78E /* LATWUITests */,
+				B4B681FD1B69856B0050A78E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4B681FD1B69856B0050A78E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4B681FC1B69856B0050A78E /* LATW.app */,
+				B4B6820F1B69856B0050A78E /* LATWTests.xctest */,
+				B4B6821A1B69856B0050A78E /* LATWUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4B681FE1B69856B0050A78E /* LATW */ = {
+			isa = PBXGroup;
+			children = (
+				B4B681FF1B69856B0050A78E /* AppDelegate.swift */,
+				B4B682011B69856B0050A78E /* GameScene.swift */,
+				B4B682031B69856B0050A78E /* GameScene.sks */,
+				B4B682051B69856B0050A78E /* Assets.xcassets */,
+				B4B682071B69856B0050A78E /* MainMenu.xib */,
+				B4B6820A1B69856B0050A78E /* Info.plist */,
+			);
+			path = LATW;
+			sourceTree = "<group>";
+		};
+		B4B682121B69856B0050A78E /* LATWTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4B682131B69856B0050A78E /* LATWTests.swift */,
+				B4B682151B69856B0050A78E /* Info.plist */,
+			);
+			path = LATWTests;
+			sourceTree = "<group>";
+		};
+		B4B6821D1B69856B0050A78E /* LATWUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B4B6821E1B69856B0050A78E /* LATWUITests.swift */,
+				B4B682201B69856B0050A78E /* Info.plist */,
+			);
+			path = LATWUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4B681FB1B69856B0050A78E /* LATW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4B682231B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATW" */;
+			buildPhases = (
+				B4B681F81B69856B0050A78E /* Sources */,
+				B4B681F91B69856B0050A78E /* Frameworks */,
+				B4B681FA1B69856B0050A78E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LATW;
+			productName = LATW;
+			productReference = B4B681FC1B69856B0050A78E /* LATW.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4B6820E1B69856B0050A78E /* LATWTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4B682261B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATWTests" */;
+			buildPhases = (
+				B4B6820B1B69856B0050A78E /* Sources */,
+				B4B6820C1B69856B0050A78E /* Frameworks */,
+				B4B6820D1B69856B0050A78E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4B682111B69856B0050A78E /* PBXTargetDependency */,
+			);
+			name = LATWTests;
+			productName = LATWTests;
+			productReference = B4B6820F1B69856B0050A78E /* LATWTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B4B682191B69856B0050A78E /* LATWUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4B682291B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATWUITests" */;
+			buildPhases = (
+				B4B682161B69856B0050A78E /* Sources */,
+				B4B682171B69856B0050A78E /* Frameworks */,
+				B4B682181B69856B0050A78E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4B6821C1B69856B0050A78E /* PBXTargetDependency */,
+			);
+			name = LATWUITests;
+			productName = LATWUITests;
+			productReference = B4B6821A1B69856B0050A78E /* LATWUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4B681F41B69856B0050A78E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Andrew Molloy";
+				TargetAttributes = {
+					B4B681FB1B69856B0050A78E = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B4B6820E1B69856B0050A78E = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = B4B681FB1B69856B0050A78E;
+					};
+					B4B682191B69856B0050A78E = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = B4B681FB1B69856B0050A78E;
+					};
+				};
+			};
+			buildConfigurationList = B4B681F71B69856B0050A78E /* Build configuration list for PBXProject "LATW" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4B681F31B69856B0050A78E;
+			productRefGroup = B4B681FD1B69856B0050A78E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4B681FB1B69856B0050A78E /* LATW */,
+				B4B6820E1B69856B0050A78E /* LATWTests */,
+				B4B682191B69856B0050A78E /* LATWUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4B681FA1B69856B0050A78E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4B682061B69856B0050A78E /* Assets.xcassets in Resources */,
+				B4B682041B69856B0050A78E /* GameScene.sks in Resources */,
+				B4B682091B69856B0050A78E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4B6820D1B69856B0050A78E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4B682181B69856B0050A78E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4B681F81B69856B0050A78E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4B682021B69856B0050A78E /* GameScene.swift in Sources */,
+				B4B682001B69856B0050A78E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4B6820B1B69856B0050A78E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4B682141B69856B0050A78E /* LATWTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4B682161B69856B0050A78E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4B6821F1B69856B0050A78E /* LATWUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4B682111B69856B0050A78E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4B681FB1B69856B0050A78E /* LATW */;
+			targetProxy = B4B682101B69856B0050A78E /* PBXContainerItemProxy */;
+		};
+		B4B6821C1B69856B0050A78E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4B681FB1B69856B0050A78E /* LATW */;
+			targetProxy = B4B6821B1B69856B0050A78E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B4B682071B69856B0050A78E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4B682081B69856B0050A78E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4B682211B69856B0050A78E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4B682221B69856B0050A78E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B4B682241B69856B0050A78E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATW/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATW;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B4B682251B69856B0050A78E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATW/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATW;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B4B682271B69856B0050A78E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATWTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LATW.app/Contents/MacOS/LATW";
+			};
+			name = Debug;
+		};
+		B4B682281B69856B0050A78E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATWTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LATW.app/Contents/MacOS/LATW";
+			};
+			name = Release;
+		};
+		B4B6822A1B69856B0050A78E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATWUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LATW;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B4B6822B1B69856B0050A78E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATWUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LATW;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4B681F71B69856B0050A78E /* Build configuration list for PBXProject "LATW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4B682211B69856B0050A78E /* Debug */,
+				B4B682221B69856B0050A78E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4B682231B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4B682241B69856B0050A78E /* Debug */,
+				B4B682251B69856B0050A78E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B4B682261B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATWTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4B682271B69856B0050A78E /* Debug */,
+				B4B682281B69856B0050A78E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B4B682291B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATWUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4B6822A1B69856B0050A78E /* Debug */,
+				B4B6822B1B69856B0050A78E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4B681F41B69856B0050A78E /* Project object */;
+}
