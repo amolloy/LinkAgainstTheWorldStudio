@@ -34,7 +34,7 @@ I will likely use these as reference from time to time, but since I am doing thi
 At this point I've just started working out a plan. I've decided a reasonable first step is to get a map loaded and drawn on the screen, and be able to scroll it around. Rather than invent my own tile-based map file format, I've decided to start with the FMP format used by [Mappy](http://tilemap.co.uk/mappy.php). This format has a number of advantages:
 
 * It's been around for ages and is reasonably straightforward.
-* There are numerous map editors which can produce FMP files, and there are plenty example FMP maps available in which I can use for testing.
+* There are numerous map editors which can produce FMP files, and there are several example FMP maps available which I can use for testing.
 * The format is documented, sort of. A lot of that documentation is "see the code," but the code is pretty straightforward C so that's not a problem.
 * It's not XML-based.
 * One of those few "game programmer projects" I actually have worked on was an implementation of a FMP map loader, so I have experience with it.
