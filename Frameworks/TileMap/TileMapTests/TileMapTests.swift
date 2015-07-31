@@ -9,23 +9,40 @@
 import XCTest
 @testable import TileMap
 
-class TileMapTests: XCTestCase {
-    
+class TileMapTests: XCTestCase
+{
+	var testMapPath : String
+	{
+		get
+		{
+			let bundle = NSBundle(forClass: TileMapTests.self)
+			let testMapPath = bundle.pathForResource("Test", ofType: "fmp")
+			return testMapPath ?? ""
+		}
+	}
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	}
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
+
+	func testLoadHeader() {
+		let tileMapFile = TileMapFile(path: testMapPath)
+		do
+		{
+			try tileMapFile.load()
+			XCTAssertTrue(tileMapFile.hasFormHeader, "TileMapFile has no FORM header")
+		}
+		catch let e
+		{
+			XCTFail("tileMapFile.load() threw \(e)")
+		}
+	}
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {

@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41F5FEC1B6B983B00C28B5C /* TileMapFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FEB1B6B983B00C28B5C /* TileMapFile.swift */; };
 		B41F5FEE1B6BC3B800C28B5C /* Char.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FED1B6BC3B800C28B5C /* Char.swift */; };
 		B479A2871B6A403700381E17 /* TileMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B479A2861B6A403700381E17 /* TileMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B479A28E1B6A403800381E17 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B479A2831B6A403700381E17 /* TileMap.framework */; };
 		B479A2931B6A403800381E17 /* TileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479A2921B6A403800381E17 /* TileMapTests.swift */; };
+		B479A29E1B6A40D300381E17 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479A29D1B6A40D300381E17 /* Author.swift */; };
+		B479A2A01B6A419D00381E17 /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479A29F1B6A419D00381E17 /* Chunk.swift */; };
+		B479A2A21B6A421000381E17 /* Test.fmp in Resources */ = {isa = PBXBuildFile; fileRef = B479A2A11B6A421000381E17 /* Test.fmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B41F5FEB1B6B983B00C28B5C /* TileMapFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapFile.swift; sourceTree = "<group>"; };
 		B41F5FED1B6BC3B800C28B5C /* Char.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Char.swift; sourceTree = "<group>"; };
 		B479A2831B6A403700381E17 /* TileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B479A2861B6A403700381E17 /* TileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileMap.h; sourceTree = "<group>"; };
@@ -31,6 +36,9 @@
 		B479A28D1B6A403800381E17 /* TileMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B479A2921B6A403800381E17 /* TileMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileMapTests.swift; sourceTree = "<group>"; };
 		B479A2941B6A403800381E17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B479A29D1B6A40D300381E17 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		B479A29F1B6A419D00381E17 /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
+		B479A2A11B6A421000381E17 /* Test.fmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.fmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,9 @@
 			children = (
 				B479A2861B6A403700381E17 /* TileMap.h */,
 				B479A2881B6A403700381E17 /* Info.plist */,
+				B479A29D1B6A40D300381E17 /* Author.swift */,
+				B479A29F1B6A419D00381E17 /* Chunk.swift */,
+				B41F5FEB1B6B983B00C28B5C /* TileMapFile.swift */,
 				B41F5FED1B6BC3B800C28B5C /* Char.swift */,
 			);
 			path = TileMap;
@@ -83,6 +94,7 @@
 		B479A2911B6A403800381E17 /* TileMapTests */ = {
 			isa = PBXGroup;
 			children = (
+				B479A2A11B6A421000381E17 /* Test.fmp */,
 				B479A2921B6A403800381E17 /* TileMapTests.swift */,
 				B479A2941B6A403800381E17 /* Info.plist */,
 			);
@@ -187,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B479A2A21B6A421000381E17 /* Test.fmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B479A29E1B6A40D300381E17 /* Author.swift in Sources */,
+				B479A2A01B6A419D00381E17 /* Chunk.swift in Sources */,
+				B41F5FEC1B6B983B00C28B5C /* TileMapFile.swift in Sources */,
 				B41F5FEE1B6BC3B800C28B5C /* Char.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
