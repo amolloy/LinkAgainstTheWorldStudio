@@ -16,6 +16,7 @@ class TileMapFile
 	}
 
 	let filePath : String
+	private(set) var fileSize : Int?
 
 	init(path : String)
 	{
@@ -29,7 +30,7 @@ class TileMapFile
 
 		inputStream.open()
 
-		try loadFormHeader(inputStream)
+		try loadFileHeader(inputStream)
 
 
 
@@ -37,7 +38,7 @@ class TileMapFile
 	}
 
 	private (set) var hasFormHeader : Bool
-	private func loadFormHeader(inputStream : NSInputStream) throws
+	private func loadFileHeader(inputStream : NSInputStream) throws
 	{
 		var formTag = [Char](count: 4, repeatedValue: Char.NULL)
 		if inputStream.read(&formTag, maxLength: 4) != 4
@@ -54,6 +55,8 @@ class TileMapFile
 		default :
 			throw TileMapFileError.InvalidHeaderError
 		}
+
+		
 	}
 }
 
