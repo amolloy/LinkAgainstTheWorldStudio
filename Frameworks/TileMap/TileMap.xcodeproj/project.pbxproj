@@ -11,6 +11,8 @@
 		B41F5FEE1B6BC3B800C28B5C /* Char.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FED1B6BC3B800C28B5C /* Char.swift */; };
 		B41F5FF01B6BC69100C28B5C /* NSInputStream+BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FEF1B6BC69100C28B5C /* NSInputStream+BigInt.swift */; };
 		B41F5FF21B6BC89100C28B5C /* NSInputStream+BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FF11B6BC89100C28B5C /* NSInputStream+BigInt.swift */; };
+		B41F5FF41B6BDD4600C28B5C /* ChunkTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FF31B6BDD4600C28B5C /* ChunkTag.swift */; };
+		B41F5FF61B6BDF1900C28B5C /* ChunkTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F5FF51B6BDF1900C28B5C /* ChunkTag.swift */; };
 		B479A2871B6A403700381E17 /* TileMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B479A2861B6A403700381E17 /* TileMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B479A28E1B6A403800381E17 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B479A2831B6A403700381E17 /* TileMap.framework */; };
 		B479A2931B6A403800381E17 /* TileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479A2921B6A403800381E17 /* TileMapTests.swift */; };
@@ -34,6 +36,8 @@
 		B41F5FED1B6BC3B800C28B5C /* Char.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Char.swift; sourceTree = "<group>"; };
 		B41F5FEF1B6BC69100C28B5C /* NSInputStream+BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSInputStream+BigInt.swift"; sourceTree = "<group>"; };
 		B41F5FF11B6BC89100C28B5C /* NSInputStream+BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSInputStream+BigInt.swift"; sourceTree = "<group>"; };
+		B41F5FF31B6BDD4600C28B5C /* ChunkTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChunkTag.swift; sourceTree = "<group>"; };
+		B41F5FF51B6BDF1900C28B5C /* ChunkTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChunkTag.swift; sourceTree = "<group>"; };
 		B479A2831B6A403700381E17 /* TileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B479A2861B6A403700381E17 /* TileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileMap.h; sourceTree = "<group>"; };
 		B479A2881B6A403700381E17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				B41F5FEB1B6B983B00C28B5C /* TileMapFile.swift */,
 				B41F5FED1B6BC3B800C28B5C /* Char.swift */,
 				B41F5FEF1B6BC69100C28B5C /* NSInputStream+BigInt.swift */,
+				B41F5FF31B6BDD4600C28B5C /* ChunkTag.swift */,
 			);
 			path = TileMap;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 				B479A2941B6A403800381E17 /* Info.plist */,
 				B41F5FF11B6BC89100C28B5C /* NSInputStream+BigInt.swift */,
 				B479A2921B6A403800381E17 /* TileMapTests.swift */,
+				B41F5FF51B6BDF1900C28B5C /* ChunkTag.swift */,
 			);
 			path = TileMapTests;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				B479A29E1B6A40D300381E17 /* Author.swift in Sources */,
 				B479A2A01B6A419D00381E17 /* Chunk.swift in Sources */,
 				B41F5FEC1B6B983B00C28B5C /* TileMapFile.swift in Sources */,
+				B41F5FF41B6BDD4600C28B5C /* ChunkTag.swift in Sources */,
 				B41F5FEE1B6BC3B800C28B5C /* Char.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41F5FF21B6BC89100C28B5C /* NSInputStream+BigInt.swift in Sources */,
+				B41F5FF61B6BDF1900C28B5C /* ChunkTag.swift in Sources */,
 				B479A2931B6A403800381E17 /* TileMapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

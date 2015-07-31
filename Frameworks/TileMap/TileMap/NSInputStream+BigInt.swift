@@ -8,10 +8,10 @@
 
 import Foundation
 
-public extension NSInputStream
+extension NSInputStream
 {
 	// Reads a big endian 4-byte signed integer from the stream and converts it to a native Int
-	public func readBigInt(inout int: Int) -> Bool
+	func readBigInt(inout int: Int) -> Bool
 	{
 		var buf = [UInt8](count: 4, repeatedValue: 0)
 		let readCount = read(&buf, maxLength: 4)

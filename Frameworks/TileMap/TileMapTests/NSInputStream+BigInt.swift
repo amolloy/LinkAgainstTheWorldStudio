@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import TileMap
+@testable import TileMap
 
 class TileMapFileInt: XCTestCase {
 

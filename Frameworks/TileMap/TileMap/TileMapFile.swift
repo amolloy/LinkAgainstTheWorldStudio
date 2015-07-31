@@ -17,6 +17,7 @@ class TileMapFile
 
 	let filePath : String
 	private(set) var dataLength : Int
+	private(set) var chunks : [Chunk]
 
 	init(path : String)
 	{
@@ -24,6 +25,7 @@ class TileMapFile
 		hasFORMTag = false
 		hasFMAPTag = false
 		dataLength = 0
+		chunks = []
 	}
 
 	func load() throws -> Bool
@@ -75,6 +77,11 @@ class TileMapFile
 		default :
 			throw TileMapFileError.InvalidHeaderError
 		}
+	}
+
+	func loadChunks(inputStream : NSInputStream) throws
+	{
+		
 	}
 }
 
