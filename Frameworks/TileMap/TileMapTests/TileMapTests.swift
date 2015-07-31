@@ -35,12 +35,14 @@ class TileMapTests: XCTestCase
 		do
 		{
 			try tileMapFile.load()
-			XCTAssertTrue(tileMapFile.hasFormHeader, "TileMapFile has no FORM header")
 		}
 		catch let e
 		{
 			XCTFail("tileMapFile.load() threw \(e)")
 		}
+
+		XCTAssertTrue(tileMapFile.hasFormHeader, "TileMapFile has no FORM header")
+		XCTAssertEqual(tileMapFile.dataLength, 45844)
 	}
 
 

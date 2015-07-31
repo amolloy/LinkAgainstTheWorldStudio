@@ -16,12 +16,13 @@ class TileMapFile
 	}
 
 	let filePath : String
-	private(set) var fileSize : Int?
+	private(set) var dataLength : Int
 
 	init(path : String)
 	{
 		filePath = path
 		hasFormHeader = false
+		dataLength = 0
 	}
 
 	func load() throws -> Bool
@@ -31,8 +32,7 @@ class TileMapFile
 		inputStream.open()
 
 		try loadFileHeader(inputStream)
-
-
+		inputStream.readBigInt(&dataLength)
 
 		return true
 	}
