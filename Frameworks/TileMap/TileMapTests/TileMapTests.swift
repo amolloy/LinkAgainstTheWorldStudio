@@ -41,7 +41,8 @@ class TileMapTests: XCTestCase
 			XCTFail("tileMapFile.load() threw \(e)")
 		}
 
-		XCTAssertTrue(tileMapFile.hasFormHeader, "TileMapFile has no FORM header")
+		XCTAssertTrue(tileMapFile.hasFORMTag, "TileMapFile has no FORM tag")
+		XCTAssertTrue(tileMapFile.hasFMAPTag, "TileMapFile has no FMAP header")
 		XCTAssertEqual(tileMapFile.dataLength, 45844)
 	}
 

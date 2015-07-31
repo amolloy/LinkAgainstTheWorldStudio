@@ -100,9 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				B479A2A11B6A421000381E17 /* Test.fmp */,
-				B479A2921B6A403800381E17 /* TileMapTests.swift */,
 				B479A2941B6A403800381E17 /* Info.plist */,
 				B41F5FF11B6BC89100C28B5C /* NSInputStream+BigInt.swift */,
+				B479A2921B6A403800381E17 /* TileMapTests.swift */,
 			);
 			path = TileMapTests;
 			sourceTree = "<group>";
