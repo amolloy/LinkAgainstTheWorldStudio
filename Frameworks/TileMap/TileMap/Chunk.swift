@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ChunkType : String
+enum ChunkType : ChunkTag
 {
 	case ATHR = "ATHR"
 	case MPHD = "MPHD"
