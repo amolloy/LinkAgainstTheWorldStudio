@@ -22,10 +22,10 @@ class ChunkTagTests: XCTestCase {
 	}
 
 	func testStringInit() {
-		let failedTag = ChunkTag(fourCCString: "NO")
+		let failedTag = ChunkTag(rawValue: "NO")
 		XCTAssert(failedTag == nil)
 
-		let workingTag = ChunkTag(fourCCString: "FMAP")
+		let workingTag = ChunkTag(rawValue: "FMAP")
 		XCTAssert(workingTag != nil)
 		XCTAssertEqual(workingTag!.tag[0], Char.F)
 		XCTAssertEqual(workingTag!.tag[1], Char.M)
@@ -34,23 +34,23 @@ class ChunkTagTests: XCTestCase {
 	}
 
 	func testEquals() {
-		guard let tag1 = ChunkTag(fourCCString: "FMAP") else { XCTFail(); return }
-		guard let tag2 = ChunkTag(fourCCString: "FMAP") else { XCTFail(); return }
+		guard let tag1 = ChunkTag(rawValue: "FMAP") else { XCTFail(); return }
+		guard let tag2 = ChunkTag(rawValue: "FMAP") else { XCTFail(); return }
 
 		XCTAssertEqual(tag1, tag2)
 
-		guard let tag3 = ChunkTag(fourCCString: "FMOD") else { XCTFail(); return }
+		guard let tag3 = ChunkTag(rawValue: "FMOD") else { XCTFail(); return }
 
 		XCTAssertNotEqual(tag1, tag3)
 	}
 
 	func testNotEquals() {
-		guard let tag1 = ChunkTag(fourCCString: "FMAP") else { XCTFail(); return }
-		guard let tag2 = ChunkTag(fourCCString: "FMOD") else { XCTFail(); return }
+		guard let tag1 = ChunkTag(rawValue: "FMAP") else { XCTFail(); return }
+		guard let tag2 = ChunkTag(rawValue: "FMOD") else { XCTFail(); return }
 
 		XCTAssertNotEqual(tag1, tag2)
 
-		guard let tag3 = ChunkTag(fourCCString: "FMAP") else { XCTFail(); return }
+		guard let tag3 = ChunkTag(rawValue: "FMAP") else { XCTFail(); return }
 
 		XCTAssertEqual(tag1, tag3)
 	}
@@ -62,7 +62,7 @@ class ChunkTagTests: XCTestCase {
 		inputStream.open()
 
 		guard let chunkTag = inputStream.readChunkTag() else { XCTFail(); return }
-		guard let testTag = ChunkTag(fourCCString: "FMAP") else { XCTFail(); return }
+		guard let testTag = ChunkTag(rawValue: "FMAP") else { XCTFail(); return }
 		XCTAssertEqual(chunkTag, testTag)
 	}
 }
