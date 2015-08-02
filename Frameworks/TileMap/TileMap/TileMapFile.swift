@@ -43,18 +43,14 @@ class TileMapFile
 	private (set) var hasFMAPTag : Bool
 	private func loadFileHeader(inputStream : NSInputStream) throws
 	{
-		var formTag = [Char](count: 4, repeatedValue: Char.NULL)
-		if inputStream.read(&formTag, maxLength: 4) != 4
+		guard let formTag = inputStream.readChunkTag() else
 		{
 			throw TileMapFileError.InvalidHeaderError
 		}
 
-		switch (formTag[0], formTag[1], formTag[2], formTag[3])
+		hasFORMTag = formTag == "FORM"
+		if (!hasFORMTag)
 		{
-		case (Char.F, Char.O, Char.R, Char.M):
-			hasFORMTag = true
-			break
-		default :
 			throw TileMapFileError.InvalidHeaderError
 		}
 
@@ -63,18 +59,14 @@ class TileMapFile
 			throw TileMapFileError.InvalidHeaderError
 		}
 
-		var fmapTag = [Char](count: 4, repeatedValue: Char.NULL)
-		if inputStream.read(&fmapTag, maxLength: 4) != 4
+		guard let fmapTag = inputStream.readChunkTag() else
 		{
 			throw TileMapFileError.InvalidHeaderError
 		}
+		hasFMAPTag = fmapTag == "FMAP"
 
-		switch (fmapTag[0], fmapTag[1], fmapTag[2], fmapTag[3])
+		if (!hasFMAPTag)
 		{
-		case (Char.F, Char.M, Char.A, Char.P):
-			hasFMAPTag = true
-			break
-		default :
 			throw TileMapFileError.InvalidHeaderError
 		}
 	}
