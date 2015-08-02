@@ -26,6 +26,33 @@ enum Char : UInt8
 	case a = 0x61, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 }
 
+extension Char : StringLiteralConvertible
+{
+	typealias StringLiteralType = String
+	typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+	typealias UnicodeScalarLiteralType = ExtendedGraphemeClusterLiteralType
+
+	init(someString value: String)
+	{
+		self = Char(rawValue: UInt8(value.utf8.first!.value)) ?? Char.NULL
+	}
+
+	init(stringLiteral value: StringLiteralType)
+	{
+		self = Char(someString: value)
+	}
+
+	init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType)
+	{
+		self = Char(someString: value)
+	}
+
+	init(unicodeScalarLiteral value: UnicodeScalarLiteralType)
+	{
+		self = Char(someString: value)
+	}
+}
+
 extension NSInputStream
 {
 	func read(buffer: UnsafeMutablePointer<Char>, maxLength len: Int) -> Int
