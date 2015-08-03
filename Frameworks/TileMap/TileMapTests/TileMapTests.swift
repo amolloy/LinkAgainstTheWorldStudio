@@ -12,7 +12,7 @@ import XCTest
 class TileMapTests: XCTestCase
 {
 	var testMapPath : String
-	{
+		{
 		get
 		{
 			let bundle = NSBundle(forClass: TileMapTests.self)
@@ -21,28 +21,47 @@ class TileMapTests: XCTestCase
 		}
 	}
 
-    override func setUp() {
-        super.setUp()
+	func testLoadHeader()
+	{
+	guard let tileMapFile = TileMapFile(path: testMapPath) else
+	{
+		XCTFail()
+		return
 	}
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+	do
+	{
+		try tileMapFile.open()
+	}
+	catch let e
+	{
+		XCTFail("tileMapFile.load() threw \(e)")
+	}
 
-	func testLoadHeader() {
-		let tileMapFile = TileMapFile(path: testMapPath)
+	XCTAssertEqual(tileMapFile.dataLength, 45844)
+	}
+
+	func testLoadChunks()
+	{
+		guard let tileMapFile = TileMapFile(path: testMapPath) else
+		{
+			XCTFail()
+			return
+		}
 		do
 		{
-			try tileMapFile.load()
+			try tileMapFile.open()
 		}
 		catch let e
 		{
-			XCTFail("tileMapFile.load() threw \(e)")
+			XCTFail("tileMapFile.open() threw \(e)")
 		}
-
-		XCTAssertTrue(tileMapFile.hasFORMTag, "TileMapFile has no FORM tag")
-		XCTAssertTrue(tileMapFile.hasFMAPTag, "TileMapFile has no FMAP header")
-		XCTAssertEqual(tileMapFile.dataLength, 45844)
-	}	
+		do
+		{
+			try tileMapFile.loadChunks()
+		}
+		catch let e
+		{
+			XCTFail("tileMapFile.loadChunks() threw \(e)")
+		}
+	}
 }

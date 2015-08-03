@@ -16,31 +16,42 @@ class TileMapFile
 	}
 
 	let filePath : String
+	let inputStream : NSInputStream
 	private(set) var dataLength : Int
 	private(set) var chunks : [Chunk]
 
-	init(path : String)
+	init?(path : String)
 	{
 		filePath = path
-		hasFORMTag = false
-		hasFMAPTag = false
 		dataLength = 0
 		chunks = []
+		let ins = NSInputStream(fileAtPath: filePath)
+		if let ins = ins
+		{
+			inputStream = ins
+		}
+		else
+		{
+			inputStream = NSInputStream()
+			return nil
+		}
 	}
 
-	func load() throws -> Bool
+	func open() throws -> Bool
 	{
-		guard let inputStream = NSInputStream(fileAtPath: filePath) else { return false }
-
 		inputStream.open()
-
 		try loadFileHeader(inputStream)
 
 		return true
 	}
 
-	private (set) var hasFORMTag : Bool
-	private (set) var hasFMAPTag : Bool
+	func loadChunks() throws -> Bool
+	{
+		try loadChunks(inputStream)
+
+		return chunks.count != 0
+	}
+
 	private func loadFileHeader(inputStream : NSInputStream) throws
 	{
 		guard let formTag = inputStream.readChunkTag() else
@@ -48,13 +59,16 @@ class TileMapFile
 			throw TileMapFileError.InvalidHeaderError
 		}
 
-		hasFORMTag = formTag == "FORM"
-		if (!hasFORMTag)
+		if (formTag != "FORM")
 		{
 			throw TileMapFileError.InvalidHeaderError
 		}
 
-		if !inputStream.readBigInt(&dataLength)
+		if let length = inputStream.readBigInt()
+		{
+			dataLength = length
+		}
+		else
 		{
 			throw TileMapFileError.InvalidHeaderError
 		}
@@ -63,17 +77,21 @@ class TileMapFile
 		{
 			throw TileMapFileError.InvalidHeaderError
 		}
-		hasFMAPTag = fmapTag == "FMAP"
 
-		if (!hasFMAPTag)
+		if (fmapTag != "FMAP")
 		{
 			throw TileMapFileError.InvalidHeaderError
 		}
 	}
 
-	func loadChunks(inputStream : NSInputStream) throws
+	private func loadChunks(inputStream : NSInputStream) throws
 	{
-		
+		var chunks = [Chunk]()
+
+		while  let chunk = try loadChunk(inputStream)
+		{
+			chunks.append(chunk)
+		}
 	}
 }
 

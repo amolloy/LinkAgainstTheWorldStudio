@@ -26,9 +26,8 @@ class TileMapFileInt: XCTestCase {
 		let short = NSData(bytes: &tooShort, length: tooShort.count)
 		let inputStream = NSInputStream(data: short)
 		inputStream.open()
-		var int : Int = 0
-		let result = inputStream.readBigInt(&int)
-		XCTAssertFalse(result)
+		let int = inputStream.readBigInt()
+		XCTAssertTrue(int == nil)
 	}
 
 	func testReadBuffer() {
@@ -36,9 +35,11 @@ class TileMapFileInt: XCTestCase {
 		let validData = NSData(bytes: &valid, length: valid.count)
 		let inputStream = NSInputStream(data: validData)
 		inputStream.open()
-		var int : Int = 0
-		let result = inputStream.readBigInt(&int)
-		XCTAssertTrue(result)
+		guard let int = inputStream.readBigInt() else
+		{
+			XCTFail()
+			return
+		}
 		XCTAssertEqual(int, 45844)
 	}
 

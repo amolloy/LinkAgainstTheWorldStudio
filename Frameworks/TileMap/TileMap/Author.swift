@@ -8,25 +8,22 @@
 
 import Foundation
 
-@objc
-class Author : NSObject, Chunk
+class Author : Chunk
 {
 	let authorInfo : [String]
 
-	static func fourCC() -> String
-	{
-		return "ATHR";
-	}
-
-	required init(chunkData : NSData)
+	required init?(inputStream: NSInputStream, length: Int)
 	{
 		// ATHR chunk is up to 4 NULL-separated C-strings
+		var bytes = [UInt8](count: length, repeatedValue: 0)
+		guard inputStream.read(&bytes, maxLength: length) == length else
+		{
+			self.authorInfo = [String]()
+			return nil
+		}
 
-		var bytes = [UInt8](count: chunkData.length, repeatedValue: 0)
-		chunkData.getBytes(&bytes, length:chunkData.length)
-
-		var authorInfo = [String]()
 		var currentAuthorInfo = ""
+		var authorInfo = [String]()
 
 		for c in bytes
 		{
@@ -42,5 +39,10 @@ class Author : NSObject, Chunk
 		}
 
 		self.authorInfo = authorInfo
+	}
+
+	func description() -> String
+	{
+		return "ATHR: \(authorInfo)"
 	}
 }
