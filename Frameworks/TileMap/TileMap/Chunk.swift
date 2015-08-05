@@ -66,6 +66,12 @@ func loadChunk(inputStream: NSInputStream, mapHeader: MapHeader?) throws -> Chun
 		return EditorInfoChunk(inputStream: inputStream, length: chunkLength)
 	case ChunkType.CMAP:
 		return ColorMap(inputStream: inputStream, length: chunkLength)
+	case ChunkType.BKDT:
+		guard let mapHeader = mapHeader else
+		{
+			throw ChunkError.MissingMapHeader
+		}
+		return BlockData(inputStream: inputStream, length: chunkLength, mapHeader: mapHeader)
 	default:
 		throw ChunkError.InvalidChunkTag
 	}
