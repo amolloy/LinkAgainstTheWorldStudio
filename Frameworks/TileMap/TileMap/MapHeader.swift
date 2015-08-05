@@ -11,7 +11,7 @@ import Foundation
 class MapHeader : Chunk
 {
 	let mapVersion : NSDecimalNumber
-	let needsBytesFlipped : Bool
+	let swapBytes : Bool
 	let mapType : Int // TODO Probably make an enum once I know what this is
 	let mapSize : CGSize
 	let reserved1 : Int
@@ -36,7 +36,7 @@ class MapHeader : Chunk
 			// addressed compiler bug:
 			// https://devforums.apple.com/thread/251388?start=0&tstart=0#1062922
 			mapVersion = NSDecimalNumber()
-			needsBytesFlipped = true
+			swapBytes = true
 			mapType = 0
 			mapSize = CGSize()
 			self.reserved1 = 0
@@ -58,7 +58,7 @@ class MapHeader : Chunk
 
 		guard let lsb = inputStream.readUInt8() else
 		{
-			needsBytesFlipped = true
+			swapBytes = true
 			mapType = 0
 			mapSize = CGSize()
 			self.reserved1 = 0
@@ -79,7 +79,7 @@ class MapHeader : Chunk
 		let hostByteOrder = __CFByteOrder(UInt32(CFByteOrderGetCurrent()))
 		let hostLsb = hostByteOrder == CFByteOrderLittleEndian
 		// if 1, data stored LSB first, otherwise MSB first.
-		needsBytesFlipped = hostLsb != (lsb == 1)
+		swapBytes = hostLsb != (lsb == 1)
 
 		/* 0 for 32 offset still, -16 offset anim shorts in BODY added FMP0.5*/
 		guard let mapTypeChar = inputStream.readUInt8() else
@@ -123,8 +123,8 @@ class MapHeader : Chunk
 			return nil
 		}
 
-		guard let mapWidth = inputStream.readInt16(needsBytesFlipped),
-			let mapHeight = inputStream.readInt16(needsBytesFlipped) else
+		guard let mapWidth = inputStream.readInt16(swapBytes),
+			let mapHeight = inputStream.readInt16(swapBytes) else
 		{
 			mapSize = CGSize()
 			self.reserved1 = 0
@@ -144,8 +144,8 @@ class MapHeader : Chunk
 		}
 		mapSize = CGSizeMake(CGFloat(mapWidth), CGFloat(mapHeight))
 
-		guard let reserved1 = inputStream.readInt16(needsBytesFlipped),
-			let reserved2 = inputStream.readInt16(needsBytesFlipped) else
+		guard let reserved1 = inputStream.readInt16(swapBytes),
+			let reserved2 = inputStream.readInt16(swapBytes) else
 		{
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -165,8 +165,8 @@ class MapHeader : Chunk
 		self.reserved1 = reserved1
 		self.reserved2 = reserved2
 
-		guard let blockWidth = inputStream.readInt16(needsBytesFlipped),
-			let blockHeight = inputStream.readInt16(needsBytesFlipped) else
+		guard let blockWidth = inputStream.readInt16(swapBytes),
+			let blockHeight = inputStream.readInt16(swapBytes) else
 		{
 			blockSize = CGSize()
 			blockColorDepth = 0
@@ -183,7 +183,7 @@ class MapHeader : Chunk
 		}
 		blockSize = CGSizeMake(CGFloat(blockWidth), CGFloat(blockHeight))
 
-		guard let blockDepth = inputStream.readInt16(needsBytesFlipped) else
+		guard let blockDepth = inputStream.readInt16(swapBytes) else
 		{
 			blockColorDepth = 0
 			blockStructureSize = 0
@@ -199,7 +199,7 @@ class MapHeader : Chunk
 		}
 		blockColorDepth = blockDepth
 
-		guard let blockStrSize = inputStream.readInt16(needsBytesFlipped) else
+		guard let blockStrSize = inputStream.readInt16(swapBytes) else
 		{
 			blockStructureSize = 0
 			blockStructureCount = 0
@@ -214,7 +214,7 @@ class MapHeader : Chunk
 		}
 		blockStructureSize = blockStrSize
 
-		guard let numBlockStr = inputStream.readInt16(needsBytesFlipped) else
+		guard let numBlockStr = inputStream.readInt16(swapBytes) else
 		{
 			blockStructureCount = 0
 			blockGFXCount = 0
@@ -228,7 +228,7 @@ class MapHeader : Chunk
 		}
 		blockStructureCount = numBlockStr
 
-		guard let numBlockGfx = inputStream.readInt16(needsBytesFlipped) else
+		guard let numBlockGfx = inputStream.readInt16(swapBytes) else
 		{
 			blockGFXCount = 0
 			keyColor = NSColor()
@@ -270,10 +270,10 @@ class MapHeader : Chunk
 
 		if length > 28
 		{
-			guard let blockGapX = inputStream.readInt16(needsBytesFlipped),
-				let blockGapY = inputStream.readInt16(needsBytesFlipped),
-				let blockStaggerX = inputStream.readInt16(needsBytesFlipped),
-				let blockStaggerY = inputStream.readInt16(needsBytesFlipped) else
+			guard let blockGapX = inputStream.readInt16(swapBytes),
+				let blockGapY = inputStream.readInt16(swapBytes),
+				let blockStaggerX = inputStream.readInt16(swapBytes),
+				let blockStaggerY = inputStream.readInt16(swapBytes) else
 			{
 				blockGap = CGSize()
 				blockStagger = CGSize()
@@ -292,7 +292,7 @@ class MapHeader : Chunk
 
 		if length > 36
 		{
-			guard let cm = inputStream.readInt16(needsBytesFlipped) 			else
+			guard let cm = inputStream.readInt16(swapBytes) 			else
 			{
 				clickMask = 0
 				pillars = 0
@@ -307,7 +307,7 @@ class MapHeader : Chunk
 
 		if length > 38
 		{
-			guard let pil = inputStream.readInt16(needsBytesFlipped) else
+			guard let pil = inputStream.readInt16(swapBytes) else
 			{
 				pillars = 0
 				return nil
