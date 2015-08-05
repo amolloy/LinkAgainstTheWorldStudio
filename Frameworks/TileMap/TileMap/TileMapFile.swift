@@ -90,6 +90,7 @@ class TileMapFile
 
 		while  let chunk = try loadChunk(inputStream)
 		{
+			print("Loaded chunk type \(chunk): \(chunk.description())")
 			chunks.append(chunk)
 		}
 	}

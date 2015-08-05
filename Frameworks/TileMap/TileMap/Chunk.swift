@@ -36,6 +36,7 @@ enum ChunkError : ErrorType
 protocol Chunk
 {
 	init?(inputStream: NSInputStream, length: Int)
+	func description() -> String
 }
 
 func loadChunk(inputStream: NSInputStream) throws -> Chunk?
@@ -59,6 +60,10 @@ func loadChunk(inputStream: NSInputStream) throws -> Chunk?
 	{
 	case ChunkType.ATHR:
 		return Author(inputStream: inputStream, length: chunkLength)
+	case ChunkType.MPHD:
+		return MapHeader(inputStream: inputStream, length: chunkLength)
+	case ChunkType.EDHD:
+		return EditorInfoChunk(inputStream: inputStream, length: chunkLength)
 	default:
 		throw ChunkError.InvalidChunkTag
 	}
