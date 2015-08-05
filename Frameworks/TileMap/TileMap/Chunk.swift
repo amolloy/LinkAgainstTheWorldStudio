@@ -31,15 +31,15 @@ enum ChunkType : ChunkTag
 enum ChunkError : ErrorType
 {
 	case InvalidChunkTag
+	case MissingMapHeader
 }
 
 protocol Chunk
 {
-	init?(inputStream: NSInputStream, length: Int)
 	func description() -> String
 }
 
-func loadChunk(inputStream: NSInputStream) throws -> Chunk?
+func loadChunk(inputStream: NSInputStream, mapHeader: MapHeader?) throws -> Chunk?
 {
 	guard let chunkTag = inputStream.readChunkTag() else
 	{

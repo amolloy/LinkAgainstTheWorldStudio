@@ -87,9 +87,15 @@ class TileMapFile
 	private func loadChunks(inputStream : NSInputStream) throws
 	{
 		var chunks = [Chunk]()
+		var mapHeader : MapHeader? = nil
 
-		while  let chunk = try loadChunk(inputStream)
+		while let chunk = try loadChunk(inputStream, mapHeader: mapHeader)
 		{
+			if let mh = chunk as? MapHeader
+			{
+				mapHeader = mh
+			}
+
 			print("Loaded chunk type \(chunk): \(chunk.description())")
 			chunks.append(chunk)
 		}
