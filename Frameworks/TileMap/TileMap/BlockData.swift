@@ -38,7 +38,7 @@ class BlockData : Chunk
 		let user7 : UInt8
 		let collision : CollisionSet
 		let trigger : Bool
-		let unused : [UInt8]
+		let unused : [Bool]
 
 		init(backgroundOffset: Int,
 			foregroundOffsets: [Int],
@@ -51,7 +51,7 @@ class BlockData : Chunk
 			user7: UInt8,
 			collision : CollisionSet,
 			trigger: Bool,
-			unused: [UInt8])
+			unused: [Bool])
 		{
 			self.backgroundOffset = backgroundOffset
 			self.foregroundOffsets = foregroundOffsets
@@ -82,9 +82,101 @@ class BlockData : Chunk
 
 		let blockCount = length / blockSize
 
-		for i in 0..<blockCount
+		for _ in 0..<blockCount
 		{
-			print("\(i)")
+			guard var bgoff = inputStream.readInt32(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard var fgoff = inputStream.readInt32(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard var fgoff2 = inputStream.readInt32(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard var fgoff3 = inputStream.readInt32(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			if (mapHeader.mapType > 0)
+			{
+				let blockWidth = Int(mapHeader.blockSize.width)
+				let blockHeight = Int(mapHeader.blockSize.height)
+				let blockDepth = mapHeader.blockColorDepth
+				bgoff *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				fgoff *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				fgoff2 *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				fgoff3 *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+			}
+			guard let user1 = inputStream.readInt32(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let user2 = inputStream.readInt32(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let user3 = inputStream.readInt16(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let user4 = inputStream.readInt16(mapHeader.swapBytes) else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let user5 = inputStream.readUInt8() else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let user6 = inputStream.readUInt8() else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let user7 = inputStream.readUInt8() else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+			guard let bitfield = inputStream.readUInt8() else
+			{
+				self.blockStructures = blockStructures
+				return nil
+			}
+
+			let unused = [(bitfield & 0x20) == 0x20,
+				(bitfield & 0x40) == 0x40,
+				(bitfield & 0x80) == 0x80]
+
+			let trigger = (bitfield & 0x10) == 0x10
+
+			let collision = BlockStructure.CollisionSet(rawValue: bitfield & 0x0F)
+
+			let block = BlockStructure(backgroundOffset: bgoff,
+				foregroundOffsets: [fgoff, fgoff2, fgoff3],
+				user1: user1,
+				user2: user2,
+				user3: user3,
+				user4: user4,
+				user5: user5,
+				user6: user6,
+				user7: user7,
+				collision: collision,
+				trigger: trigger,
+				unused: unused)
+
+			blockStructures.append(block)
 		}
 
 		self.blockStructures = blockStructures
