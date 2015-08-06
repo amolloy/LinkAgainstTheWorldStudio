@@ -46,22 +46,22 @@ extension NSInputStream
 		return int;
 	}
 
-	func readInt16(swap: Bool) -> Int?
+	func readInt16(swap: Bool) -> Int16?
 	{
 		var buf = [UInt8](count: 2, repeatedValue: 0)
 		let readCount = read(&buf, maxLength: 2)
-		var int : Int?
+		var int : Int16?
 		if readCount == 2
 		{
 			if swap
 			{
-				int = Int(buf[1]) +
-					(Int(buf[0]) << 8)
+				int = Int16(buf[1]) +
+					(Int16(buf[0]) << 8)
 			}
 			else
 			{
-				int = Int(buf[0]) +
-					(Int(buf[1]) << 8)
+				int = Int16(buf[0]) +
+					(Int16(buf[1]) << 8)
 			}
 		}
 
