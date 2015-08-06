@@ -162,8 +162,8 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
-		self.reserved1 = reserved1
-		self.reserved2 = reserved2
+		self.reserved1 = Int(reserved1)
+		self.reserved2 = Int(reserved2)
 
 		guard let blockWidth = inputStream.readInt16(swapBytes),
 			let blockHeight = inputStream.readInt16(swapBytes) else
@@ -197,7 +197,7 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
-		blockColorDepth = blockDepth
+		blockColorDepth = Int(blockDepth)
 
 		guard let blockStrSize = inputStream.readInt16(swapBytes) else
 		{
@@ -212,7 +212,7 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
-		blockStructureSize = blockStrSize
+		blockStructureSize = Int(blockStrSize)
 
 		guard let numBlockStr = inputStream.readInt16(swapBytes) else
 		{
@@ -226,7 +226,7 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
-		blockStructureCount = numBlockStr
+		blockStructureCount = Int(numBlockStr)
 
 		guard let numBlockGfx = inputStream.readInt16(swapBytes) else
 		{
@@ -239,7 +239,7 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
-		blockGFXCount = numBlockGfx
+		blockGFXCount = Int(numBlockGfx)
 
 		if length > 24
 		{
@@ -298,7 +298,7 @@ class MapHeader : Chunk
 				pillars = 0
 				return nil
 			}
-			clickMask = cm
+			clickMask = Int(cm)
 		}
 		else
 		{
@@ -312,7 +312,7 @@ class MapHeader : Chunk
 				pillars = 0
 				return nil
 			}
-			pillars = pil
+			pillars = Int(pil)
 		}
 		else
 		{
