@@ -73,7 +73,10 @@ func loadChunk(inputStream: NSInputStream, mapHeader: MapHeader?) throws -> Chun
 		}
 		return BlockData(inputStream: inputStream, length: chunkLength, mapHeader: mapHeader)
 	default:
-		throw ChunkError.InvalidChunkTag
+		print("Unknown chunk tag: \(chunkType)")
+		var buffer = [UInt8](count: chunkLength, repeatedValue: 0)
+		inputStream.read(&buffer, maxLength: chunkLength)
+		return nil
 	}
 }
 
