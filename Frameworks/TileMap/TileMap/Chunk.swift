@@ -72,6 +72,12 @@ func loadChunk(inputStream: NSInputStream, mapHeader: MapHeader?) throws -> Chun
 			throw ChunkError.MissingMapHeader
 		}
 		return BlockData(inputStream: inputStream, length: chunkLength, mapHeader: mapHeader)
+	case ChunkType.ANDT:
+		guard let mapHeader = mapHeader else
+		{
+			throw ChunkError.MissingMapHeader
+		}
+		return AnimationData(inputStream: inputStream, length: chunkLength, mapHeader: mapHeader)
 	default:
 		print("Unknown chunk tag: \(chunkType)")
 		var buffer = [UInt8](count: chunkLength, repeatedValue: 0)
