@@ -70,7 +70,8 @@ class BlockData : Chunk
 
 	let blockStructures : [BlockStructure]
 
-	required init?(inputStream: NSInputStream, length: Int, mapHeader: MapHeader) {
+	required init?(inputStream: NSInputStream, length: Int, mapHeader: MapHeader)
+	{
 		var blockStructures = [BlockStructure]()
 		let blockSize = mapHeader.blockStructureSize
 
@@ -104,7 +105,7 @@ class BlockData : Chunk
 				self.blockStructures = blockStructures
 				return nil
 			}
-			if (mapHeader.mapType > 0)
+			if (mapHeader.mapType > .FMP05)
 			{
 				let blockWidth = Int(mapHeader.blockSize.width)
 				let blockHeight = Int(mapHeader.blockSize.height)

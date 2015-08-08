@@ -10,9 +10,16 @@ import Foundation
 
 class MapHeader : Chunk
 {
+	enum MapType : UInt8, Comparable
+	{
+		case FMP05
+		case FMP10
+		case FMP10RLE
+	}
+
 	let mapVersion : NSDecimalNumber
 	let swapBytes : Bool
-	let mapType : Int // TODO Probably make an enum once I know what this is
+	let mapType : MapType
 	let mapSize : CGSize
 	let reserved1 : Int
 	let reserved2 : Int
@@ -37,7 +44,7 @@ class MapHeader : Chunk
 			// https://devforums.apple.com/thread/251388?start=0&tstart=0#1062922
 			mapVersion = NSDecimalNumber()
 			swapBytes = true
-			mapType = 0
+			mapType = .FMP05
 			mapSize = CGSize()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -59,7 +66,7 @@ class MapHeader : Chunk
 		guard let lsb = inputStream.readUInt8() else
 		{
 			swapBytes = true
-			mapType = 0
+			mapType = .FMP05
 			mapSize = CGSize()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -84,7 +91,7 @@ class MapHeader : Chunk
 		/* 0 for 32 offset still, -16 offset anim shorts in BODY added FMP0.5*/
 		guard let mapTypeChar = inputStream.readUInt8() else
 		{
-			mapType = 0
+			mapType = .FMP05
 			mapSize = CGSize()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -101,11 +108,11 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
-		mapType = Int(mapTypeChar)
 
-		if mapType > 3
+		guard let theMapType = MapType(rawValue: mapTypeChar) else
 		{
 			// TODO throw too new
+			mapType = .FMP05
 			mapSize = CGSize()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -122,6 +129,7 @@ class MapHeader : Chunk
 			pillars = 0
 			return nil
 		}
+		mapType = theMapType
 
 		guard let mapWidth = inputStream.readInt16(swapBytes),
 			let mapHeight = inputStream.readInt16(swapBytes) else
@@ -323,4 +331,9 @@ class MapHeader : Chunk
 	func description() -> String {
 		return "MapHeader"
 	}
+}
+
+func <(lhs: MapHeader.MapType, rhs: MapHeader.MapType) -> Bool
+{
+	return lhs.rawValue < rhs.rawValue
 }
