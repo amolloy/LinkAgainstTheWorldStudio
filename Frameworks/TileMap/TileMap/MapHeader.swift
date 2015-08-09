@@ -16,22 +16,40 @@ class MapHeader : Chunk
 		case FMP10
 		case FMP10RLE
 	}
+	struct Size
+	{
+		let width : Int
+		let height : Int
+		init(_ width: Int, _ height: Int)
+		{
+			self.width = width
+			self.height = height
+		}
+		init(_ width: Int16, _ height: Int16)
+		{
+			self.init(Int(width), Int(height))
+		}
+		init()
+		{
+			self.init(0, 0)
+		}
+	}
 
 	let mapVersion : NSDecimalNumber
 	let swapBytes : Bool
 	let mapType : MapType
-	let mapSize : CGSize
+	let mapSize : Size
 	let reserved1 : Int
 	let reserved2 : Int
-	let blockSize : CGSize
+	let blockSize : Size
 	let blockColorDepth : Int
 	let blockStructureSize : Int
 	let blockStructureCount : Int
 	let blockGFXCount : Int
 	let keyColor : NSColor?
 	let keyColor8Bit : UInt8
-	let blockGap : CGSize
-	let blockStagger : CGSize
+	let blockGap : Size
+	let blockStagger : Size
 	let clickMask : Int
 	let pillars : Int
 
@@ -45,18 +63,18 @@ class MapHeader : Chunk
 			mapVersion = NSDecimalNumber()
 			swapBytes = true
 			mapType = .FMP05
-			mapSize = CGSize()
+			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -67,18 +85,18 @@ class MapHeader : Chunk
 		{
 			swapBytes = true
 			mapType = .FMP05
-			mapSize = CGSize()
+			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -92,18 +110,18 @@ class MapHeader : Chunk
 		guard let mapTypeChar = inputStream.readUInt8() else
 		{
 			mapType = .FMP05
-			mapSize = CGSize()
+			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -113,18 +131,18 @@ class MapHeader : Chunk
 		{
 			// TODO throw too new
 			mapType = .FMP05
-			mapSize = CGSize()
+			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -134,38 +152,38 @@ class MapHeader : Chunk
 		guard let mapWidth = inputStream.readInt16(swapBytes),
 			let mapHeight = inputStream.readInt16(swapBytes) else
 		{
-			mapSize = CGSize()
+			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
 		}
-		mapSize = CGSizeMake(CGFloat(mapWidth), CGFloat(mapHeight))
+		mapSize = Size(mapWidth, mapHeight)
 
 		guard let reserved1 = inputStream.readInt16(swapBytes),
 			let reserved2 = inputStream.readInt16(swapBytes) else
 		{
 			self.reserved1 = 0
 			self.reserved2 = 0
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -176,20 +194,20 @@ class MapHeader : Chunk
 		guard let blockWidth = inputStream.readInt16(swapBytes),
 			let blockHeight = inputStream.readInt16(swapBytes) else
 		{
-			blockSize = CGSize()
+			blockSize = Size()
 			blockColorDepth = 0
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
 		}
-		blockSize = CGSizeMake(CGFloat(blockWidth), CGFloat(blockHeight))
+		blockSize = Size(blockWidth, blockHeight)
 
 		guard let blockDepth = inputStream.readInt16(swapBytes) else
 		{
@@ -199,8 +217,8 @@ class MapHeader : Chunk
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -214,8 +232,8 @@ class MapHeader : Chunk
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -228,8 +246,8 @@ class MapHeader : Chunk
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -241,8 +259,8 @@ class MapHeader : Chunk
 			blockGFXCount = 0
 			keyColor = NSColor()
 			keyColor8Bit = 0
-			blockGap = CGSize()
-			blockStagger = CGSize()
+			blockGap = Size()
+			blockStagger = Size()
 			clickMask = 0
 			pillars = 0
 			return nil
@@ -258,8 +276,8 @@ class MapHeader : Chunk
 			{
 				keyColor8Bit = 0
 				keyColor = NSColor()
-				blockGap = CGSize()
-				blockStagger = CGSize()
+				blockGap = Size()
+				blockStagger = Size()
 				clickMask = 0
 				pillars = 0
 				return nil
@@ -283,19 +301,19 @@ class MapHeader : Chunk
 				let blockStaggerX = inputStream.readInt16(swapBytes),
 				let blockStaggerY = inputStream.readInt16(swapBytes) else
 			{
-				blockGap = CGSize()
-				blockStagger = CGSize()
+				blockGap = Size()
+				blockStagger = Size()
 				clickMask = 0
 				pillars = 0
 				return nil
 			}
-			blockGap = CGSizeMake(CGFloat(blockGapX), CGFloat(blockGapY))
-			blockStagger = CGSizeMake(CGFloat(blockStaggerX), CGFloat(blockStaggerY))
+			blockGap = Size(blockGapX, blockGapY)
+			blockStagger = Size(blockStaggerX, blockStaggerY)
 		}
 		else
 		{
 			blockGap = blockSize;
-			blockStagger = CGSizeZero
+			blockStagger = Size()
 		}
 
 		if length > 36
