@@ -17,6 +17,7 @@
 		B43B7DEE1B76245700AB19A3 /* CollectionBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43B7DED1B76245700AB19A3 /* CollectionBuffer.swift */; };
 		B4522AD21B6F8CDB000EA22F /* EditorInfoChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522AD11B6F8CDB000EA22F /* EditorInfoChunk.swift */; };
 		B4522AD41B6F909E000EA22F /* MapHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522AD31B6F909E000EA22F /* MapHeader.swift */; };
+		B46C0E661B7761BF00A4149A /* BlockGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C0E651B7761BF00A4149A /* BlockGraphics.swift */; };
 		B479A2871B6A403700381E17 /* TileMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B479A2861B6A403700381E17 /* TileMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B479A28E1B6A403800381E17 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B479A2831B6A403700381E17 /* TileMap.framework */; };
 		B479A2931B6A403800381E17 /* TileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479A2921B6A403800381E17 /* TileMapTests.swift */; };
@@ -48,6 +49,7 @@
 		B43B7DED1B76245700AB19A3 /* CollectionBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBuffer.swift; sourceTree = "<group>"; };
 		B4522AD11B6F8CDB000EA22F /* EditorInfoChunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorInfoChunk.swift; sourceTree = "<group>"; };
 		B4522AD31B6F909E000EA22F /* MapHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHeader.swift; sourceTree = "<group>"; };
+		B46C0E651B7761BF00A4149A /* BlockGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGraphics.swift; sourceTree = "<group>"; };
 		B479A2831B6A403700381E17 /* TileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B479A2861B6A403700381E17 /* TileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileMap.h; sourceTree = "<group>"; };
 		B479A2881B6A403700381E17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				B4F039CF1B72396B0017F268 /* BlockData.swift */,
 				B421D0831B738F2E00ED964A /* AnimationData.swift */,
 				B43B7DED1B76245700AB19A3 /* CollectionBuffer.swift */,
+				B46C0E651B7761BF00A4149A /* BlockGraphics.swift */,
 			);
 			path = TileMap;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				B41F5FF41B6BDD4600C28B5C /* ChunkTag.swift in Sources */,
 				B41F5FEE1B6BC3B800C28B5C /* Char.swift in Sources */,
 				B4F039D01B72396B0017F268 /* BlockData.swift in Sources */,
+				B46C0E661B7761BF00A4149A /* BlockGraphics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
