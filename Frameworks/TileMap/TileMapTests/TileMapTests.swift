@@ -23,26 +23,24 @@ class TileMapTests: XCTestCase
 
 	func testLoadHeader()
 	{
-	guard let tileMapFile = TileMapFile(path: testMapPath) else
-	{
-		XCTFail()
-		return
-	}
-	do
-	{
-		try tileMapFile.open()
-	}
-	catch let e
-	{
-		XCTFail("tileMapFile.load() threw \(e)")
-	}
-
-	XCTAssertEqual(tileMapFile.dataLength, 45844)
+		guard let tileMapFile = TileMap(path: testMapPath) else
+		{
+			XCTFail()
+			return
+		}
+		do
+		{
+			try tileMapFile.open()
+		}
+		catch let e
+		{
+			XCTFail("tileMapFile.load() threw \(e)")
+		}
 	}
 
 	func testLoadChunks()
 	{
-		guard let tileMapFile = TileMapFile(path: testMapPath) else
+		guard let tileMapFile = TileMap(path: testMapPath) else
 		{
 			XCTFail()
 			return

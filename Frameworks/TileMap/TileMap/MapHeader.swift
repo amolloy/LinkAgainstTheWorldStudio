@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapHeader : Chunk
+class MapHeader : Loadable
 {
 	enum MapType : UInt8, Comparable
 	{
@@ -16,6 +16,7 @@ class MapHeader : Chunk
 		case FMP10
 		case FMP10RLE
 	}
+
 	struct Size
 	{
 		let width : Int
@@ -53,7 +54,8 @@ class MapHeader : Chunk
 	let clickMask : Int
 	let pillars : Int
 
-	required init?(inputStream: NSInputStream, length: Int) {
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	{
 		guard let versionHigh = inputStream.readUInt8(),
 			let versionLow = inputStream.readUInt8() else
 		{
@@ -267,7 +269,7 @@ class MapHeader : Chunk
 		}
 		blockGFXCount = Int(numBlockGfx)
 
-		if length > 24
+		if dataLength > 24
 		{
 			guard let ckey8bit = inputStream.readUInt8(),
 				let ckeyred = inputStream.readUInt8(),
@@ -294,7 +296,7 @@ class MapHeader : Chunk
 			keyColor = nil
 		}
 
-		if length > 28
+		if dataLength > 28
 		{
 			guard let blockGapX = inputStream.readInt16(swapBytes),
 				let blockGapY = inputStream.readInt16(swapBytes),
@@ -316,7 +318,7 @@ class MapHeader : Chunk
 			blockStagger = Size()
 		}
 
-		if length > 36
+		if dataLength > 36
 		{
 			guard let cm = inputStream.readInt16(swapBytes) 			else
 			{
@@ -331,7 +333,7 @@ class MapHeader : Chunk
 			clickMask = 0
 		}
 
-		if length > 38
+		if dataLength > 38
 		{
 			guard let pil = inputStream.readInt16(swapBytes) else
 			{
@@ -346,8 +348,9 @@ class MapHeader : Chunk
 		}
 	}
 
-	func description() -> String {
-		return "MapHeader"
+	static func registerWithTileMap(tileMap: TileMap)
+	{
+		tileMap.registerLoadable(self, chunkType: ChunkType.MPHD)
 	}
 }
 

@@ -8,9 +8,9 @@
 
 import Foundation
 
-class BlockData : Chunk
+class BlockData : Loadable
 {
-	class BlockStructure
+	class BlockStructure : Tileable
 	{
 		struct CollisionSet : OptionSetType
 		{
@@ -70,37 +70,44 @@ class BlockData : Chunk
 
 	let blockStructures : [BlockStructure]
 
-	required init?(inputStream: NSInputStream, length: Int, mapHeader: MapHeader)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
 	{
 		var blockStructures = [BlockStructure]()
+
+		guard let mapHeader = tileMap.mapHeader else
+		{
+			self.blockStructures = blockStructures
+			return nil
+		}
+		let swapBytes = mapHeader.swapBytes
 		let blockSize = mapHeader.blockStructureSize
 
-		if length % blockSize != 0
+		if dataLength % blockSize != 0
 		{
 			self.blockStructures = blockStructures
 			return nil
 		}
 
-		let blockCount = length / blockSize
+		let blockCount = dataLength / blockSize
 
 		for _ in 0..<blockCount
 		{
-			guard var bgoff = inputStream.readInt32(mapHeader.swapBytes) else
+			guard var bgoff = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard var fgoff = inputStream.readInt32(mapHeader.swapBytes) else
+			guard var fgoff = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard var fgoff2 = inputStream.readInt32(mapHeader.swapBytes) else
+			guard var fgoff2 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard var fgoff3 = inputStream.readInt32(mapHeader.swapBytes) else
+			guard var fgoff3 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
@@ -115,22 +122,22 @@ class BlockData : Chunk
 				fgoff2 *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
 				fgoff3 *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
 			}
-			guard let user1 = inputStream.readInt32(mapHeader.swapBytes) else
+			guard let user1 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard let user2 = inputStream.readInt32(mapHeader.swapBytes) else
+			guard let user2 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard let user3 = inputStream.readInt16(mapHeader.swapBytes) else
+			guard let user3 = inputStream.readInt16(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard let user4 = inputStream.readInt16(mapHeader.swapBytes) else
+			guard let user4 = inputStream.readInt16(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
@@ -183,7 +190,8 @@ class BlockData : Chunk
 		self.blockStructures = blockStructures
 	}
 
-	func description() -> String {
-		return "BlockData"
+	static func registerWithTileMap(tileMap: TileMap)
+	{
+		tileMap.registerLoadable(self, chunkType: ChunkType.BKDT)
 	}
 }

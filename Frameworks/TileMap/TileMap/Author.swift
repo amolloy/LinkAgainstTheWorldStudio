@@ -8,15 +8,15 @@
 
 import Foundation
 
-class Author : Chunk
+class Author : Loadable
 {
 	let authorInfo : [String]
 
-	required init?(inputStream: NSInputStream, length: Int)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
 	{
 		// ATHR chunk is up to 4 NULL-separated C-strings
-		var bytes = [UInt8](count: length, repeatedValue: 0)
-		guard inputStream.read(&bytes, maxLength: length) == length else
+		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
+		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
 		{
 			self.authorInfo = [String]()
 			return nil
@@ -41,8 +41,8 @@ class Author : Chunk
 		self.authorInfo = authorInfo
 	}
 
-	func description() -> String
+	static func registerWithTileMap(tileMap: TileMap)
 	{
-		return "ATHR: \(authorInfo)"
+		tileMap.registerLoadable(self, chunkType: ChunkType.ATHR)
 	}
 }

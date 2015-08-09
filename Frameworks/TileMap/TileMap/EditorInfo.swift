@@ -11,18 +11,19 @@ import Foundation
 // The EditorInfoChunk stores editor information such as the last offset
 // into the map the user was editing, what size the editing screen was, 
 // etc. We'll just ignore it since we won't be using it even in our editor.
-class EditorInfoChunk : Chunk
+class EditorInfo : Loadable
 {
-	required init?(inputStream: NSInputStream, length: Int)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
 	{
-		var bytes = [UInt8](count: length, repeatedValue: 0)
-		guard inputStream.read(&bytes, maxLength: length) == length else
+		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
+		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
 		{
 			return nil
 		}
 	}
 
-	func description() -> String {
-		return "EditorInfoChunk (ignored)"
+	static func registerWithTileMap(tileMap: TileMap)
+	{
+		tileMap.registerLoadable(self, chunkType: ChunkType.EDHD)
 	}
 }

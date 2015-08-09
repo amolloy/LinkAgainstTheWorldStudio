@@ -8,19 +8,20 @@
 
 import Foundation
 
-class ColorMap : Chunk
+class ColorMap : Loadable
 {
 	let palette : [NSColor]
 
-	required init?(inputStream: NSInputStream, length: Int) {
-		if length % 3 != 0
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	{
+		if dataLength % 3 != 0
 		{
 			palette = [NSColor]()
 			return nil
 		}
 
 		var p = [NSColor]()
-		let numColors = length / 3
+		let numColors = dataLength / 3
 
 		for _ in 0..<numColors
 		{
@@ -43,7 +44,8 @@ class ColorMap : Chunk
 		palette = p
 	}
 
-	func description() -> String {
-		return "ColorMap"
+	static func registerWithTileMap(tileMap: TileMap)
+	{
+		tileMap.registerLoadable(self, chunkType: ChunkType.CMAP)
 	}
 }

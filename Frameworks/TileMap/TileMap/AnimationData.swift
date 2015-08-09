@@ -8,9 +8,9 @@
 
 import Foundation
 
-class AnimationData : Chunk
+class AnimationData : Loadable
 {
-	class AnimationStructure
+	class AnimationStructure : Tileable
 	{
 		enum AnimType : Int8
 		{
@@ -52,10 +52,17 @@ class AnimationData : Chunk
 
 	let animationStructures : [AnimationStructure]
 
-	required init?(inputStream: NSInputStream, length: Int, mapHeader: MapHeader)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
 	{
-		var uChunkData = [UInt8](count: length, repeatedValue: 0)
-		if inputStream.read(&uChunkData, maxLength: length) != length
+		guard let mapHeader = tileMap.mapHeader else
+		{
+			animationStructures = [AnimationStructure]()
+			return nil
+		}
+		let swapBytes = mapHeader.swapBytes
+
+		var uChunkData = [UInt8](count: dataLength, repeatedValue: 0)
+		if inputStream.read(&uChunkData, maxLength: dataLength) != dataLength
 		{
 			animationStructures = [AnimationStructure]()
 			return nil
@@ -87,10 +94,10 @@ class AnimationData : Chunk
 			let delayCountdown = chunkData[readPtr + 2]
 			let userData = chunkData[readPtr + 3]
 
-			var offset1 = chunkData.getIntAtIndex(readPtr + 8, swapBytes: mapHeader.swapBytes)
-			let offset2 = chunkData.getIntAtIndex(readPtr + 12, swapBytes: mapHeader.swapBytes)
+			var offset1 = chunkData.getIntAtIndex(readPtr + 8, swapBytes: swapBytes)
+			let offset2 = chunkData.getIntAtIndex(readPtr + 12, swapBytes: swapBytes)
 			let frameCount = (offset2 - offset1) / intSize
-			let startFrame = (chunkData.getIntAtIndex(readPtr + 4, swapBytes: mapHeader.swapBytes) - offset1) / intSize
+			let startFrame = (chunkData.getIntAtIndex(readPtr + 4, swapBytes: swapBytes) - offset1) / intSize
 
 			var frameIndex = 0
 			if frameCount > 0
@@ -100,13 +107,13 @@ class AnimationData : Chunk
 
 			if mapHeader.mapType != .FMP05
 			{
-				offset1 = (offset1 * 4) - length
+				offset1 = (offset1 * 4) - dataLength
 			}
 
 			var frames = [Int]()
 			for _ in 0..<frameCount
 			{
-				let frameNo = chunkData.getIntAtIndex(length + offset1 - 4, swapBytes: mapHeader.swapBytes)
+				let frameNo = chunkData.getIntAtIndex(dataLength + offset1 - 4, swapBytes: swapBytes)
 				frames.append(frameNo / imageSize)
 				offset1 += 4
 			}
@@ -125,7 +132,8 @@ class AnimationData : Chunk
 		self.animationStructures = animStructures
 	}
 
-	func description() -> String {
-		return "AnimationData"
+	static func registerWithTileMap(tileMap: TileMap)
+	{
+		tileMap.registerLoadable(self, chunkType: ChunkType.ANDT)
 	}
 }

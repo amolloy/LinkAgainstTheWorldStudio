@@ -1,5 +1,5 @@
 //
-//  BlockGraphics.swift
+//  Unknown.swift
 //  TileMap
 //
 //  Created by Andrew Molloy on 8/9/15.
@@ -8,23 +8,19 @@
 
 import Foundation
 
-class BlockGraphics : Loadable
+class Unknown : Loadable
 {
-	let buffer : [UInt8]
-
 	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
 	{
 		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
 		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
 		{
-			buffer = [UInt8]()
 			return nil
 		}
-		buffer = bytes
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.BGFX)
+		// Do nothing
 	}
 }
