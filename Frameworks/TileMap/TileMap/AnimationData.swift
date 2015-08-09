@@ -123,8 +123,6 @@ class AnimationData : Chunk
 			animStructures.append(s)
 		}
 		self.animationStructures = animStructures
-
-		return nil
 	}
 
 	func description() -> String {
