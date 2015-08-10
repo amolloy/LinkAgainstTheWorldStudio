@@ -20,6 +20,8 @@ class EditorInfo : Loadable
 		{
 			return nil
 		}
+
+		tileMap.editorInfo = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

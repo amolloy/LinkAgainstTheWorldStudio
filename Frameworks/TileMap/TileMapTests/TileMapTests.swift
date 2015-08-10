@@ -61,5 +61,14 @@ class TileMapTests: XCTestCase
 		{
 			XCTFail("tileMapFile.loadChunks() threw \(e)")
 		}
+
+		XCTAssertNotNil(tileMapFile.animationData)
+		XCTAssertNotNil(tileMapFile.author)
+		XCTAssertNotNil(tileMapFile.blockData)
+		XCTAssertNotNil(tileMapFile.blockGraphics)
+		XCTAssertNotNil(tileMapFile.colorMap)
+		XCTAssertNotNil(tileMapFile.editorInfo)
+		XCTAssertNotNil(tileMapFile.mapHeader)
+		XCTAssertNotEqual(tileMapFile.layers.count, 0)
 	}
 }

@@ -59,50 +59,10 @@ extension TileMap
 
 	private func loadChunks(inputStream : NSInputStream) throws
 	{
-		var layers = [Layer]()
-		var unknownChunks = [Unknown]()
-
 		while let chunk = try loadChunk(inputStream)
 		{
-			if let animationData = chunk as? AnimationData
-			{
-				self.animationData = animationData
-			}
-			else if let author = chunk as? Author
-			{
-				self.author = author
-			}
-			else if let blockData = chunk as? BlockData
-			{
-				self.blockData = blockData
-			}
-			else if let colorMap = chunk as? ColorMap
-			{
-				self.colorMap = colorMap
-			}
-			else if let editorInfo = chunk as? EditorInfo
-			{
-				self.editorInfo = editorInfo
-			}
-			else if let layer = chunk as? Layer
-			{
-				// TODO make sure they are in order
-				layers.append(layer)
-			}
-			else if let mapHeader = chunk as? MapHeader
-			{
-				self.mapHeader = mapHeader
-			}
-			else if let unknownChunk = chunk as? Unknown
-			{
-				unknownChunks.append(unknownChunk)
-			}
-
 			print("Loaded chunk type \(chunk)")
 		}
-
-		self.layers = layers
-		self.unknownChunks = unknownChunks
 	}
 
 	private func loadChunk(inputStream: NSInputStream) throws -> Loadable?
@@ -138,5 +98,16 @@ extension TileMap
 				chunkType: chunkType)
 		}
 		return chunk
+	}
+
+	func addLayer(layer: Layer, index: Int)
+	{
+		assert(index == layers.count, "Layers must appear in the file in order")
+		layers.append(layer)
+	}
+
+	func addUnknownChunk(chunk: Unknown)
+	{
+		unknownChunks.append(chunk)
 	}
 }

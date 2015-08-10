@@ -17,6 +17,8 @@ class Unknown : Loadable
 		{
 			return nil
 		}
+
+		tileMap.addUnknownChunk(self)
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

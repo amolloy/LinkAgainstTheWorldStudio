@@ -130,6 +130,8 @@ class AnimationData : Loadable
 			animStructures.append(s)
 		}
 		self.animationStructures = animStructures
+
+		tileMap.animationData = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

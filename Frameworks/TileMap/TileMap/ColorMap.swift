@@ -42,6 +42,8 @@ class ColorMap : Loadable
 		}
 
 		palette = p
+
+		tileMap.colorMap = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

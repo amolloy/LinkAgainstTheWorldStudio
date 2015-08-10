@@ -39,6 +39,8 @@ class Author : Loadable
 		}
 
 		self.authorInfo = authorInfo
+
+		tileMap.author = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

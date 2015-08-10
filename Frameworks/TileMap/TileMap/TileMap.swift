@@ -12,9 +12,10 @@ class TileMap
 {
 	var inputStream : NSInputStream
 
+	var animationData : AnimationData!
 	var author : Author!
 	var blockData : BlockData!
-	var animationData : AnimationData!
+	var blockGraphics : BlockGraphics!
 	var colorMap : ColorMap!
 	var editorInfo : EditorInfo!
 	var layers : [Layer]
@@ -25,9 +26,10 @@ class TileMap
 	{
 		loaders = [ChunkType: Loadable.Type]()
 
+		animationData = nil
 		author = nil
 		blockData = nil
-		animationData = nil
+		blockGraphics = nil
 		colorMap = nil
 		editorInfo = nil
 		layers = [Layer]()

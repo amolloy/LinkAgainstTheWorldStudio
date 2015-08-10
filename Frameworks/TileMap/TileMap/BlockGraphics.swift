@@ -21,6 +21,8 @@ class BlockGraphics : Loadable
 			return nil
 		}
 		buffer = bytes
+
+		tileMap.blockGraphics = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

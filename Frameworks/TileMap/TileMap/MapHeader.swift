@@ -346,6 +346,8 @@ class MapHeader : Loadable
 		{
 			pillars = 0
 		}
+
+		tileMap.mapHeader = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

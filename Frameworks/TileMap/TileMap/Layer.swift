@@ -74,6 +74,8 @@ class Layer : Loadable
 		}
 
 		tiles = tileRows
+
+		tileMap.addLayer(self, index: chunkType.layer())
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)

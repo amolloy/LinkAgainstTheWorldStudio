@@ -188,6 +188,8 @@ class BlockData : Loadable
 		}
 
 		self.blockStructures = blockStructures
+
+		tileMap.blockData = self
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)
