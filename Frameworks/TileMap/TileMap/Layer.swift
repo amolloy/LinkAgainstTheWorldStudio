@@ -20,25 +20,21 @@ class Layer : Loadable
 
 	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
 	{
-		guard let mapHeader = tileMap.mapHeader else
+		guard let mapHeader = tileMap.mapHeader,
+		let blockData = tileMap.blockData,
+		let animationData = tileMap.animationData else
 		{
 			tiles = [[Tileable]]()
 			return nil
 		}
 		let swapBytes = mapHeader.swapBytes
 
-		chunkType = nil
-		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
-		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
-		{
-			tiles = [[Tileable]]()
-			return nil
-		}
-
+		var tileRows = [[Tileable]]()
 		if mapHeader.mapType == .FMP05
 		{
 			for _ in 0..<mapHeader.mapSize.height
 			{
+				var tileColumns = [Tileable]()
 				for _ in 0..<mapHeader.mapSize.width
 				{
 					guard let tile = inputStream.readInt16(swapBytes) else
@@ -46,22 +42,29 @@ class Layer : Loadable
 						tiles = [[Tileable]]()
 						return nil
 					}
-/*
-					*mymappt = (short int) MapGetshort (mdatpt);
-					if (*mymappt >= 0) { *mymappt /= blockstrsize; }
-					else { *mymappt /= 16; *mymappt *= sizeof(ANISTR); }
-					mdatpt+=2; mymappt++;
-*/
+
+					let tileIndex = Int(tile) / mapHeader.blockStructureSize
+					if tile >= 0
+					{
+						tileColumns.append(blockData.blockStructures[tileIndex])
+					}
+					else
+					{
+						tileColumns.append(animationData.animationStructures[-tileIndex])
+					}
 				}
+				tileRows.append(tileColumns)
 			}
 		}
 		else if mapHeader.mapType == .FMP10
 		{
 			// TODO
+			assert(false, "FMP 1.0 Maps not yet implemented")
 		}
 		else if mapHeader.mapType == .FMP10RLE
 		{
 			// TODO
+			assert(false, "FMP 1.0RLE Maps not yet implemented")
 		}
 		else
 		{
@@ -70,7 +73,7 @@ class Layer : Loadable
 			return nil
 		}
 
-		tiles = [[Tileable]]()
+		tiles = tileRows
 	}
 
 	static func registerWithTileMap(tileMap: TileMap)
