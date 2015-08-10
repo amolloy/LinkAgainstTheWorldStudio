@@ -18,7 +18,7 @@ class Layer : Loadable
 	var chunkType : ChunkType?
 	let tiles : [[Tileable]]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let mapHeader = tileMap.mapHeader,
 		let blockData = tileMap.blockData,

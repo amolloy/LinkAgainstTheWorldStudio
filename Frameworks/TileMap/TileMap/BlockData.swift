@@ -70,7 +70,7 @@ class BlockData : Loadable
 
 	let blockStructures : [BlockStructure]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		var blockStructures = [BlockStructure]()
 

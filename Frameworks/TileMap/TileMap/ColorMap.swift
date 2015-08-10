@@ -12,7 +12,7 @@ class ColorMap : Loadable
 {
 	let palette : [NSColor]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		if dataLength % 3 != 0
 		{

@@ -125,11 +125,17 @@ extension TileMap
 		let chunk : Loadable?
 		if let loader = loaders[chunkType]
 		{
-			chunk = loader.init(inputStream: inputStream, dataLength: chunkLength, tileMap: self)
+			chunk = loader.init(inputStream: inputStream,
+				dataLength: chunkLength,
+				tileMap: self,
+				chunkType: chunkType)
 		}
 		else
 		{
-			chunk = Unknown(inputStream: inputStream, dataLength: chunkLength, tileMap: self)
+			chunk = Unknown(inputStream: inputStream,
+				dataLength: chunkLength,
+				tileMap: self,
+				chunkType: chunkType)
 		}
 		return chunk
 	}

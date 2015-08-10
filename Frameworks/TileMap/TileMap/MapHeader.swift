@@ -54,7 +54,7 @@ class MapHeader : Loadable
 	let clickMask : Int
 	let pillars : Int
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let versionHigh = inputStream.readUInt8(),
 			let versionLow = inputStream.readUInt8() else

@@ -13,7 +13,7 @@ import Foundation
 // etc. We'll just ignore it since we won't be using it even in our editor.
 class EditorInfo : Loadable
 {
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
 		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else

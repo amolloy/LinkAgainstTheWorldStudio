@@ -52,7 +52,7 @@ class AnimationData : Loadable
 
 	let animationStructures : [AnimationStructure]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap)
+	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let mapHeader = tileMap.mapHeader else
 		{
