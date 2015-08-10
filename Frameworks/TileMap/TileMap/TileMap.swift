@@ -12,10 +12,11 @@ class TileMap
 {
 	var inputStream : NSInputStream
 
-	var author : Author?
-	var blockData : BlockData?
-	var colorMap : ColorMap?
-	var editorInfo : EditorInfo?
+	var author : Author!
+	var blockData : BlockData!
+	var animationData : AnimationData!
+	var colorMap : ColorMap!
+	var editorInfo : EditorInfo!
 	var layers : [Layer]
 	var mapHeader : MapHeader?
 	var unknownChunks : [Unknown]
@@ -26,6 +27,7 @@ class TileMap
 
 		author = nil
 		blockData = nil
+		animationData = nil
 		colorMap = nil
 		editorInfo = nil
 		layers = [Layer]()

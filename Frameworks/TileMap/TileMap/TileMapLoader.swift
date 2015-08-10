@@ -64,7 +64,11 @@ extension TileMap
 
 		while let chunk = try loadChunk(inputStream)
 		{
-			if let author = chunk as? Author
+			if let animationData = chunk as? AnimationData
+			{
+				self.animationData = animationData
+			}
+			else if let author = chunk as? Author
 			{
 				self.author = author
 			}
