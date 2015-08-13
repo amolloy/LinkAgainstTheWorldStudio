@@ -12,12 +12,12 @@ class TileMap
 {
 	var inputStream : NSInputStream
 
-	var animationData : AnimationData!
-	var author : Author!
-	var blockData : BlockData!
-	var blockGraphics : BlockGraphics!
-	var colorMap : ColorMap!
-	var editorInfo : EditorInfo!
+	var animationData : AnimationData?
+	var author : Author?
+	var blockData : BlockData?
+	var blockGraphics : BlockGraphics?
+	var colorMap : ColorMap?
+	var editorInfo : EditorInfo?
 	var layers : [Layer]
 	var mapHeader : MapHeader?
 	var unknownChunks : [Unknown]
