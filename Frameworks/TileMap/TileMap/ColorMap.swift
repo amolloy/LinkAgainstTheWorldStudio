@@ -10,17 +10,17 @@ import Foundation
 
 class ColorMap : Loadable
 {
-	let palette : [NSColor]
+	let palette : [TileMap.Color]
 
 	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		if dataLength % 3 != 0
 		{
-			palette = [NSColor]()
+			palette = []
 			return nil
 		}
 
-		var p = [NSColor]()
+		var p : [TileMap.Color] = []
 		let numColors = dataLength / 3
 
 		for _ in 0..<numColors
@@ -29,16 +29,11 @@ class ColorMap : Loadable
 			let green = inputStream.readUInt8(),
 			let blue = inputStream.readUInt8() else
 			{
-				palette = [NSColor]()
+				palette = []
 				return nil
 			}
 
-			let color = NSColor(red: CGFloat(red) / CGFloat(0xFF),
-				green: CGFloat(green) / CGFloat(0xFF),
-				blue: CGFloat(blue) / CGFloat(0xFF),
-				alpha: 1)
-
-			p.append(color)
+			p.append(r: red, g: green, b: blue)
 		}
 
 		palette = p

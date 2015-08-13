@@ -47,7 +47,7 @@ class MapHeader : Loadable
 	let blockStructureSize : Int
 	let blockStructureCount : Int
 	let blockGFXCount : Int
-	let keyColor : (UInt8, UInt8, UInt8)
+	let keyColor : TileMap.Color
 	let keyColor8Bit : UInt8
 	let blockGap : Size
 	let blockStagger : Size

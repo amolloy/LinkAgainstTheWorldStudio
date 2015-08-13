@@ -10,6 +10,8 @@ import Foundation
 
 class TileMap
 {
+	typealias Color = (r: UInt8, g: UInt8, b: UInt8)
+
 	var inputStream : NSInputStream
 
 	var animationData : AnimationData?
