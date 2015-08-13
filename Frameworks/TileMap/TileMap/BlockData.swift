@@ -27,8 +27,8 @@ class BlockData : Loadable
 			static var br : CollisionSet { return CollisionSet(rawValue: 1 << 3) }
 		}
 
-		let backgroundOffset : Int
-		let foregroundOffsets : [Int]
+		let backgroundIndex : Int
+		let foregroundIndices : [Int]
 		let user1 : Int
 		let user2 : Int
 		let user3 : Int16
@@ -40,8 +40,8 @@ class BlockData : Loadable
 		let trigger : Bool
 		let unused : [Bool]
 
-		init(backgroundOffset: Int,
-			foregroundOffsets: [Int],
+		init(backgroundIndex: Int,
+			foregroundIndices: [Int],
 			user1: Int,
 			user2: Int,
 			user3: Int16,
@@ -53,8 +53,8 @@ class BlockData : Loadable
 			trigger: Bool,
 			unused: [Bool])
 		{
-			self.backgroundOffset = backgroundOffset
-			self.foregroundOffsets = foregroundOffsets
+			self.backgroundIndex = backgroundIndex
+			self.foregroundIndices = foregroundIndices
 			self.user1 = user1
 			self.user2 = user2
 			self.user3 = user3
@@ -92,35 +92,43 @@ class BlockData : Loadable
 
 		for _ in 0..<blockCount
 		{
-			guard var bgoff = inputStream.readInt32(swapBytes) else
+			guard let bgoff = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard var fgoff = inputStream.readInt32(swapBytes) else
+			guard let fgoff1 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard var fgoff2 = inputStream.readInt32(swapBytes) else
+			guard let fgoff2 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
-			guard var fgoff3 = inputStream.readInt32(swapBytes) else
+			guard let fgoff3 = inputStream.readInt32(swapBytes) else
 			{
 				self.blockStructures = blockStructures
 				return nil
 			}
+			let bgIndex : Int
+			let fgIndices : [Int]
 			if (mapHeader.mapType > .FMP05)
+			{
+				bgIndex = bgoff
+				fgIndices = [fgoff1, fgoff2, fgoff3]
+			}
+			else
 			{
 				let blockWidth = Int(mapHeader.blockSize.width)
 				let blockHeight = Int(mapHeader.blockSize.height)
 				let blockDepth = mapHeader.blockColorDepth
-				bgoff *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
-				fgoff *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
-				fgoff2 *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
-				fgoff3 *= (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				bgIndex = bgoff / (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				let fgIndex1 = fgoff1 / (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				let fgIndex2 = fgoff2 / (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				let fgIndex3 = fgoff3 / (blockWidth * blockHeight * ((blockDepth + 1) / 8))
+				fgIndices = [fgIndex1, fgIndex2, fgIndex3]
 			}
 			guard let user1 = inputStream.readInt32(swapBytes) else
 			{
@@ -171,8 +179,8 @@ class BlockData : Loadable
 
 			let collision = BlockStructure.CollisionSet(rawValue: bitfield & 0x0F)
 
-			let block = BlockStructure(backgroundOffset: bgoff,
-				foregroundOffsets: [fgoff, fgoff2, fgoff3],
+			let block = BlockStructure(backgroundIndex: bgIndex,
+				foregroundIndices: fgIndices,
 				user1: user1,
 				user2: user2,
 				user3: user3,
