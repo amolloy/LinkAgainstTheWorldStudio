@@ -357,3 +357,12 @@ func <(lhs: MapHeader.MapType, rhs: MapHeader.MapType) -> Bool
 {
 	return lhs.rawValue < rhs.rawValue
 }
+
+extension NSSize
+{
+	init(_ size: MapHeader.Size)
+	{
+		width = CGFloat(size.width)
+		height = CGFloat(size.height)
+	}
+}
