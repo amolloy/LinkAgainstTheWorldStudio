@@ -10,7 +10,7 @@ import Foundation
 
 extension TileMap
 {
-	enum TileMapFileError : ErrorType
+	enum Error : ErrorType
 	{
 		case InvalidHeaderError
 	}
@@ -32,28 +32,28 @@ extension TileMap
 	{
 		guard let formTag = inputStream.readChunkTag() else
 		{
-			throw TileMapFileError.InvalidHeaderError
+			throw Error.InvalidHeaderError
 		}
 
 		if (formTag != "FORM")
 		{
-			throw TileMapFileError.InvalidHeaderError
+			throw Error.InvalidHeaderError
 		}
 
 		// Skip past the data length
 		guard let _ = inputStream.readBigInt() else
 		{
-			throw TileMapFileError.InvalidHeaderError
+			throw Error.InvalidHeaderError
 		}
 
 		guard let fmapTag = inputStream.readChunkTag() else
 		{
-			throw TileMapFileError.InvalidHeaderError
+			throw Error.InvalidHeaderError
 		}
 
 		if (fmapTag != "FMAP")
 		{
-			throw TileMapFileError.InvalidHeaderError
+			throw Error.InvalidHeaderError
 		}
 	}
 
