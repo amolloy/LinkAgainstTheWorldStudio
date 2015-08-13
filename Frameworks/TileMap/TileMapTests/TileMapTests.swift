@@ -12,7 +12,7 @@ import XCTest
 class TileMapTests: XCTestCase
 {
 	var testMapPath : String
-		{
+	{
 		get
 		{
 			let bundle = NSBundle(forClass: TileMapTests.self)
