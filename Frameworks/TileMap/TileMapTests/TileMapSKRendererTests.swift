@@ -14,7 +14,7 @@ class TileMapSKRendererTests: XCTestCase
 	lazy var tileMap : TileMap? =
 	{
 		let bundle = NSBundle(forClass: TileMapTests.self)
-		guard let testMapPath = bundle.pathForResource("Test", ofType: "fmp") else
+		guard let testMapPath = bundle.pathForResource("Isotst", ofType: "fmp") else
 		{
 			XCTFail()
 			return nil

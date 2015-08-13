@@ -66,3 +66,8 @@ class TileMap
 		loaders[chunkType] = loadable
 	}
 }
+
+func == (c1:TileMap.Color, c2:TileMap.Color) -> Bool
+{
+	return (c1.r == c2.r) && (c1.g == c2.g) && (c1.b == c2.b)
+}

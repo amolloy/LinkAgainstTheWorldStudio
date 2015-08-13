@@ -77,6 +77,13 @@ class TileMapSKRenderer
 				// TODO
 				throw Error.UnsupportedColorDepth
 			}
+			else if mapHeader.blockColorDepth == 24
+			{
+				cgImage = try create24BitTexture(mapHeader.blockSize,
+					colorSpace:cs,
+					buffer: subBuffer,
+					keyColor: mapHeader.keyColor)
+			}
 			else if mapHeader.blockColorDepth == 32
 			{
 				// TODO
@@ -117,6 +124,61 @@ class TileMapSKRenderer
 				rgbBuffer.append(r);
 				rgbBuffer.append(g);
 				rgbBuffer.append(b);
+				rgbBuffer.append(0xFF);
+			}
+		}
+
+		let rgbData = NSData(bytes: &rgbBuffer, length: rgbBuffer.count)
+		guard let provider = CGDataProviderCreateWithCFData(rgbData) else
+		{
+			throw Error.CannotCreateDataProvider
+		}
+
+		guard let cgImage = CGImageCreate(blockSize.width,
+			blockSize.height,
+			8,
+			32,
+			blockSize.width * 4,
+			colorSpace,
+			CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue),
+			provider,
+			nil,
+			true,
+			CGColorRenderingIntent.RenderingIntentDefault) else
+		{
+			throw Error.InvalidBlockImage
+		}
+		return cgImage
+	}
+
+	func create24BitTexture(blockSize: MapHeader.Size,
+		colorSpace: CGColorSpaceRef,
+		buffer: ArraySlice<UInt8>,
+		keyColor: TileMap.Color) throws -> CGImageRef
+	{
+		assert(buffer.count % 3 == 0)
+
+		var rgbBuffer = [UInt8]()
+		rgbBuffer.reserveCapacity((buffer.count / 3) * 4)
+
+		for i in 0..<(buffer.count / 3)
+		{
+			let r = buffer[i * 3 + 0]
+			let g = buffer[i * 3 + 1]
+			let b = buffer[i * 3 + 2]
+
+			let color : TileMap.Color = TileMap.Color(r: r, g: g, b: b)
+
+			rgbBuffer.append(r)
+			rgbBuffer.append(g)
+			rgbBuffer.append(b)
+
+			if keyColor == color
+			{
+				rgbBuffer.append(0);
+			}
+			else
+			{
 				rgbBuffer.append(0xFF);
 			}
 		}
