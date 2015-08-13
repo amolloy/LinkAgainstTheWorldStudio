@@ -47,7 +47,7 @@ class MapHeader : Loadable
 	let blockStructureSize : Int
 	let blockStructureCount : Int
 	let blockGFXCount : Int
-	let keyColor : NSColor?
+	let keyColor : (UInt8, UInt8, UInt8)
 	let keyColor8Bit : UInt8
 	let blockGap : Size
 	let blockStagger : Size
@@ -73,7 +73,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -95,7 +95,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -120,7 +120,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -141,7 +141,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -162,7 +162,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -182,7 +182,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -201,7 +201,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -217,7 +217,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -232,7 +232,7 @@ class MapHeader : Loadable
 			blockStructureSize = 0
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -246,7 +246,7 @@ class MapHeader : Loadable
 		{
 			blockStructureCount = 0
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -259,7 +259,7 @@ class MapHeader : Loadable
 		guard let numBlockGfx = inputStream.readInt16(swapBytes) else
 		{
 			blockGFXCount = 0
-			keyColor = NSColor()
+			keyColor = (0,0,0)
 			keyColor8Bit = 0
 			blockGap = Size()
 			blockStagger = Size()
@@ -277,7 +277,7 @@ class MapHeader : Loadable
 				let ckeyblue = inputStream.readUInt8() else
 			{
 				keyColor8Bit = 0
-				keyColor = NSColor()
+				keyColor = (0,0,0)
 				blockGap = Size()
 				blockStagger = Size()
 				clickMask = 0
@@ -285,15 +285,12 @@ class MapHeader : Loadable
 				return nil
 			}
 			keyColor8Bit = ckey8bit
-			keyColor = NSColor(red: CGFloat(ckeyred) / CGFloat(0xFF),
-				green: CGFloat(ckeygreen) / CGFloat(0xFF),
-				blue: CGFloat(ckeyblue) / CGFloat(0xFF),
-				alpha: 1)
+			keyColor = (ckeyred, ckeygreen, ckeyblue)
 		}
 		else
 		{
 			keyColor8Bit = 0
-			keyColor = nil
+			keyColor = (0,0,0)
 		}
 
 		if dataLength > 28
