@@ -15,7 +15,7 @@ extension TileMap
 		case InvalidHeaderError
 	}
 
-	func open() throws -> Bool
+	public func open() throws -> Bool
 	{
 		inputStream.open()
 		try loadFileHeader(inputStream)
@@ -23,7 +23,7 @@ extension TileMap
 		return true
 	}
 
-	func loadChunks() throws
+	public func loadChunks() throws
 	{
 		try loadChunks(inputStream)
 	}

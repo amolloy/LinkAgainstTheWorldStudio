@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TileMap
+public class TileMap
 {
 	typealias Color = (r: UInt8, g: UInt8, b: UInt8)
 
@@ -24,7 +24,7 @@ class TileMap
 	var mapHeader : MapHeader?
 	var unknownChunks : [Unknown]
 
-	init?(path : String)
+	public init?(path : String)
 	{
 		loaders = [ChunkType: Loadable.Type]()
 

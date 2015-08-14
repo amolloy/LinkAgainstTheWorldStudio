@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class TileMapSKRenderer
+public class TileMapSKRenderer
 {
 	let tileMap : TileMap
 	var textureAtlas : SKTextureAtlas?
@@ -26,7 +26,7 @@ class TileMapSKRenderer
 		case CannotCreateImageFromData
 	}
 
-	init(tileMap: TileMap)
+	public init(tileMap: TileMap)
 	{
 		self.tileMap = tileMap
 		textureAtlas = nil
