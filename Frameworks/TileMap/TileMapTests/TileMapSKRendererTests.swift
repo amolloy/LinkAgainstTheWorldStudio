@@ -14,7 +14,7 @@ class TileMapSKRendererTests: XCTestCase
 	lazy var tileMap : TileMap? =
 	{
 		let bundle = NSBundle(forClass: TileMapTests.self)
-		guard let testMapPath = bundle.pathForResource("Isotst", ofType: "fmp") else
+		guard let testMapPath = bundle.pathForResource("Test", ofType: "fmp") else
 		{
 			XCTFail()
 			return nil
@@ -62,5 +62,36 @@ class TileMapSKRendererTests: XCTestCase
 		{
 			XCTFail("renderer.createTextureAtlas threw \(e)")
 		}
+	}
+
+	func testCreateNode()
+	{
+		guard let tileMap = self.tileMap else
+		{
+			XCTFail("Could not load TileMap for testing")
+			return
+		}
+
+		let renderer = TileMapSKRenderer(tileMap: tileMap)
+		do
+		{
+			try renderer.createTextureAtlas()
+		}
+		catch let e
+		{
+			XCTFail("renderer.createTextureAtlas threw \(e)")
+		}
+
+		let node : TileMapSKNode?
+		do
+		{
+			node = try renderer.node()
+		}
+		catch let e
+		{
+			XCTFail("renderer.node() threw \(e)")
+			node = nil
+		}
+		XCTAssertNotNil(node)
 	}
 }

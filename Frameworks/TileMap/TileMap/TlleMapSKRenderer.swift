@@ -24,6 +24,7 @@ public class TileMapSKRenderer
 		case UnsupportedColorDepth
 		case CannotCreateDataProvider
 		case CannotCreateImageFromData
+		case MissingTextureAtlas
 	}
 
 	public init(tileMap: TileMap)
@@ -204,5 +205,41 @@ public class TileMapSKRenderer
 			throw Error.InvalidBlockImage
 		}
 		return cgImage
+	}
+
+	public func node() throws -> TileMapSKNode?
+	{
+		if self.textureAtlas == nil
+		{
+			do
+			{
+				try createTextureAtlas()
+			}
+			catch let e
+			{
+				assertionFailure("Couldn't create texture atlas: \(e)")
+				return nil
+			}
+		}
+		guard let textureAtlas = self.textureAtlas else
+		{
+			throw Error.MissingTextureAtlas
+		}
+		let node = TileMapSKNode(tileMap: tileMap, textureAtlas: textureAtlas)
+
+		// TODO this api is all wrong.
+		var i = 0
+		for layer in tileMap.layers
+		{
+			let sn = node.buildTilesForLayer(layer)
+			if let sn = sn
+			{
+				sn.zPosition = CGFloat(i * 100)
+				node.addChild(sn)
+			}
+			++i
+		}
+
+		return node
 	}
 }
