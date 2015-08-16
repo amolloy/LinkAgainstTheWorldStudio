@@ -11,18 +11,21 @@ import SpriteKit
 
 protocol SpriteKitTileable : Tileable
 {
-	func spriteNode(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas) -> SKNode
+	func spriteNodeAtX(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
 }
 
-extension BlockData.BlockStructure : SpriteKitTileable
+extension SpriteKitTileable
 {
 	func spriteNode(index: Int, textureAtlas: SKTextureAtlas) -> SKSpriteNode
 	{
 		let texture = textureAtlas.textureNamed(String(index))
 		return SKSpriteNode(texture: texture)
 	}
+}
 
-	func spriteNode(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas) -> SKNode
+extension BlockData.BlockStructure : SpriteKitTileable
+{
+	func spriteNodeAtX(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
 	{
 		let node = SKNode()
 
@@ -54,25 +57,11 @@ extension BlockData.BlockStructure : SpriteKitTileable
 
 extension AnimationData.AnimationStructure : SpriteKitTileable
 {
-	func spriteNode(index: Int, textureAtlas: SKTextureAtlas) -> SKSpriteNode
+	func spriteNodeAtX(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
 	{
-		let texture = textureAtlas.textureNamed(String(index))
-		return SKSpriteNode(texture: texture)
-	}
-
-	func spriteNode(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas) -> SKNode
-	{
-		let node = SKNode()
-
 		// TODO Actual animation
-		let gfxNode = spriteNode(frames[0], textureAtlas: textureAtlas)
-		gfxNode.anchorPoint = CGPointZero
-		gfxNode.position = CGPoint(x: x, y: y)
-		gfxNode.zPosition = CGFloat(baseZ)
-
-		node.addChild(gfxNode)
-
-		return node
+		let block = blocks[frames[frameIndex]]
+		return block.spriteNodeAtX(x, y: y, baseZ: baseZ, textureAtlas: textureAtlas, blocks: blocks)
 	}
 }
 
@@ -103,6 +92,10 @@ public class TileMapSKNode : SKNode
 		{
 			return nil
 		}
+		guard let blocks = tileMap.blockData?.blockStructures else
+		{
+			return nil
+		}
 
 		let node = SKNode()
 
@@ -116,7 +109,11 @@ public class TileMapSKNode : SKNode
 				if let tile = tile as? SpriteKitTileable
 				{
 					let xPos = x * mapHeader.blockSize.width
-					let tileNode = tile.spriteNode(xPos, y: yPos, baseZ: 0, textureAtlas: textureAtlas)
+					let tileNode = tile.spriteNodeAtX(xPos,
+						y: yPos,
+						baseZ: 0,
+						textureAtlas: textureAtlas,
+						blocks: blocks)
 					node.addChild(tileNode)
 				}
 				else
