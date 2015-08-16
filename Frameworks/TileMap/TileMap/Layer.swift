@@ -43,14 +43,24 @@ class Layer : Loadable
 						return nil
 					}
 
-					let tileIndex = Int(tile) / mapHeader.blockStructureSize
 					if tile >= 0
 					{
-						tileColumns.append(blockData.blockStructures[tileIndex])
+						let theIndex = Int(tile) / mapHeader.blockStructureSize
+						tileColumns.append(blockData.blockStructures[theIndex])
 					}
 					else
 					{
-						tileColumns.append(animationData.animationStructures[-tileIndex])
+						let divisor : Int
+						if .FMP05 == mapHeader.mapType
+						{
+							divisor = 16
+						}
+						else
+						{
+							divisor = 1
+						}
+						let theIndex = Int(-tile) / divisor - 1
+						tileColumns.append(animationData.animationStructures[theIndex])
 					}
 				}
 				tileRows.append(tileColumns)
