@@ -2,7 +2,11 @@
 
 This README is currently more like a journal for the development of this project.
 
-_30 July 2015_
+_August 17, 2015_
+
+The TileMap framework is able to load 8bpp rectangular grid FMP files and create a SpriteKit node to render the map. This was a good exercise, but I have decided to abandon using the FMP file format, at least for the editor (I may consider it as a "compiled" format for use in-game). Many factors went in to this decision, not least being that I have decided I would like to use a format which is more friendly to being tracked by a revision control system. To that end, I will be creating a simple new format to satisfy my needs. The format will in fact be a bundle rather than a single, monolithic file. Initially, the bundle will contain a control file, one or more tile sets, one or more brush sets (collections of tiles which form a larger image), and one or more layer definitions. The format will support only rectangular grids. For an easy first test, a tool will be crafted to convert a compatible FMP to this new format. 
+
+_July 30, 2015_
 
 My oldest son, currently seven, is a huge fan of the Zelda series of
 video games. Knowing that his dear old dad is a programmer in the video game industry, he's been asking me about making his own Zelda-like game for months. Having reached a good breaking point between my several other personal projects, I decided it was finally time to do something about it with him. This project is the result of that.
