@@ -1,6 +1,6 @@
 # Editor Map Format
 
-The Link Against the World Studio editor map is represented on disk by an OS X bundle. The bundle contains a control file and one or more of the following:
+The Link Against the World Studio editor map is represented on disk by an OS X bundle. While there is a tendency to want to use plist files within a bundle, JSON will be used instead.  The bundle contains a control file and one or more of the following:
 
 - [Tile Sets](#tile-sets)
 - [Brush Sets](#brush-sets)
@@ -14,7 +14,7 @@ The expectation is that these files may be stored in a revision control system, 
 
 ## Tile Sets
 
-A tile set is a bundle containing a single TIFF image file and a control file. The control file (Info.plist) is an XML plist with the following required properties:
+A tile set is a bundle containing a single TIFF image file and a control file. The control file (Info.json) is a JSON file with the following required properties:
 
  Key | Value Description
 -----|-------------------
@@ -45,7 +45,7 @@ A brush is an organized collection of tiles from a single tile set which, when d
 
 A brush set is a collection of brushes dependent on a single tile set. Note that while a brush set may depend on only one tile set, a tile set can be depended upon by any number of brush sets.
 
-A brush set is represented by an XML plist file with the following keys:
+A brush set is represented by a JSON file with the following keys:
 
  Key | Value Description
 -----|-------------------
@@ -72,7 +72,7 @@ At its simplest, a terrain is an ordered grid of tiles, like a brush, which can 
 
 In this example, the terrain is a single tile of grass (G). The image on the left defines the border between this terrain and a water (W) tile for convex shapes. The right image is the same for concave shapes. Both convex and concave borders are required, though the straight edges should not be repeated. 
 
-A terrain set is a collection of terrains dependent on a single tile set. Terrain sets of represented by an XML plist file with the following required keys:
+A terrain set is a collection of terrains dependent on a single tile set. Terrain sets of represented by a JSON file with the following required keys:
 
  Key | Value Description
 -----|-------------------
@@ -80,7 +80,7 @@ version | Currently always 1.0
 name | A string uniquely identifying the terrain set within the map
 terrains | An array of terrain definitions
 
-Terrains are stored in the plist as a dictionary:
+Terrains are stored in the JSON as a dictionary:
 
  Key | Value Description
 -----|-------------------
@@ -97,7 +97,7 @@ The keys for the border definitions are comma separated lists of the tile indexe
 
 A tile layer is a rectangular grid of tiles and terrains which represents a layer of the map. All tiles in the tile layer must come from the same tile set. Likewise, all terrains must use that same tile set.
 
-A tile layer is represented by an XML plist with the following keys:
+A tile layer is represented by a JSON file with the following keys:
 
  Key | Value Description
 -----|-------------------
