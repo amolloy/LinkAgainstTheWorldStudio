@@ -93,8 +93,26 @@ The keys for the border definitions are comma separated lists of the tile indexe
 
 ![Terrain Border Keys](img/TerrainBorderKeys.png)
 
-
-
-
-
 ## Tile Layers
+
+A tile layer is a rectangular grid of tiles and terrains which represents a layer of the map. All tiles in the tile layer must come from the same tile set. Likewise, all terrains must use that same tile set.
+
+A tile layer is represented by an XML plist with the following keys:
+
+ Key | Value Description
+-----|-------------------
+version | Currently always 1.0
+name | A string uniquely identifying the layer within the map
+tileset | The name of the tile set used by the layer
+terrains | An array of terrain names used by the layer
+layerData | An array of strings representing the layer data. Each entry in the array represents a row in the layer, from top to bottom. The string is a comma separated list of values. Each value represents a cell in a column of the layer, from left to right. Definitions of these values are found in the table below.
+zIndex | The z-index for this tile layer. Higher numbers are "closer" to the user.
+
+A cell definition may have one of three formats:
+
+ Format | Meaning
+--------|---------
+- | An empty cell. This is equivalent to a completely transparent tile.
+tileIndex | The index of the tile occupying this cell.
+tsi:ti | tsi is the index into the array of terrain sets associated with this layer for the cell. ti is the index of the terrain within that terrain set which occupies the cell.
+
