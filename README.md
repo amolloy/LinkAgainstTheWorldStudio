@@ -2,6 +2,17 @@
 
 This README is currently more like a journal for the development of this project.
 
+_1 January 2016_
+
+On second thought, using an ancient map format designed for systems with far less memory and storage space than modern computers was probably a bad idea. There are other options out there, but in the interest of making this as difficult for myself as possible (and therefore fun!) I decided to define my own format. There will actually be two formats:
+
+1. An editor-friendly format that is optimized to be easy to update and keep in a revision control system.
+1. A deployment format, optimized for fast deserialization, intended to be distributed with a shipping game.
+
+For now I will define only the editor format. The deployment format will come later, when I start working on the game proper.
+
+The editor format is documented [here](docs/EditorMapFormat.md).
+
 _30 July 2015_
 
 My oldest son, currently seven, is a huge fan of the Zelda series of

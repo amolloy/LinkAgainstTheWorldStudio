@@ -1,0 +1,2 @@
+# Editor Map Format
+
