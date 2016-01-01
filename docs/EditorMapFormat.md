@@ -3,7 +3,7 @@
 The Link Against the World Studio editor map is represented on disk by an OS X bundle. The bundle contains a control file and one or more of the following:
 
 - [Tile Sets](#tile-sets)
-- [Brush Sets](#brunch-sets)
+- [Brush Sets](#brush-sets)
 - [Terrain Sets](#terrain-sets)
 - [Tile Layers](#tile-layers)
 - Object Layers (TBD)
@@ -16,8 +16,8 @@ The expectation is that these files may be stored in a revision control system, 
 
 A tile set is a bundle containing a single TIFF image file and a control file. The control file (Info.plist) is an XML plist with the following required properties:
 
-Key | Value Description
-----|-------------------
+ Key | Value Description
+-----|-------------------
 version | Currently always 1.0
 image | Name of the TIFF file
 tileCount | Number of tiles in the tile set
@@ -35,12 +35,66 @@ Indexes into a tile set are expected to be permanent. If a tile is deleted, its 
 
 The control file my optionally contain the following key:
 
-Key | Value Description
-----|-------------------
+ Key | Value Description
+-----|-------------------
 unused | Array of indices for deleted tiles. New tiles may safely be placed in an unused index.
 
 ## Brush Sets
 
+A brush is an organized collection of tiles from a single tile set which, when drawn together, create a larger image. For example, a house in a town may be made up of an 8x8 grid of tiles. A brush could be made of this set of tiles, facilitating placement of the house on a map.
+
+A brush set is a collection of brushes dependent on a single tile set. Note that while a brush set may depend on only one tile set, a tile set can be depended upon by any number of brush sets.
+
+A brush set is represented by an XML plist file with the following keys:
+
+ Key | Value Description
+-----|-------------------
+version | Currently always 1.0
+name | A string uniquely identifying this brush set within a map bundle
+brushes | An array of brush definitions
+
+Brush are stored in the brush set as a dictionary with the following keys (all keys required):
+
+ Key | Value Description
+-----|-------------------
+name | A string uniquely identifying this brush within the brush set
+width | The width of the brush in tiles
+height | The height of the brush in tiles
+brushData | An array of strings, each string representing a row in the brush. Rows are ordered from top to bottom.
+
+Each row is a comma separated list of indexes into the tile set for each column in the brush. Columns are listed from left-to-right. 
+
 ## Terrain Sets
+
+At its simplest, a terrain is an ordered grid of tiles, like a brush, which can be repeated over a large area of a map (useful, for example, for basic ground). More complicated terrain can be define a set of border tiles to be used when the terrain comes into contact with specific other tiles. For example, a grass terrain may define a set of border tiles containing a beach when bordered by water:
+
+![Terrain Border Definition](img/TerrainSetBorderExample.png)
+
+In this example, the terrain is a single tile of grass (G). The image on the left defines the border between this terrain and a water (W) tile for convex shapes. The right image is the same for concave shapes. Both convex and concave borders are required, though the straight edges should not be repeated. 
+
+A terrain set is a collection of terrains dependent on a single tile set. Terrain sets of represented by an XML plist file with the following required keys:
+
+ Key | Value Description
+-----|-------------------
+version | Currently always 1.0
+name | A string uniquely identifying the terrain set within the map
+terrains | An array of terrain definitions
+
+Terrains are stored in the plist as a dictionary:
+
+ Key | Value Description
+-----|-------------------
+name | A string uniquely identifying the terrain within the set
+width | The width, in tiles, of the terrain pattern
+height | The height, in tiles, of the terrain pattern
+borders | Dictionary of terrain border definitions
+
+The keys for the border definitions are comma separated lists of the tile indexes for all tiles which should use this border when next to this terrain. The value is a dictionary defining the border. Each key in the dictionary represents one of the border sections (defined below) and the value is the index of the tile used for that section.
+
+![Terrain Border Keys](img/TerrainBorderKeys.png)
+
+
+
+
 
 ## Tile Layers
