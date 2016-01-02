@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TileSet
+public class TileSet
 {
 	let image : Image
 	let name : String

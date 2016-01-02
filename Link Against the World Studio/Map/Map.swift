@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Map
+public class Map
 {
 	let tileSets : Array<TileSet>
 
