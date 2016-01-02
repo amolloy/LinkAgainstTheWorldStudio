@@ -13,6 +13,34 @@
 		B4522F651C38316F009B7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4522F641C38316F009B7314 /* Assets.xcassets */; };
 		B4522F681C38316F009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F661C38316F009B7314 /* Main.storyboard */; };
 		B4522F731C38316F009B7314 /* Link_Against_the_World_StudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F721C38316F009B7314 /* Link_Against_the_World_StudioTests.swift */; };
+		B495DA321C38484A00CA0E52 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; };
+		B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; };
+		B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B495DA721C38636600CA0E52 /* ChunkTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA6C1C38636600CA0E52 /* ChunkTag.swift */; };
+		B495DA731C38636600CA0E52 /* Isotst.fmp in Resources */ = {isa = PBXBuildFile; fileRef = B495DA6D1C38636600CA0E52 /* Isotst.fmp */; };
+		B495DA741C38636600CA0E52 /* NSInputStream+BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA6E1C38636600CA0E52 /* NSInputStream+BigInt.swift */; };
+		B495DA751C38636600CA0E52 /* Test.fmp in Resources */ = {isa = PBXBuildFile; fileRef = B495DA6F1C38636600CA0E52 /* Test.fmp */; };
+		B495DA761C38636600CA0E52 /* TileMapSKRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA701C38636600CA0E52 /* TileMapSKRendererTests.swift */; };
+		B495DA771C38636600CA0E52 /* TileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA711C38636600CA0E52 /* TileMapTests.swift */; };
+		B495DA8B1C38637C00CA0E52 /* AnimationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA781C38637C00CA0E52 /* AnimationData.swift */; };
+		B495DA8C1C38637C00CA0E52 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA791C38637C00CA0E52 /* Author.swift */; };
+		B495DA8D1C38637C00CA0E52 /* BlockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA7A1C38637C00CA0E52 /* BlockData.swift */; };
+		B495DA8E1C38637C00CA0E52 /* BlockGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA7B1C38637C00CA0E52 /* BlockGraphics.swift */; };
+		B495DA8F1C38637C00CA0E52 /* Char.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA7C1C38637C00CA0E52 /* Char.swift */; };
+		B495DA901C38637C00CA0E52 /* ChunkTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA7D1C38637C00CA0E52 /* ChunkTag.swift */; };
+		B495DA911C38637C00CA0E52 /* ChunkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA7E1C38637C00CA0E52 /* ChunkType.swift */; };
+		B495DA921C38637C00CA0E52 /* CollectionBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA7F1C38637C00CA0E52 /* CollectionBuffer.swift */; };
+		B495DA931C38637C00CA0E52 /* ColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA801C38637C00CA0E52 /* ColorMap.swift */; };
+		B495DA941C38637C00CA0E52 /* EditorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA811C38637C00CA0E52 /* EditorInfo.swift */; };
+		B495DA951C38637C00CA0E52 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA821C38637C00CA0E52 /* Layer.swift */; };
+		B495DA961C38637C00CA0E52 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA831C38637C00CA0E52 /* Loadable.swift */; };
+		B495DA971C38637C00CA0E52 /* MapHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA841C38637C00CA0E52 /* MapHeader.swift */; };
+		B495DA981C38637C00CA0E52 /* NSInputStream+Swapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA851C38637C00CA0E52 /* NSInputStream+Swapping.swift */; };
+		B495DA991C38637C00CA0E52 /* TileMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA861C38637C00CA0E52 /* TileMap.swift */; };
+		B495DA9A1C38637C00CA0E52 /* TileMapLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA871C38637C00CA0E52 /* TileMapLoader.swift */; };
+		B495DA9B1C38637C00CA0E52 /* TileMapSKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */; };
+		B495DA9C1C38637C00CA0E52 /* TlleMapSKRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */; };
+		B495DA9D1C38637C00CA0E52 /* Unknown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA8A1C38637C00CA0E52 /* Unknown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +51,42 @@
 			remoteGlobalIDString = B4522F5A1C38316F009B7314;
 			remoteInfo = "Link Against the World Studio";
 		};
+		B495DA331C38484A00CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DA271C38484A00CA0E52;
+			remoteInfo = TileMap;
+		};
+		B495DA351C38484A00CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4522F5A1C38316F009B7314;
+			remoteInfo = "Link Against the World Studio";
+		};
+		B495DA3B1C38484A00CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DA271C38484A00CA0E52;
+			remoteInfo = TileMap;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B495DA441C38484A00CA0E52 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B4522F5B1C38316F009B7314 /* Link Against the World Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Link Against the World Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +99,35 @@
 		B4522F6E1C38316F009B7314 /* Link Against the World StudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Link Against the World StudioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4522F721C38316F009B7314 /* Link_Against_the_World_StudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link_Against_the_World_StudioTests.swift; sourceTree = "<group>"; };
 		B4522F741C38316F009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DA281C38484A00CA0E52 /* TileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DA2C1C38484A00CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DA311C38484A00CA0E52 /* TileMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DA3A1C38484A00CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DA6C1C38636600CA0E52 /* ChunkTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChunkTag.swift; sourceTree = "<group>"; };
+		B495DA6D1C38636600CA0E52 /* Isotst.fmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Isotst.fmp; sourceTree = "<group>"; };
+		B495DA6E1C38636600CA0E52 /* NSInputStream+BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSInputStream+BigInt.swift"; sourceTree = "<group>"; };
+		B495DA6F1C38636600CA0E52 /* Test.fmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.fmp; sourceTree = "<group>"; };
+		B495DA701C38636600CA0E52 /* TileMapSKRendererTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapSKRendererTests.swift; sourceTree = "<group>"; };
+		B495DA711C38636600CA0E52 /* TileMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapTests.swift; sourceTree = "<group>"; };
+		B495DA781C38637C00CA0E52 /* AnimationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationData.swift; sourceTree = "<group>"; };
+		B495DA791C38637C00CA0E52 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		B495DA7A1C38637C00CA0E52 /* BlockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockData.swift; sourceTree = "<group>"; };
+		B495DA7B1C38637C00CA0E52 /* BlockGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGraphics.swift; sourceTree = "<group>"; };
+		B495DA7C1C38637C00CA0E52 /* Char.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Char.swift; sourceTree = "<group>"; };
+		B495DA7D1C38637C00CA0E52 /* ChunkTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChunkTag.swift; sourceTree = "<group>"; };
+		B495DA7E1C38637C00CA0E52 /* ChunkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChunkType.swift; sourceTree = "<group>"; };
+		B495DA7F1C38637C00CA0E52 /* CollectionBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBuffer.swift; sourceTree = "<group>"; };
+		B495DA801C38637C00CA0E52 /* ColorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMap.swift; sourceTree = "<group>"; };
+		B495DA811C38637C00CA0E52 /* EditorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorInfo.swift; sourceTree = "<group>"; };
+		B495DA821C38637C00CA0E52 /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		B495DA831C38637C00CA0E52 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		B495DA841C38637C00CA0E52 /* MapHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHeader.swift; sourceTree = "<group>"; };
+		B495DA851C38637C00CA0E52 /* NSInputStream+Swapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSInputStream+Swapping.swift"; sourceTree = "<group>"; };
+		B495DA861C38637C00CA0E52 /* TileMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMap.swift; sourceTree = "<group>"; };
+		B495DA871C38637C00CA0E52 /* TileMapLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapLoader.swift; sourceTree = "<group>"; };
+		B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapSKNode.swift; sourceTree = "<group>"; };
+		B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TlleMapSKRenderer.swift; sourceTree = "<group>"; };
+		B495DA8A1C38637C00CA0E52 /* Unknown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unknown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +143,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DA241C38484A00CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DA2E1C38484A00CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DA321C38484A00CA0E52 /* TileMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +169,8 @@
 			children = (
 				B4522F5D1C38316F009B7314 /* Link Against the World Studio */,
 				B4522F711C38316F009B7314 /* Link Against the World StudioTests */,
+				B495DA291C38484A00CA0E52 /* TileMap */,
+				B495DA371C38484A00CA0E52 /* TileMapTests */,
 				B4522F5C1C38316F009B7314 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +180,8 @@
 			children = (
 				B4522F5B1C38316F009B7314 /* Link Against the World Studio.app */,
 				B4522F6E1C38316F009B7314 /* Link Against the World StudioTests.xctest */,
+				B495DA281C38484A00CA0E52 /* TileMap.framework */,
+				B495DA311C38484A00CA0E52 /* TileMapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +208,58 @@
 			path = "Link Against the World StudioTests";
 			sourceTree = "<group>";
 		};
+		B495DA291C38484A00CA0E52 /* TileMap */ = {
+			isa = PBXGroup;
+			children = (
+				B495DA781C38637C00CA0E52 /* AnimationData.swift */,
+				B495DA791C38637C00CA0E52 /* Author.swift */,
+				B495DA7A1C38637C00CA0E52 /* BlockData.swift */,
+				B495DA7B1C38637C00CA0E52 /* BlockGraphics.swift */,
+				B495DA7C1C38637C00CA0E52 /* Char.swift */,
+				B495DA7D1C38637C00CA0E52 /* ChunkTag.swift */,
+				B495DA7E1C38637C00CA0E52 /* ChunkType.swift */,
+				B495DA7F1C38637C00CA0E52 /* CollectionBuffer.swift */,
+				B495DA801C38637C00CA0E52 /* ColorMap.swift */,
+				B495DA811C38637C00CA0E52 /* EditorInfo.swift */,
+				B495DA821C38637C00CA0E52 /* Layer.swift */,
+				B495DA831C38637C00CA0E52 /* Loadable.swift */,
+				B495DA841C38637C00CA0E52 /* MapHeader.swift */,
+				B495DA851C38637C00CA0E52 /* NSInputStream+Swapping.swift */,
+				B495DA861C38637C00CA0E52 /* TileMap.swift */,
+				B495DA871C38637C00CA0E52 /* TileMapLoader.swift */,
+				B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */,
+				B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */,
+				B495DA8A1C38637C00CA0E52 /* Unknown.swift */,
+				B495DA2C1C38484A00CA0E52 /* Info.plist */,
+			);
+			path = TileMap;
+			sourceTree = "<group>";
+		};
+		B495DA371C38484A00CA0E52 /* TileMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				B495DA6C1C38636600CA0E52 /* ChunkTag.swift */,
+				B495DA6D1C38636600CA0E52 /* Isotst.fmp */,
+				B495DA6E1C38636600CA0E52 /* NSInputStream+BigInt.swift */,
+				B495DA6F1C38636600CA0E52 /* Test.fmp */,
+				B495DA701C38636600CA0E52 /* TileMapSKRendererTests.swift */,
+				B495DA711C38636600CA0E52 /* TileMapTests.swift */,
+				B495DA3A1C38484A00CA0E52 /* Info.plist */,
+			);
+			path = TileMapTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B495DA251C38484A00CA0E52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B4522F5A1C38316F009B7314 /* Link Against the World Studio */ = {
@@ -106,10 +269,12 @@
 				B4522F571C38316F009B7314 /* Sources */,
 				B4522F581C38316F009B7314 /* Frameworks */,
 				B4522F591C38316F009B7314 /* Resources */,
+				B495DA441C38484A00CA0E52 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B495DA3C1C38484A00CA0E52 /* PBXTargetDependency */,
 			);
 			name = "Link Against the World Studio";
 			productName = "Link Against the World Studio";
@@ -134,6 +299,43 @@
 			productReference = B4522F6E1C38316F009B7314 /* Link Against the World StudioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B495DA271C38484A00CA0E52 /* TileMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DA431C38484A00CA0E52 /* Build configuration list for PBXNativeTarget "TileMap" */;
+			buildPhases = (
+				B495DA231C38484A00CA0E52 /* Sources */,
+				B495DA241C38484A00CA0E52 /* Frameworks */,
+				B495DA251C38484A00CA0E52 /* Headers */,
+				B495DA261C38484A00CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TileMap;
+			productName = TileMap;
+			productReference = B495DA281C38484A00CA0E52 /* TileMap.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B495DA301C38484A00CA0E52 /* TileMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DA451C38484A00CA0E52 /* Build configuration list for PBXNativeTarget "TileMapTests" */;
+			buildPhases = (
+				B495DA2D1C38484A00CA0E52 /* Sources */,
+				B495DA2E1C38484A00CA0E52 /* Frameworks */,
+				B495DA2F1C38484A00CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B495DA341C38484A00CA0E52 /* PBXTargetDependency */,
+				B495DA361C38484A00CA0E52 /* PBXTargetDependency */,
+			);
+			name = TileMapTests;
+			productName = TileMapTests;
+			productReference = B495DA311C38484A00CA0E52 /* TileMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +350,13 @@
 						CreatedOnToolsVersion = 7.2;
 					};
 					B4522F6D1C38316F009B7314 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B4522F5A1C38316F009B7314;
+					};
+					B495DA271C38484A00CA0E52 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B495DA301C38484A00CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = B4522F5A1C38316F009B7314;
 					};
@@ -168,6 +377,8 @@
 			targets = (
 				B4522F5A1C38316F009B7314 /* Link Against the World Studio */,
 				B4522F6D1C38316F009B7314 /* Link Against the World StudioTests */,
+				B495DA271C38484A00CA0E52 /* TileMap */,
+				B495DA301C38484A00CA0E52 /* TileMapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +397,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DA261C38484A00CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DA2F1C38484A00CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DA731C38636600CA0E52 /* Isotst.fmp in Resources */,
+				B495DA751C38636600CA0E52 /* Test.fmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +437,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DA231C38484A00CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DA911C38637C00CA0E52 /* ChunkType.swift in Sources */,
+				B495DA9A1C38637C00CA0E52 /* TileMapLoader.swift in Sources */,
+				B495DA8D1C38637C00CA0E52 /* BlockData.swift in Sources */,
+				B495DA8C1C38637C00CA0E52 /* Author.swift in Sources */,
+				B495DA951C38637C00CA0E52 /* Layer.swift in Sources */,
+				B495DA8E1C38637C00CA0E52 /* BlockGraphics.swift in Sources */,
+				B495DA961C38637C00CA0E52 /* Loadable.swift in Sources */,
+				B495DA971C38637C00CA0E52 /* MapHeader.swift in Sources */,
+				B495DA8F1C38637C00CA0E52 /* Char.swift in Sources */,
+				B495DA901C38637C00CA0E52 /* ChunkTag.swift in Sources */,
+				B495DA941C38637C00CA0E52 /* EditorInfo.swift in Sources */,
+				B495DA991C38637C00CA0E52 /* TileMap.swift in Sources */,
+				B495DA9B1C38637C00CA0E52 /* TileMapSKNode.swift in Sources */,
+				B495DA981C38637C00CA0E52 /* NSInputStream+Swapping.swift in Sources */,
+				B495DA8B1C38637C00CA0E52 /* AnimationData.swift in Sources */,
+				B495DA921C38637C00CA0E52 /* CollectionBuffer.swift in Sources */,
+				B495DA9D1C38637C00CA0E52 /* Unknown.swift in Sources */,
+				B495DA9C1C38637C00CA0E52 /* TlleMapSKRenderer.swift in Sources */,
+				B495DA931C38637C00CA0E52 /* ColorMap.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DA2D1C38484A00CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DA771C38636600CA0E52 /* TileMapTests.swift in Sources */,
+				B495DA741C38636600CA0E52 /* NSInputStream+BigInt.swift in Sources */,
+				B495DA721C38636600CA0E52 /* ChunkTag.swift in Sources */,
+				B495DA761C38636600CA0E52 /* TileMapSKRendererTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +481,21 @@
 			isa = PBXTargetDependency;
 			target = B4522F5A1C38316F009B7314 /* Link Against the World Studio */;
 			targetProxy = B4522F6F1C38316F009B7314 /* PBXContainerItemProxy */;
+		};
+		B495DA341C38484A00CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DA271C38484A00CA0E52 /* TileMap */;
+			targetProxy = B495DA331C38484A00CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DA361C38484A00CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4522F5A1C38316F009B7314 /* Link Against the World Studio */;
+			targetProxy = B495DA351C38484A00CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DA3C1C38484A00CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DA271C38484A00CA0E52 /* TileMap */;
+			targetProxy = B495DA3B1C38484A00CA0E52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -317,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Link Against the World Studio/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amolloy.Link-Against-the-World-Studio";
@@ -329,6 +609,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Link Against the World Studio/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amolloy.Link-Against-the-World-Studio";
@@ -362,6 +643,78 @@
 			};
 			name = Release;
 		};
+		B495DA3F1C38484A00CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = TileMap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B495DA401C38484A00CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = TileMap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B495DA411C38484A00CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TileMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
+			};
+			name = Debug;
+		};
+		B495DA421C38484A00CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TileMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,12 +734,30 @@
 				B4522F791C38316F009B7314 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4522F7A1C38316F009B7314 /* Build configuration list for PBXNativeTarget "Link Against the World StudioTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B4522F7B1C38316F009B7314 /* Debug */,
 				B4522F7C1C38316F009B7314 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B495DA431C38484A00CA0E52 /* Build configuration list for PBXNativeTarget "TileMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DA3F1C38484A00CA0E52 /* Debug */,
+				B495DA401C38484A00CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B495DA451C38484A00CA0E52 /* Build configuration list for PBXNativeTarget "TileMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DA411C38484A00CA0E52 /* Debug */,
+				B495DA421C38484A00CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

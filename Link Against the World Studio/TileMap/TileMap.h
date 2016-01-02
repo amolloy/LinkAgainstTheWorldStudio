@@ -2,8 +2,8 @@
 //  TileMap.h
 //  TileMap
 //
-//  Created by Andrew Molloy on 7/30/15.
-//  Copyright © 2015 Andrew Molloy. All rights reserved.
+//  Created by Andrew Molloy on 1/2/16.
+//  Copyright © 2016 Andy Molloy. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
