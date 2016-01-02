@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4522F381C382DFA009B7314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F371C382DFA009B7314 /* AppDelegate.swift */; };
-		B4522F3A1C382DFA009B7314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F391C382DFA009B7314 /* ViewController.swift */; };
-		B4522F3C1C382DFA009B7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4522F3B1C382DFA009B7314 /* Assets.xcassets */; };
-		B4522F3F1C382DFA009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F3D1C382DFA009B7314 /* Main.storyboard */; };
-		B4522F4A1C382DFA009B7314 /* MapConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F491C382DFA009B7314 /* MapConverterTests.swift */; };
 		B4A8772D1B7E086100DCE0CA /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A8772A1B7E085200DCE0CA /* TileMap.framework */; };
 		B4A8772F1B7E08A500DCE0CA /* Test.fmp in Resources */ = {isa = PBXBuildFile; fileRef = B4A8772E1B7E08A500DCE0CA /* Test.fmp */; };
 		B4B682001B69856B0050A78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B681FF1B69856B0050A78E /* AppDelegate.swift */; };
@@ -78,14 +73,7 @@
 /* Begin PBXFileReference section */
 		B4522F261C382DBE009B7314 /* LATWMap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LATWMap.xcodeproj; path = ../Frameworks/LATWMap/LATWMap.xcodeproj; sourceTree = "<group>"; };
 		B4522F351C382DFA009B7314 /* MapConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4522F371C382DFA009B7314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4522F391C382DFA009B7314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4522F3B1C382DFA009B7314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B4522F3E1C382DFA009B7314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4522F401C382DFA009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4522F451C382DFA009B7314 /* MapConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4522F491C382DFA009B7314 /* MapConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConverterTests.swift; sourceTree = "<group>"; };
-		B4522F4B1C382DFA009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A877241B7E085200DCE0CA /* TileMap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TileMap.xcodeproj; path = ../Frameworks/TileMap/TileMap.xcodeproj; sourceTree = "<group>"; };
 		B4A8772E1B7E08A500DCE0CA /* Test.fmp */ = {isa = PBXFileReference; lastKnownFileType = file; name = Test.fmp; path = ../../Frameworks/TileMap/TileMapTests/Test.fmp; sourceTree = "<group>"; };
 		B4B681FC1B69856B0050A78E /* LATW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LATW.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,27 +140,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B4522F361C382DFA009B7314 /* MapConverter */ = {
-			isa = PBXGroup;
-			children = (
-				B4522F371C382DFA009B7314 /* AppDelegate.swift */,
-				B4522F391C382DFA009B7314 /* ViewController.swift */,
-				B4522F3B1C382DFA009B7314 /* Assets.xcassets */,
-				B4522F3D1C382DFA009B7314 /* Main.storyboard */,
-				B4522F401C382DFA009B7314 /* Info.plist */,
-			);
-			path = MapConverter;
-			sourceTree = "<group>";
-		};
-		B4522F481C382DFA009B7314 /* MapConverterTests */ = {
-			isa = PBXGroup;
-			children = (
-				B4522F491C382DFA009B7314 /* MapConverterTests.swift */,
-				B4522F4B1C382DFA009B7314 /* Info.plist */,
-			);
-			path = MapConverterTests;
-			sourceTree = "<group>";
-		};
 		B4A877251B7E085200DCE0CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +157,6 @@
 				B4B681FE1B69856B0050A78E /* LATW */,
 				B4B682121B69856B0050A78E /* LATWTests */,
 				B4B6821D1B69856B0050A78E /* LATWUITests */,
-				B4522F361C382DFA009B7314 /* MapConverter */,
-				B4522F481C382DFA009B7314 /* MapConverterTests */,
 				B4B681FD1B69856B0050A78E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -429,8 +394,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4522F3C1C382DFA009B7314 /* Assets.xcassets in Resources */,
-				B4522F3F1C382DFA009B7314 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,8 +436,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4522F3A1C382DFA009B7314 /* ViewController.swift in Sources */,
-				B4522F381C382DFA009B7314 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +443,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4522F4A1C382DFA009B7314 /* MapConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,14 +492,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B4522F3D1C382DFA009B7314 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B4522F3E1C382DFA009B7314 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B4B682071B69856B0050A78E /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
