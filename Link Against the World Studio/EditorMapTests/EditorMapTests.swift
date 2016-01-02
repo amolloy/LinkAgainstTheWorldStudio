@@ -1,15 +1,15 @@
 //
-//  LATWMapTests.swift
-//  LATWMapTests
+//  EditorMapTests.swift
+//  EditorMapTests
 //
 //  Created by Andrew Molloy on 1/2/16.
 //  Copyright © 2016 Andy Molloy. All rights reserved.
 //
 
 import XCTest
-@testable import LATWMap
+@testable import EditorMap
 
-class LATWMapTests: XCTestCase {
+class EditorMapTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

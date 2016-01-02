@@ -41,6 +41,18 @@
 		B495DA9B1C38637C00CA0E52 /* TileMapSKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */; };
 		B495DA9C1C38637C00CA0E52 /* TlleMapSKRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */; };
 		B495DA9D1C38637C00CA0E52 /* Unknown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA8A1C38637C00CA0E52 /* Unknown.swift */; };
+		B495DAA61C38666300CA0E52 /* Map.h in Headers */ = {isa = PBXBuildFile; fileRef = B495DAA51C38666300CA0E52 /* Map.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B495DAAD1C38666300CA0E52 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; };
+		B495DAB81C38666300CA0E52 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; };
+		B495DAB91C38666300CA0E52 /* Map.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B495DAC31C38667B00CA0E52 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAC01C38667B00CA0E52 /* CrossPlatform.swift */; };
+		B495DAC41C38667B00CA0E52 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAC11C38667B00CA0E52 /* Map.swift */; };
+		B495DAC51C38667B00CA0E52 /* TileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAC21C38667B00CA0E52 /* TileSet.swift */; };
+		B495DACE1C38671100CA0E52 /* EditorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B495DACD1C38671100CA0E52 /* EditorMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B495DAD51C38671100CA0E52 /* EditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DACB1C38671100CA0E52 /* EditorMap.framework */; };
+		B495DADC1C38671100CA0E52 /* EditorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DADB1C38671100CA0E52 /* EditorMapTests.swift */; };
+		B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DACB1C38671100CA0E52 /* EditorMap.framework */; };
+		B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DACB1C38671100CA0E52 /* EditorMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +84,48 @@
 			remoteGlobalIDString = B495DA271C38484A00CA0E52;
 			remoteInfo = TileMap;
 		};
+		B495DAAE1C38666300CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DAA21C38666300CA0E52;
+			remoteInfo = Map;
+		};
+		B495DAB01C38666300CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4522F5A1C38316F009B7314;
+			remoteInfo = "Link Against the World Studio";
+		};
+		B495DAB61C38666300CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DAA21C38666300CA0E52;
+			remoteInfo = Map;
+		};
+		B495DAD61C38671100CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DACA1C38671100CA0E52;
+			remoteInfo = EditorMap;
+		};
+		B495DAD81C38671100CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4522F5A1C38316F009B7314;
+			remoteInfo = "Link Against the World Studio";
+		};
+		B495DADE1C38671100CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DACA1C38671100CA0E52;
+			remoteInfo = EditorMap;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +136,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */,
+				B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */,
+				B495DAB91C38666300CA0E52 /* Map.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +184,20 @@
 		B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapSKNode.swift; sourceTree = "<group>"; };
 		B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TlleMapSKRenderer.swift; sourceTree = "<group>"; };
 		B495DA8A1C38637C00CA0E52 /* Unknown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unknown.swift; sourceTree = "<group>"; };
+		B495DAA31C38666300CA0E52 /* Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DAA51C38666300CA0E52 /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		B495DAA71C38666300CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DAAC1C38666300CA0E52 /* MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DAB51C38666300CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DAC01C38667B00CA0E52 /* CrossPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
+		B495DAC11C38667B00CA0E52 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		B495DAC21C38667B00CA0E52 /* TileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSet.swift; sourceTree = "<group>"; };
+		B495DACB1C38671100CA0E52 /* EditorMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditorMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DACD1C38671100CA0E52 /* EditorMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditorMap.h; sourceTree = "<group>"; };
+		B495DACF1C38671100CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditorMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DADB1C38671100CA0E52 /* EditorMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMapTests.swift; sourceTree = "<group>"; };
+		B495DADD1C38671100CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */,
+				B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */,
+				B495DAB81C38666300CA0E52 /* Map.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +233,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DA9F1C38666300CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAA91C38666300CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DAAD1C38666300CA0E52 /* Map.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAC71C38671100CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAD11C38671100CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DAD51C38671100CA0E52 /* EditorMap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -171,6 +273,10 @@
 				B4522F711C38316F009B7314 /* Link Against the World StudioTests */,
 				B495DA291C38484A00CA0E52 /* TileMap */,
 				B495DA371C38484A00CA0E52 /* TileMapTests */,
+				B495DAA41C38666300CA0E52 /* Map */,
+				B495DAB21C38666300CA0E52 /* MapTests */,
+				B495DACC1C38671100CA0E52 /* EditorMap */,
+				B495DADA1C38671100CA0E52 /* EditorMapTests */,
 				B4522F5C1C38316F009B7314 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +288,10 @@
 				B4522F6E1C38316F009B7314 /* Link Against the World StudioTests.xctest */,
 				B495DA281C38484A00CA0E52 /* TileMap.framework */,
 				B495DA311C38484A00CA0E52 /* TileMapTests.xctest */,
+				B495DAA31C38666300CA0E52 /* Map.framework */,
+				B495DAAC1C38666300CA0E52 /* MapTests.xctest */,
+				B495DACB1C38671100CA0E52 /* EditorMap.framework */,
+				B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,10 +359,64 @@
 			path = TileMapTests;
 			sourceTree = "<group>";
 		};
+		B495DAA41C38666300CA0E52 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B495DAC01C38667B00CA0E52 /* CrossPlatform.swift */,
+				B495DAC11C38667B00CA0E52 /* Map.swift */,
+				B495DAC21C38667B00CA0E52 /* TileSet.swift */,
+				B495DAA51C38666300CA0E52 /* Map.h */,
+				B495DAA71C38666300CA0E52 /* Info.plist */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B495DAB21C38666300CA0E52 /* MapTests */ = {
+			isa = PBXGroup;
+			children = (
+				B495DAB51C38666300CA0E52 /* Info.plist */,
+			);
+			path = MapTests;
+			sourceTree = "<group>";
+		};
+		B495DACC1C38671100CA0E52 /* EditorMap */ = {
+			isa = PBXGroup;
+			children = (
+				B495DACD1C38671100CA0E52 /* EditorMap.h */,
+				B495DACF1C38671100CA0E52 /* Info.plist */,
+			);
+			path = EditorMap;
+			sourceTree = "<group>";
+		};
+		B495DADA1C38671100CA0E52 /* EditorMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				B495DADB1C38671100CA0E52 /* EditorMapTests.swift */,
+				B495DADD1C38671100CA0E52 /* Info.plist */,
+			);
+			path = EditorMapTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		B495DA251C38484A00CA0E52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DACE1C38671100CA0E52 /* EditorMap.h in Headers */,
+				B495DAA61C38666300CA0E52 /* Map.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAA01C38666300CA0E52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAC81C38671100CA0E52 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,6 +439,8 @@
 			);
 			dependencies = (
 				B495DA3C1C38484A00CA0E52 /* PBXTargetDependency */,
+				B495DAB71C38666300CA0E52 /* PBXTargetDependency */,
+				B495DADF1C38671100CA0E52 /* PBXTargetDependency */,
 			);
 			name = "Link Against the World Studio";
 			productName = "Link Against the World Studio";
@@ -336,6 +502,80 @@
 			productReference = B495DA311C38484A00CA0E52 /* TileMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B495DAA21C38666300CA0E52 /* Map */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "Map" */;
+			buildPhases = (
+				B495DA9E1C38666300CA0E52 /* Sources */,
+				B495DA9F1C38666300CA0E52 /* Frameworks */,
+				B495DAA01C38666300CA0E52 /* Headers */,
+				B495DAA11C38666300CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Map;
+			productName = Map;
+			productReference = B495DAA31C38666300CA0E52 /* Map.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B495DAAB1C38666300CA0E52 /* MapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "MapTests" */;
+			buildPhases = (
+				B495DAA81C38666300CA0E52 /* Sources */,
+				B495DAA91C38666300CA0E52 /* Frameworks */,
+				B495DAAA1C38666300CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B495DAAF1C38666300CA0E52 /* PBXTargetDependency */,
+				B495DAB11C38666300CA0E52 /* PBXTargetDependency */,
+			);
+			name = MapTests;
+			productName = MapTests;
+			productReference = B495DAAC1C38666300CA0E52 /* MapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B495DACA1C38671100CA0E52 /* EditorMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DAE21C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMap" */;
+			buildPhases = (
+				B495DAC61C38671100CA0E52 /* Sources */,
+				B495DAC71C38671100CA0E52 /* Frameworks */,
+				B495DAC81C38671100CA0E52 /* Headers */,
+				B495DAC91C38671100CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EditorMap;
+			productName = EditorMap;
+			productReference = B495DACB1C38671100CA0E52 /* EditorMap.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B495DAD31C38671100CA0E52 /* EditorMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DAE51C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMapTests" */;
+			buildPhases = (
+				B495DAD01C38671100CA0E52 /* Sources */,
+				B495DAD11C38671100CA0E52 /* Frameworks */,
+				B495DAD21C38671100CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B495DAD71C38671100CA0E52 /* PBXTargetDependency */,
+				B495DAD91C38671100CA0E52 /* PBXTargetDependency */,
+			);
+			name = EditorMapTests;
+			productName = EditorMapTests;
+			productReference = B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -360,6 +600,20 @@
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = B4522F5A1C38316F009B7314;
 					};
+					B495DAA21C38666300CA0E52 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B495DAAB1C38666300CA0E52 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B4522F5A1C38316F009B7314;
+					};
+					B495DACA1C38671100CA0E52 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B495DAD31C38671100CA0E52 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B4522F5A1C38316F009B7314;
+					};
 				};
 			};
 			buildConfigurationList = B4522F561C38316F009B7314 /* Build configuration list for PBXProject "Link Against the World Studio" */;
@@ -379,6 +633,10 @@
 				B4522F6D1C38316F009B7314 /* Link Against the World StudioTests */,
 				B495DA271C38484A00CA0E52 /* TileMap */,
 				B495DA301C38484A00CA0E52 /* TileMapTests */,
+				B495DAA21C38666300CA0E52 /* Map */,
+				B495DAAB1C38666300CA0E52 /* MapTests */,
+				B495DACA1C38671100CA0E52 /* EditorMap */,
+				B495DAD31C38671100CA0E52 /* EditorMapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -413,6 +671,34 @@
 			files = (
 				B495DA731C38636600CA0E52 /* Isotst.fmp in Resources */,
 				B495DA751C38636600CA0E52 /* Test.fmp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAA11C38666300CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAAA1C38666300CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAC91C38671100CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAD21C38671100CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +760,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DA9E1C38666300CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DAC41C38667B00CA0E52 /* Map.swift in Sources */,
+				B495DAC51C38667B00CA0E52 /* TileSet.swift in Sources */,
+				B495DAC31C38667B00CA0E52 /* CrossPlatform.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAA81C38666300CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAC61C38671100CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DAD01C38671100CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DADC1C38671100CA0E52 /* EditorMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -496,6 +814,36 @@
 			isa = PBXTargetDependency;
 			target = B495DA271C38484A00CA0E52 /* TileMap */;
 			targetProxy = B495DA3B1C38484A00CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DAAF1C38666300CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DAA21C38666300CA0E52 /* Map */;
+			targetProxy = B495DAAE1C38666300CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DAB11C38666300CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4522F5A1C38316F009B7314 /* Link Against the World Studio */;
+			targetProxy = B495DAB01C38666300CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DAB71C38666300CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DAA21C38666300CA0E52 /* Map */;
+			targetProxy = B495DAB61C38666300CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DAD71C38671100CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DACA1C38671100CA0E52 /* EditorMap */;
+			targetProxy = B495DAD61C38671100CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DAD91C38671100CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4522F5A1C38316F009B7314 /* Link Against the World Studio */;
+			targetProxy = B495DAD81C38671100CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DADF1C38671100CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DACA1C38671100CA0E52 /* EditorMap */;
+			targetProxy = B495DADE1C38671100CA0E52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -715,6 +1063,141 @@
 			};
 			name = Release;
 		};
+		B495DABB1C38666300CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Map/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.Map;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B495DABC1C38666300CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Map/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.Map;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B495DABE1C38666300CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
+			};
+			name = Debug;
+		};
+		B495DABF1C38666300CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
+			};
+			name = Release;
+		};
+		B495DAE31C38671100CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = EditorMap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B495DAE41C38671100CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = EditorMap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B495DAE61C38671100CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EditorMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
+			};
+			name = Debug;
+		};
+		B495DAE71C38671100CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EditorMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -758,6 +1241,38 @@
 			buildConfigurations = (
 				B495DA411C38484A00CA0E52 /* Debug */,
 				B495DA421C38484A00CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "Map" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DABB1C38666300CA0E52 /* Debug */,
+				B495DABC1C38666300CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "MapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DABE1C38666300CA0E52 /* Debug */,
+				B495DABF1C38666300CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B495DAE21C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DAE31C38671100CA0E52 /* Debug */,
+				B495DAE41C38671100CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B495DAE51C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DAE61C38671100CA0E52 /* Debug */,
+				B495DAE71C38671100CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
