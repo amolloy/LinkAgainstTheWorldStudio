@@ -10,6 +10,7 @@
 		B4522F071C381D13009B7314 /* LATWMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B4522F061C381D13009B7314 /* LATWMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4522F0E1C381D13009B7314 /* LATWMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4522F031C381D13009B7314 /* LATWMap.framework */; };
 		B4522F131C381D13009B7314 /* LATWMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F121C381D13009B7314 /* LATWMapTests.swift */; };
+		B4522F241C382BCA009B7314 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F231C382BCA009B7314 /* CrossPlatform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		B4522F0D1C381D13009B7314 /* LATWMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LATWMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4522F121C381D13009B7314 /* LATWMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATWMapTests.swift; sourceTree = "<group>"; };
 		B4522F141C381D13009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4522F231C382BCA009B7314 /* CrossPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				B4522F061C381D13009B7314 /* LATWMap.h */,
 				B4522F081C381D13009B7314 /* Info.plist */,
+				B4522F231C382BCA009B7314 /* CrossPlatform.swift */,
 			);
 			path = LATWMap;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4522F241C382BCA009B7314 /* CrossPlatform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
