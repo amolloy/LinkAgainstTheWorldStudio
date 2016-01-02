@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4522F5F1C38316F009B7314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F5E1C38316F009B7314 /* AppDelegate.swift */; };
 		B4522F611C38316F009B7314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F601C38316F009B7314 /* ViewController.swift */; };
-		B4522F631C38316F009B7314 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F621C38316F009B7314 /* Document.swift */; };
+		B4522F631C38316F009B7314 /* MapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F621C38316F009B7314 /* MapDocument.swift */; };
 		B4522F651C38316F009B7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4522F641C38316F009B7314 /* Assets.xcassets */; };
 		B4522F681C38316F009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F661C38316F009B7314 /* Main.storyboard */; };
 		B4522F731C38316F009B7314 /* Link_Against_the_World_StudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F721C38316F009B7314 /* Link_Against_the_World_StudioTests.swift */; };
@@ -29,7 +29,7 @@
 		B4522F5B1C38316F009B7314 /* Link Against the World Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Link Against the World Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4522F5E1C38316F009B7314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4522F601C38316F009B7314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4522F621C38316F009B7314 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		B4522F621C38316F009B7314 /* MapDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDocument.swift; sourceTree = "<group>"; };
 		B4522F641C38316F009B7314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4522F671C38316F009B7314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4522F691C38316F009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				B4522F5E1C38316F009B7314 /* AppDelegate.swift */,
-				B4522F601C38316F009B7314 /* ViewController.swift */,
-				B4522F621C38316F009B7314 /* Document.swift */,
 				B4522F641C38316F009B7314 /* Assets.xcassets */,
-				B4522F661C38316F009B7314 /* Main.storyboard */,
 				B4522F691C38316F009B7314 /* Info.plist */,
+				B4522F661C38316F009B7314 /* Main.storyboard */,
+				B4522F621C38316F009B7314 /* MapDocument.swift */,
+				B4522F601C38316F009B7314 /* ViewController.swift */,
 			);
 			path = "Link Against the World Studio";
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 			files = (
 				B4522F611C38316F009B7314 /* ViewController.swift in Sources */,
 				B4522F5F1C38316F009B7314 /* AppDelegate.swift in Sources */,
-				B4522F631C38316F009B7314 /* Document.swift in Sources */,
+				B4522F631C38316F009B7314 /* MapDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

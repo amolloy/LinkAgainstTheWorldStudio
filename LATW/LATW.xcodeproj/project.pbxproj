@@ -719,6 +719,7 @@
 				B4522F4E1C382DFA009B7314 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4522F4F1C382DFA009B7314 /* Build configuration list for PBXNativeTarget "MapConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +728,7 @@
 				B4522F511C382DFA009B7314 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4B681F71B69856B0050A78E /* Build configuration list for PBXProject "LATW" */ = {
 			isa = XCConfigurationList;

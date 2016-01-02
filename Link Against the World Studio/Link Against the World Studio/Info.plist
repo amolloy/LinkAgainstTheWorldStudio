@@ -9,20 +9,44 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>latw</string>
+				<string>latwmap</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
 			<key>CFBundleTypeName</key>
-			<string>DocumentType</string>
+			<string>Link Against the World Studio Map</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
-				<string>????</string>
+				<string>LAWM</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.amolloy.latwmap</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<integer>1</integer>
 			<key>NSDocumentClass</key>
-			<string>$(PRODUCT_MODULE_NAME).Document</string>
+			<string>$(PRODUCT_MODULE_NAME).MapDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>fmp</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>TileMap</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.amolloy.tilemap</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<integer>0</integer>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).MapDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -51,5 +75,46 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Link Against the World Studio Map</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.amolloy.latwmap</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>latwmap</string>
+				</array>
+				<key>public.mime-type</key>
+				<array/>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>TileMap</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.amolloy.tilemap</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>fmp</string>
+				</array>
+				<key>public.mime-type</key>
+				<array/>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
