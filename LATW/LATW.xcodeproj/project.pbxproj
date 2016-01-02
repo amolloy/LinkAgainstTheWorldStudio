@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4522F381C382DFA009B7314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F371C382DFA009B7314 /* AppDelegate.swift */; };
+		B4522F3A1C382DFA009B7314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F391C382DFA009B7314 /* ViewController.swift */; };
+		B4522F3C1C382DFA009B7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4522F3B1C382DFA009B7314 /* Assets.xcassets */; };
+		B4522F3F1C382DFA009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F3D1C382DFA009B7314 /* Main.storyboard */; };
+		B4522F4A1C382DFA009B7314 /* MapConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F491C382DFA009B7314 /* MapConverterTests.swift */; };
 		B4A8772D1B7E086100DCE0CA /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A8772A1B7E085200DCE0CA /* TileMap.framework */; };
 		B4A8772F1B7E08A500DCE0CA /* Test.fmp in Resources */ = {isa = PBXBuildFile; fileRef = B4A8772E1B7E08A500DCE0CA /* Test.fmp */; };
 		B4B682001B69856B0050A78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B681FF1B69856B0050A78E /* AppDelegate.swift */; };
@@ -19,6 +24,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B4522F2B1C382DBE009B7314 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F261C382DBE009B7314 /* LATWMap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4522F031C381D13009B7314;
+			remoteInfo = LATWMap;
+		};
+		B4522F2D1C382DBE009B7314 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F261C382DBE009B7314 /* LATWMap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4522F0D1C381D13009B7314;
+			remoteInfo = LATWMapTests;
+		};
+		B4522F461C382DFA009B7314 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4B681F41B69856B0050A78E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4522F341C382DFA009B7314;
+			remoteInfo = MapConverter;
+		};
 		B4A877291B7E085200DCE0CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4A877241B7E085200DCE0CA /* TileMap.xcodeproj */;
@@ -50,6 +76,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4522F261C382DBE009B7314 /* LATWMap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LATWMap.xcodeproj; path = ../Frameworks/LATWMap/LATWMap.xcodeproj; sourceTree = "<group>"; };
+		B4522F351C382DFA009B7314 /* MapConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4522F371C382DFA009B7314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4522F391C382DFA009B7314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4522F3B1C382DFA009B7314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4522F3E1C382DFA009B7314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B4522F401C382DFA009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4522F451C382DFA009B7314 /* MapConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4522F491C382DFA009B7314 /* MapConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConverterTests.swift; sourceTree = "<group>"; };
+		B4522F4B1C382DFA009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A877241B7E085200DCE0CA /* TileMap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TileMap.xcodeproj; path = ../Frameworks/TileMap/TileMap.xcodeproj; sourceTree = "<group>"; };
 		B4A8772E1B7E08A500DCE0CA /* Test.fmp */ = {isa = PBXFileReference; lastKnownFileType = file; name = Test.fmp; path = ../../Frameworks/TileMap/TileMapTests/Test.fmp; sourceTree = "<group>"; };
 		B4B681FC1B69856B0050A78E /* LATW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LATW.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +104,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B4522F321C382DFA009B7314 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4522F421C382DFA009B7314 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4B681F91B69856B0050A78E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +143,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4522F271C382DBE009B7314 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4522F2C1C382DBE009B7314 /* LATWMap.framework */,
+				B4522F2E1C382DBE009B7314 /* LATWMapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4522F361C382DFA009B7314 /* MapConverter */ = {
+			isa = PBXGroup;
+			children = (
+				B4522F371C382DFA009B7314 /* AppDelegate.swift */,
+				B4522F391C382DFA009B7314 /* ViewController.swift */,
+				B4522F3B1C382DFA009B7314 /* Assets.xcassets */,
+				B4522F3D1C382DFA009B7314 /* Main.storyboard */,
+				B4522F401C382DFA009B7314 /* Info.plist */,
+			);
+			path = MapConverter;
+			sourceTree = "<group>";
+		};
+		B4522F481C382DFA009B7314 /* MapConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4522F491C382DFA009B7314 /* MapConverterTests.swift */,
+				B4522F4B1C382DFA009B7314 /* Info.plist */,
+			);
+			path = MapConverterTests;
+			sourceTree = "<group>";
+		};
 		B4A877251B7E085200DCE0CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +185,13 @@
 		B4B681F31B69856B0050A78E = {
 			isa = PBXGroup;
 			children = (
+				B4522F261C382DBE009B7314 /* LATWMap.xcodeproj */,
 				B4A877241B7E085200DCE0CA /* TileMap.xcodeproj */,
 				B4B681FE1B69856B0050A78E /* LATW */,
 				B4B682121B69856B0050A78E /* LATWTests */,
 				B4B6821D1B69856B0050A78E /* LATWUITests */,
+				B4522F361C382DFA009B7314 /* MapConverter */,
+				B4522F481C382DFA009B7314 /* MapConverterTests */,
 				B4B681FD1B69856B0050A78E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +202,8 @@
 				B4B681FC1B69856B0050A78E /* LATW.app */,
 				B4B6820F1B69856B0050A78E /* LATWTests.xctest */,
 				B4B6821A1B69856B0050A78E /* LATWUITests.xctest */,
+				B4522F351C382DFA009B7314 /* MapConverter.app */,
+				B4522F451C382DFA009B7314 /* MapConverterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +243,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B4522F341C382DFA009B7314 /* MapConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4522F4C1C382DFA009B7314 /* Build configuration list for PBXNativeTarget "MapConverter" */;
+			buildPhases = (
+				B4522F311C382DFA009B7314 /* Sources */,
+				B4522F321C382DFA009B7314 /* Frameworks */,
+				B4522F331C382DFA009B7314 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapConverter;
+			productName = MapConverter;
+			productReference = B4522F351C382DFA009B7314 /* MapConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4522F441C382DFA009B7314 /* MapConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4522F4F1C382DFA009B7314 /* Build configuration list for PBXNativeTarget "MapConverterTests" */;
+			buildPhases = (
+				B4522F411C382DFA009B7314 /* Sources */,
+				B4522F421C382DFA009B7314 /* Frameworks */,
+				B4522F431C382DFA009B7314 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4522F471C382DFA009B7314 /* PBXTargetDependency */,
+			);
+			name = MapConverterTests;
+			productName = MapConverterTests;
+			productReference = B4522F451C382DFA009B7314 /* MapConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B4B681FB1B69856B0050A78E /* LATW */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4B682231B69856B0050A78E /* Build configuration list for PBXNativeTarget "LATW" */;
@@ -217,9 +337,17 @@
 		B4B681F41B69856B0050A78E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Andrew Molloy";
 				TargetAttributes = {
+					B4522F341C382DFA009B7314 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B4522F441C382DFA009B7314 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B4522F341C382DFA009B7314;
+					};
 					B4B681FB1B69856B0050A78E = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -246,6 +374,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = B4522F271C382DBE009B7314 /* Products */;
+					ProjectRef = B4522F261C382DBE009B7314 /* LATWMap.xcodeproj */;
+				},
+				{
 					ProductGroup = B4A877251B7E085200DCE0CA /* Products */;
 					ProjectRef = B4A877241B7E085200DCE0CA /* TileMap.xcodeproj */;
 				},
@@ -255,11 +387,27 @@
 				B4B681FB1B69856B0050A78E /* LATW */,
 				B4B6820E1B69856B0050A78E /* LATWTests */,
 				B4B682191B69856B0050A78E /* LATWUITests */,
+				B4522F341C382DFA009B7314 /* MapConverter */,
+				B4522F441C382DFA009B7314 /* MapConverterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B4522F2C1C382DBE009B7314 /* LATWMap.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LATWMap.framework;
+			remoteRef = B4522F2B1C382DBE009B7314 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4522F2E1C382DBE009B7314 /* LATWMapTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LATWMapTests.xctest;
+			remoteRef = B4522F2D1C382DBE009B7314 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B4A8772A1B7E085200DCE0CA /* TileMap.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -277,6 +425,22 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B4522F331C382DFA009B7314 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4522F3C1C382DFA009B7314 /* Assets.xcassets in Resources */,
+				B4522F3F1C382DFA009B7314 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4522F431C382DFA009B7314 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4B681FA1B69856B0050A78E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +469,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B4522F311C382DFA009B7314 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4522F3A1C382DFA009B7314 /* ViewController.swift in Sources */,
+				B4522F381C382DFA009B7314 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4522F411C382DFA009B7314 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4522F4A1C382DFA009B7314 /* MapConverterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4B681F81B69856B0050A78E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +514,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B4522F471C382DFA009B7314 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4522F341C382DFA009B7314 /* MapConverter */;
+			targetProxy = B4522F461C382DFA009B7314 /* PBXContainerItemProxy */;
+		};
 		B4B682111B69856B0050A78E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B4B681FB1B69856B0050A78E /* LATW */;
@@ -346,6 +532,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B4522F3D1C382DFA009B7314 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4522F3E1C382DFA009B7314 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		B4B682071B69856B0050A78E /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,6 +551,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B4522F4D1C382DFA009B7314 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MapConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B4522F4E1C382DFA009B7314 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MapConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B4522F501C382DFA009B7314 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MapConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapConverter.app/Contents/MacOS/MapConverter";
+			};
+			name = Debug;
+		};
+		B4522F511C382DFA009B7314 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MapConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapConverter.app/Contents/MacOS/MapConverter";
+			};
+			name = Release;
+		};
 		B4B682211B69856B0050A78E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -516,6 +760,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B4522F4C1C382DFA009B7314 /* Build configuration list for PBXNativeTarget "MapConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4522F4D1C382DFA009B7314 /* Debug */,
+				B4522F4E1C382DFA009B7314 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B4522F4F1C382DFA009B7314 /* Build configuration list for PBXNativeTarget "MapConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4522F501C382DFA009B7314 /* Debug */,
+				B4522F511C382DFA009B7314 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B4B681F71B69856B0050A78E /* Build configuration list for PBXProject "LATW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
