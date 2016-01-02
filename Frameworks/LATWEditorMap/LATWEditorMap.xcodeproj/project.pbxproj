@@ -10,6 +10,7 @@
 		B4366F1D1C381BDE009EF222 /* LATWEditorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B4366F1C1C381BDE009EF222 /* LATWEditorMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4366F241C381BDE009EF222 /* LATWEditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4366F191C381BDE009EF222 /* LATWEditorMap.framework */; };
 		B4366F291C381BDE009EF222 /* LATWEditorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4366F281C381BDE009EF222 /* LATWEditorMapTests.swift */; };
+		B4C86D461C381C55002B5F3B /* MapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C86D451C381C55002B5F3B /* MapDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		B4366F231C381BDE009EF222 /* LATWEditorMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LATWEditorMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4366F281C381BDE009EF222 /* LATWEditorMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATWEditorMapTests.swift; sourceTree = "<group>"; };
 		B4366F2A1C381BDE009EF222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4C86D451C381C55002B5F3B /* MapDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				B4366F1C1C381BDE009EF222 /* LATWEditorMap.h */,
 				B4366F1E1C381BDE009EF222 /* Info.plist */,
+				B4C86D451C381C55002B5F3B /* MapDocument.swift */,
 			);
 			path = LATWEditorMap;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C86D461C381C55002B5F3B /* MapDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +309,7 @@
 		B4366F2E1C381BDE009EF222 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -317,12 +322,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWEditorMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B4366F2F1C381BDE009EF222 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -379,6 +386,7 @@
 				B4366F2F1C381BDE009EF222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4366F301C381BDE009EF222 /* Build configuration list for PBXNativeTarget "LATWEditorMapTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +395,7 @@
 				B4366F321C381BDE009EF222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
