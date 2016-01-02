@@ -53,6 +53,8 @@
 		B495DADC1C38671100CA0E52 /* EditorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DADB1C38671100CA0E52 /* EditorMapTests.swift */; };
 		B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DACB1C38671100CA0E52 /* EditorMap.framework */; };
 		B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DACB1C38671100CA0E52 /* EditorMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B495DAE91C38677500CA0E52 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAE81C38677500CA0E52 /* Map.swift */; };
+		B495DAEB1C3867BF00CA0E52 /* TileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAEA1C3867BF00CA0E52 /* TileSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,8 @@
 		B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditorMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B495DADB1C38671100CA0E52 /* EditorMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMapTests.swift; sourceTree = "<group>"; };
 		B495DADD1C38671100CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DAE81C38677500CA0E52 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		B495DAEA1C3867BF00CA0E52 /* TileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				B495DAB51C38666300CA0E52 /* Info.plist */,
+				B495DAE81C38677500CA0E52 /* Map.swift */,
+				B495DAEA1C3867BF00CA0E52 /* TileSet.swift */,
 			);
 			path = MapTests;
 			sourceTree = "<group>";
@@ -774,6 +780,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B495DAEB1C3867BF00CA0E52 /* TileSet.swift in Sources */,
+				B495DAE91C38677500CA0E52 /* Map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,11 +1119,13 @@
 		B495DABE1C38666300CA0E52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Debug;
@@ -1123,6 +1133,7 @@
 		B495DABF1C38666300CA0E52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
