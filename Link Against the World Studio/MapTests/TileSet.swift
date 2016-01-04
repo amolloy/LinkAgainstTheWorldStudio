@@ -8,18 +8,20 @@
 
 import XCTest
 @testable import Map
+import CrossPlatform
 
 class TileSetTests: XCTestCase
 {
 	func testInit()
 	{
 		let image = Image()
-		let tileset = TileSet(image: image, name: "name", tileCount: 16, width: 8, height: 8)
+		let tileset = TileSet(image: image, imageName: "image", name: "name", tileCount: 16, tileWidth: 8, tileHeight: 8)
 
 		XCTAssertEqual(tileset.image, image)
+		XCTAssertEqual(tileset.imageName, "image")
 		XCTAssertEqual(tileset.name, "name")
 		XCTAssertEqual(tileset.tileCount, 16)
-		XCTAssertEqual(tileset.width, 8)
-		XCTAssertEqual(tileset.height, 8)
+		XCTAssertEqual(tileset.tileWidth, 8)
+		XCTAssertEqual(tileset.tileHeight, 8)
 	}
 }

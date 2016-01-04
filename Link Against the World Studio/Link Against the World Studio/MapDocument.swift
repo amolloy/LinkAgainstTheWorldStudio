@@ -9,6 +9,7 @@
 import Cocoa
 import TileMap
 import Map
+import EditorMap
 
 class MapDocument: NSDocument {
 
@@ -43,23 +44,30 @@ class MapDocument: NSDocument {
 
 	override func fileWrapperOfType(typeName: String) throws -> NSFileWrapper
 	{
+		guard let map = map else { return NSFileWrapper() }
+
 		if self.documentFileWrapper == nil
 		{
 			documentFileWrapper = NSFileWrapper(directoryWithFileWrappers: [String: NSFileWrapper]())
 		}
 
 		guard let documentFileWrapper = documentFileWrapper else { return NSFileWrapper() }
-//		let fileWrappers = documentFileWrapper.fileWrappers
+
+		for tileSetName : NSString in map.tileSets.keys
+		{
+			let wrapperName = tileSetName.stringByAppendingPathExtension("tileset") ?? "" as String
+
+			if let fileWrapper = map.tileSets[tileSetName as String]?.fileWrapper()
+			{
+				fileWrapper.preferredFilename = wrapperName
+				documentFileWrapper.addFileWrapper(fileWrapper)
+			}
+		}
 
 		return documentFileWrapper
 	}
 
 	override func readFromFileWrapper(fileWrapper: NSFileWrapper, ofType typeName: String) throws
-	{
-
-	}
-
-	override func readFromData(data: NSData, ofType typeName: String) throws
 	{
 		if (NSWorkspace.sharedWorkspace().type("com.amolloy.tilemap", conformsToType: typeName))
 		{
@@ -67,7 +75,8 @@ class MapDocument: NSDocument {
 			self.fileURL = nil
 			self.fileType = standardFileType
 
-			let tileMapInputStream = NSInputStream(data: data)
+			guard let fileContents = fileWrapper.regularFileContents else { return }
+			let tileMapInputStream = NSInputStream(data: fileContents)
 			guard let tileMap = TileMap(inputStream: tileMapInputStream) else { return }
 			try tileMap.open()
 			try tileMap.loadChunks()
@@ -76,7 +85,30 @@ class MapDocument: NSDocument {
 		}
 		else if (NSWorkspace.sharedWorkspace().type(standardFileType, conformsToType: typeName))
 		{
+			map = Map()
+			guard let map = map else { return }
 
+			// TODO error handling
+			guard let fileWrappers = fileWrapper.fileWrappers else { return }
+			for key in fileWrappers.keys
+			{
+				if let wrapper = fileWrappers[key]
+				{
+					let ext = (key as NSString).pathExtension.lowercaseString as String
+					switch ext
+					{
+					case "tileset":
+						if let tileset = try TileSet(fileWrapper: wrapper)
+						{
+							map.addTileSet(tileset)
+						}
+						break
+					default:
+						print("Unknown file in LATW Map: \(key)")
+						break
+					}
+				}
+			}
 		}
 	}
 

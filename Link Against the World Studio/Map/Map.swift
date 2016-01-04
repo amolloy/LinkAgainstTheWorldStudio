@@ -10,10 +10,20 @@ import Cocoa
 
 public class Map
 {
-	let tileSets : Array<TileSet>
+	public private(set) var tileSets : [String: TileSet]
 
-	public init(tileSets: Array<TileSet>)
+	public init()
 	{
-		self.tileSets = tileSets
+		self.tileSets = [String: TileSet]()
+	}
+
+	public func addTileSet(tileSet: TileSet) -> Bool
+	{
+		if let _ = tileSets[tileSet.name]
+		{
+			return false
+		}
+		tileSets[tileSet.name] = tileSet
+		return true
 	}
 }

@@ -9,17 +9,19 @@
 import Foundation
 import CrossPlatform
 
-public class TileSet
+public final class TileSet
 {
-	let image : Image
-	let name : String
-	let tileCount : Int
-	let tileWidth : Int
-	let tileHeight :Int
+	public var image : Image?
+	public let imageName : String
+	public let name : String
+	public let tileCount : Int
+	public let tileWidth : Int
+	public let tileHeight : Int
 
-	public init(image: Image, name: String, tileCount: Int, tileWidth: Int, tileHeight: Int)
+	public init(image: Image?, imageName: String, name: String, tileCount: Int, tileWidth: Int, tileHeight: Int)
 	{
 		self.image = image
+		self.imageName = imageName
 		self.name = name
 		self.tileCount = tileCount
 		self.tileWidth = tileWidth

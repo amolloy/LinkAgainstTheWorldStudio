@@ -53,6 +53,8 @@ extension Map
 {
 	convenience init?(tileMap: TileMap) throws
 	{
+		self.init()
+
 		guard let blockSize = tileMap.blockSize() else
 		{
 			return nil
@@ -63,11 +65,12 @@ extension Map
 			return nil
 		}
 		let tileSet = TileSet(image: atlasImage,
-			name: "Imported",
+			imageName:  "tilemap.tiff",
+			name: "Imported from TileMap",
 			tileCount: textures.count,
 			tileWidth: blockSize.width,
 			tileHeight: blockSize.height)
 
-		self.init(tileSets: [tileSet])
+		self.addTileSet(tileSet)
 	}
 }
