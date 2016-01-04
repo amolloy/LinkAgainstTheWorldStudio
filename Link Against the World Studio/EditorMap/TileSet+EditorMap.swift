@@ -11,6 +11,8 @@ import Map
 import JSONCodable
 import CrossPlatform
 
+let version = "1.0"
+
 public extension TileSet
 {
 	public func fileWrapper() -> NSFileWrapper?
@@ -65,6 +67,7 @@ public extension TileSet
 	}
 }
 
+let versionKey = "version"
 let nameKey = "name"
 let imageNameKey = "imageName"
 let tileCountKey = "tileCount"
@@ -76,6 +79,7 @@ extension TileSet : JSONEncodable
 	public func toJSON() throws -> AnyObject
 	{
 		return try JSONEncoder.create({ (encoder) -> Void in
+			try encoder.encode(version, key: versionKey)
 			try encoder.encode(imageName, key: imageNameKey)
 			try encoder.encode(name, key: nameKey)
 			try encoder.encode(tileCount, key: tileCountKey)
@@ -92,9 +96,16 @@ extension TileSet : JSONDecodable
 		let decoder = JSONDecoder(object: JSONDictionary)
 		do
 		{
+			let name : String = try decoder.decode(nameKey)
+			let jsonVersion : String = try decoder.decode(versionKey)
+			if jsonVersion.compare(version, options: .NumericSearch, range: nil, locale: nil) == .OrderedDescending
+			{
+				print("TileSet \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
+			}
+
 			self.init(image: nil,
 				imageName: try decoder.decode(imageNameKey),
-				name: try decoder.decode(nameKey),
+				name: name,
 				tileCount: try decoder.decode(tileCountKey),
 				tileWidth: try decoder.decode(tileWidthKey),
 				tileHeight: try decoder.decode(tileHeightKey))
