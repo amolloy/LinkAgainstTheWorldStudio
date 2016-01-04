@@ -13,6 +13,8 @@
 		B4522F651C38316F009B7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4522F641C38316F009B7314 /* Assets.xcassets */; };
 		B4522F681C38316F009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F661C38316F009B7314 /* Main.storyboard */; };
 		B4522F731C38316F009B7314 /* Link_Against_the_World_StudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F721C38316F009B7314 /* Link_Against_the_World_StudioTests.swift */; };
+		B46740131C3AC26700293C9B /* TileSet+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46740121C3AC26700293C9B /* TileSet+EditorMap.swift */; };
+		B46740151C3AC2F000293C9B /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; };
 		B495DA321C38484A00CA0E52 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; };
 		B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; };
 		B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -185,6 +187,7 @@
 		B4522F6E1C38316F009B7314 /* Link Against the World StudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Link Against the World StudioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4522F721C38316F009B7314 /* Link_Against_the_World_StudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link_Against_the_World_StudioTests.swift; sourceTree = "<group>"; };
 		B4522F741C38316F009B7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B46740121C3AC26700293C9B /* TileSet+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TileSet+EditorMap.swift"; sourceTree = "<group>"; };
 		B495DA281C38484A00CA0E52 /* TileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B495DA2C1C38484A00CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B495DA311C38484A00CA0E52 /* TileMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46740151C3AC2F000293C9B /* Map.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +455,7 @@
 			children = (
 				B495DACD1C38671100CA0E52 /* EditorMap.h */,
 				B495DACF1C38671100CA0E52 /* Info.plist */,
+				B46740121C3AC26700293C9B /* TileSet+EditorMap.swift */,
 			);
 			path = EditorMap;
 			sourceTree = "<group>";
@@ -947,6 +952,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46740131C3AC26700293C9B /* TileSet+EditorMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1330,6 +1336,7 @@
 		B495DAE31C38671100CA0E52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1343,6 +1350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1351,6 +1359,7 @@
 		B495DAE41C38671100CA0E52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1520,6 +1529,7 @@
 				B495DA401C38484A00CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DA451C38484A00CA0E52 /* Build configuration list for PBXNativeTarget "TileMapTests" */ = {
 			isa = XCConfigurationList;
@@ -1528,6 +1538,7 @@
 				B495DA421C38484A00CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "Map" */ = {
 			isa = XCConfigurationList;
@@ -1536,6 +1547,7 @@
 				B495DABC1C38666300CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "MapTests" */ = {
 			isa = XCConfigurationList;
@@ -1544,6 +1556,7 @@
 				B495DABF1C38666300CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DAE21C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMap" */ = {
 			isa = XCConfigurationList;
@@ -1552,6 +1565,7 @@
 				B495DAE41C38671100CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DAE51C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMapTests" */ = {
 			isa = XCConfigurationList;
@@ -1560,6 +1574,7 @@
 				B495DAE71C38671100CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DAFE1C38850800CA0E52 /* Build configuration list for PBXNativeTarget "CrossPlatform" */ = {
 			isa = XCConfigurationList;
@@ -1568,6 +1583,7 @@
 				B495DB001C38850800CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B495DB131C395EDD00CA0E52 /* Build configuration list for PBXNativeTarget "ImageUtilities" */ = {
 			isa = XCConfigurationList;
@@ -1576,6 +1592,7 @@
 				B495DB151C395EDD00CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

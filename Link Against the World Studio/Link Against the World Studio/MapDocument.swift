@@ -13,11 +13,13 @@ import Map
 class MapDocument: NSDocument {
 
 	let standardFileType = "com.amolloy.latwmap"
+	var map : Map?
+	var documentFileWrapper : NSFileWrapper?
 
 	override init()
 	{
 	    super.init()
-		// Add your subclass-specific initialization here.
+		map = nil
 	}
 
 	override func windowControllerDidLoadNib(aController: NSWindowController)
@@ -39,12 +41,22 @@ class MapDocument: NSDocument {
 		self.addWindowController(windowController)
 	}
 
-
-	override func dataOfType(typeName: String) throws -> NSData
+	override func fileWrapperOfType(typeName: String) throws -> NSFileWrapper
 	{
-		// Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
-		// You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+		if self.documentFileWrapper == nil
+		{
+			documentFileWrapper = NSFileWrapper(directoryWithFileWrappers: [String: NSFileWrapper]())
+		}
+
+		guard let documentFileWrapper = documentFileWrapper else { return NSFileWrapper() }
+//		let fileWrappers = documentFileWrapper.fileWrappers
+
+		return documentFileWrapper
+	}
+
+	override func readFromFileWrapper(fileWrapper: NSFileWrapper, ofType typeName: String) throws
+	{
+
 	}
 
 	override func readFromData(data: NSData, ofType typeName: String) throws
@@ -60,13 +72,17 @@ class MapDocument: NSDocument {
 			try tileMap.open()
 			try tileMap.loadChunks()
 
-			// TEMP
-			let _ = try Map(tileMap: tileMap)
+			map = try Map(tileMap: tileMap)
 		}
 		else if (NSWorkspace.sharedWorkspace().type(standardFileType, conformsToType: typeName))
 		{
 
 		}
+	}
+
+	override class func canConcurrentlyReadDocumentsOfType(typename: String) -> Bool
+	{
+		return true
 	}
 }
 
