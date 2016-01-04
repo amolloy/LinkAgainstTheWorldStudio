@@ -24,7 +24,7 @@ extension TileMap
 		case MissingTextureAtlas
 	}
 
-	func textures() throws -> [String: AnyObject]
+	public func textures() throws -> [Image]
 	{
 		guard let mapHeader = mapHeader else
 		{
@@ -44,7 +44,7 @@ extension TileMap
 
 		let cs = CGColorSpaceCreateDeviceRGB()!
 
-		var atlasInfo = [String: AnyObject]()
+		var textures = [Image]()
 		for i in 0..<blockCount
 		{
 			let offset = i * blockDataSize
@@ -86,10 +86,10 @@ extension TileMap
 				throw TileMapTexturesError.UnsupportedColorDepth
 			}
 
-			atlasInfo[String(i)] = Image(CGImage: cgImage, size: NSSize(mapHeader.blockSize))
+			textures.append(Image(CGImage: cgImage, size: NSSize(mapHeader.blockSize)))
 		}
 
-		return atlasInfo
+		return textures
 	}
 
 	func create8BitTexture(blockSize: MapHeader.Size,

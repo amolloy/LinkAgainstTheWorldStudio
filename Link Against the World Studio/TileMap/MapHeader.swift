@@ -17,24 +17,7 @@ class MapHeader : Loadable
 		case FMP10RLE
 	}
 
-	struct Size
-	{
-		let width : Int
-		let height : Int
-		init(_ width: Int, _ height: Int)
-		{
-			self.width = width
-			self.height = height
-		}
-		init(_ width: Int16, _ height: Int16)
-		{
-			self.init(Int(width), Int(height))
-		}
-		init()
-		{
-			self.init(0, 0)
-		}
-	}
+	typealias Size = TileMap.Size
 
 	let mapVersion : NSDecimalNumber
 	let swapBytes : Bool
@@ -356,13 +339,4 @@ class MapHeader : Loadable
 func <(lhs: MapHeader.MapType, rhs: MapHeader.MapType) -> Bool
 {
 	return lhs.rawValue < rhs.rawValue
-}
-
-extension NSSize
-{
-	init(_ size: MapHeader.Size)
-	{
-		width = CGFloat(size.width)
-		height = CGFloat(size.height)
-	}
 }

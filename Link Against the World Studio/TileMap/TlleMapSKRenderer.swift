@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import CrossPlatform
 
 public class TileMapSKRenderer
 {
@@ -71,7 +72,14 @@ public class TileMapSKRenderer
 
 	func createTextureAtlas() throws
 	{
-		let textureAtlasInfo = try tileMap.textures()
+		let textures = try tileMap.textures()
+		var textureAtlasInfo = [String: Image]()
+
+		for i in 0..<textures.count
+		{
+			textureAtlasInfo[String(i)] = textures[i]
+		}
+
 		textureAtlas = SKTextureAtlas(dictionary: textureAtlasInfo)
 	}
 }

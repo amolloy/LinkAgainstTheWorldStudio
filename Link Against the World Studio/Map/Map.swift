@@ -12,7 +12,7 @@ public class Map
 {
 	let tileSets : Array<TileSet>
 
-	init(tileSets: Array<TileSet>)
+	public init(tileSets: Array<TileSet>)
 	{
 		self.tileSets = tileSets
 	}

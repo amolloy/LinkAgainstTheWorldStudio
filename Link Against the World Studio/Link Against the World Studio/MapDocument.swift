@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import TileMap
+import Map
 
 class MapDocument: NSDocument {
 
@@ -52,6 +54,14 @@ class MapDocument: NSDocument {
 			// import...
 			self.fileURL = nil
 			self.fileType = standardFileType
+
+			let tileMapInputStream = NSInputStream(data: data)
+			guard let tileMap = TileMap(inputStream: tileMapInputStream) else { return }
+			try tileMap.open()
+			try tileMap.loadChunks()
+
+			// TEMP
+			let _ = try Map(tileMap: tileMap)
 		}
 		else if (NSWorkspace.sharedWorkspace().type(standardFileType, conformsToType: typeName))
 		{

@@ -12,6 +12,25 @@ public class TileMap
 {
 	typealias Color = (r: UInt8, g: UInt8, b: UInt8)
 
+	public struct Size
+	{
+		public let width : Int
+		public let height : Int
+		public init(_ width: Int, _ height: Int)
+		{
+			self.width = width
+			self.height = height
+		}
+		public init(_ width: Int16, _ height: Int16)
+		{
+			self.init(Int(width), Int(height))
+		}
+		public init()
+		{
+			self.init(0, 0)
+		}
+	}
+
 	var inputStream : NSInputStream
 
 	var animationData : AnimationData?
@@ -24,7 +43,17 @@ public class TileMap
 	var mapHeader : MapHeader?
 	var unknownChunks : [Unknown]
 
-	public init?(path : String)
+	public convenience init?(path : String)
+	{
+		guard let inputStream = NSInputStream(fileAtPath: path) else
+		{
+			return nil
+		}
+
+		self.init(inputStream: inputStream)
+	}
+
+	public init?(inputStream : NSInputStream)
 	{
 		loaders = [ChunkType: Loadable.Type]()
 
@@ -38,11 +67,6 @@ public class TileMap
 		mapHeader = nil
 		unknownChunks = [Unknown]()
 
-		guard let inputStream = NSInputStream(fileAtPath: path) else
-		{
-			self.inputStream = NSInputStream()
-			return nil
-		}
 		self.inputStream = inputStream
 
 		let loadableTypes : [Loadable.Type] = [
@@ -65,9 +89,27 @@ public class TileMap
 	{
 		loaders[chunkType] = loadable
 	}
+
+	public func blockSize() -> Size?
+	{
+		guard let mapHeader = self.mapHeader else
+		{
+			return nil
+		}
+		return mapHeader.blockSize
+	}
 }
 
 func == (c1:TileMap.Color, c2:TileMap.Color) -> Bool
 {
 	return (c1.r == c2.r) && (c1.g == c2.g) && (c1.b == c2.b)
+}
+
+public extension NSSize
+{
+	public init(_ size: TileMap.Size)
+	{
+		width = CGFloat(size.width)
+		height = CGFloat(size.height)
+	}
 }

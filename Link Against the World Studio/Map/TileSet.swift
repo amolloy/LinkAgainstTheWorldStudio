@@ -7,21 +7,22 @@
 //
 
 import Foundation
+import CrossPlatform
 
 public class TileSet
 {
 	let image : Image
 	let name : String
 	let tileCount : Int
-	let width : Int
-	let height :Int
+	let tileWidth : Int
+	let tileHeight :Int
 
-	init(image: Image, name: String, tileCount: Int, width: Int, height: Int)
+	public init(image: Image, name: String, tileCount: Int, tileWidth: Int, tileHeight: Int)
 	{
 		self.image = image
 		self.name = name
 		self.tileCount = tileCount
-		self.width = width
-		self.height = height
+		self.tileWidth = tileWidth
+		self.tileHeight = tileHeight
 	}
 }

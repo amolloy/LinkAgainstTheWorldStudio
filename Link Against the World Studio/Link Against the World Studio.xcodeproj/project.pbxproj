@@ -54,12 +54,19 @@
 		B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DACB1C38671100CA0E52 /* EditorMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B495DAE91C38677500CA0E52 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAE81C38677500CA0E52 /* Map.swift */; };
 		B495DAEB1C3867BF00CA0E52 /* TileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAEA1C3867BF00CA0E52 /* TileSet.swift */; };
+		B495DAED1C387FCA00CA0E52 /* Map+TileMapImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAEC1C387FCA00CA0E52 /* Map+TileMapImport.swift */; };
+		B495DAEF1C38837B00CA0E52 /* TileMap+Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAEE1C38837B00CA0E52 /* TileMap+Textures.swift */; };
 		B495DAF81C38850800CA0E52 /* CrossPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = B495DAF71C38850800CA0E52 /* CrossPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B495DAFC1C38850800CA0E52 /* CrossPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; };
 		B495DAFD1C38850800CA0E52 /* CrossPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B495DB021C38852700CA0E52 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DB011C38852700CA0E52 /* CrossPlatform.swift */; };
 		B495DB031C38854B00CA0E52 /* CrossPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; };
 		B495DB041C38855000CA0E52 /* CrossPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; };
+		B495DB0D1C395EDD00CA0E52 /* ImageUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B495DB0C1C395EDD00CA0E52 /* ImageUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B495DB111C395EDD00CA0E52 /* ImageUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */; };
+		B495DB121C395EDD00CA0E52 /* ImageUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B495DB171C395EFA00CA0E52 /* Image+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DB161C395EFA00CA0E52 /* Image+Utilities.swift */; };
+		B495DB181C395F0600CA0E52 /* CrossPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +147,13 @@
 			remoteGlobalIDString = B495DAF41C38850800CA0E52;
 			remoteInfo = CrossPlatform;
 		};
+		B495DB0F1C395EDD00CA0E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B495DB091C395EDD00CA0E52;
+			remoteInfo = ImageUtilities;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -153,6 +167,7 @@
 				B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */,
 				B495DAFD1C38850800CA0E52 /* CrossPlatform.framework in Embed Frameworks */,
 				B495DAB91C38666300CA0E52 /* Map.framework in Embed Frameworks */,
+				B495DB121C395EDD00CA0E52 /* ImageUtilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,10 +229,16 @@
 		B495DADD1C38671100CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B495DAE81C38677500CA0E52 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B495DAEA1C3867BF00CA0E52 /* TileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSet.swift; sourceTree = "<group>"; };
+		B495DAEC1C387FCA00CA0E52 /* Map+TileMapImport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+TileMapImport.swift"; sourceTree = "<group>"; };
+		B495DAEE1C38837B00CA0E52 /* TileMap+Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TileMap+Textures.swift"; sourceTree = "<group>"; };
 		B495DAF51C38850800CA0E52 /* CrossPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CrossPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B495DAF71C38850800CA0E52 /* CrossPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrossPlatform.h; sourceTree = "<group>"; };
 		B495DAF91C38850800CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B495DB011C38852700CA0E52 /* CrossPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
+		B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DB0C1C395EDD00CA0E52 /* ImageUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUtilities.h; sourceTree = "<group>"; };
+		B495DB0E1C395EDD00CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B495DB161C395EFA00CA0E52 /* Image+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +250,7 @@
 				B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */,
 				B495DAFC1C38850800CA0E52 /* CrossPlatform.framework in Frameworks */,
 				B495DAB81C38666300CA0E52 /* Map.framework in Frameworks */,
+				B495DB111C395EDD00CA0E52 /* ImageUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +315,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DB061C395EDD00CA0E52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DB181C395F0600CA0E52 /* CrossPlatform.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -308,6 +338,7 @@
 				B495DACC1C38671100CA0E52 /* EditorMap */,
 				B495DADA1C38671100CA0E52 /* EditorMapTests */,
 				B495DAF61C38850800CA0E52 /* CrossPlatform */,
+				B495DB0B1C395EDD00CA0E52 /* ImageUtilities */,
 				B4522F5C1C38316F009B7314 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -324,6 +355,7 @@
 				B495DACB1C38671100CA0E52 /* EditorMap.framework */,
 				B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */,
 				B495DAF51C38850800CA0E52 /* CrossPlatform.framework */,
+				B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -337,6 +369,7 @@
 				B4522F661C38316F009B7314 /* Main.storyboard */,
 				B4522F621C38316F009B7314 /* MapDocument.swift */,
 				B4522F601C38316F009B7314 /* ViewController.swift */,
+				B495DAEC1C387FCA00CA0E52 /* Map+TileMapImport.swift */,
 			);
 			path = "Link Against the World Studio";
 			sourceTree = "<group>";
@@ -363,16 +396,17 @@
 				B495DA7F1C38637C00CA0E52 /* CollectionBuffer.swift */,
 				B495DA801C38637C00CA0E52 /* ColorMap.swift */,
 				B495DA811C38637C00CA0E52 /* EditorInfo.swift */,
+				B495DA2C1C38484A00CA0E52 /* Info.plist */,
 				B495DA821C38637C00CA0E52 /* Layer.swift */,
 				B495DA831C38637C00CA0E52 /* Loadable.swift */,
 				B495DA841C38637C00CA0E52 /* MapHeader.swift */,
 				B495DA851C38637C00CA0E52 /* NSInputStream+Swapping.swift */,
 				B495DA861C38637C00CA0E52 /* TileMap.swift */,
+				B495DAEE1C38837B00CA0E52 /* TileMap+Textures.swift */,
 				B495DA871C38637C00CA0E52 /* TileMapLoader.swift */,
 				B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */,
 				B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */,
 				B495DA8A1C38637C00CA0E52 /* Unknown.swift */,
-				B495DA2C1C38484A00CA0E52 /* Info.plist */,
 			);
 			path = TileMap;
 			sourceTree = "<group>";
@@ -440,6 +474,16 @@
 			path = CrossPlatform;
 			sourceTree = "<group>";
 		};
+		B495DB0B1C395EDD00CA0E52 /* ImageUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				B495DB0C1C395EDD00CA0E52 /* ImageUtilities.h */,
+				B495DB0E1C395EDD00CA0E52 /* Info.plist */,
+				B495DB161C395EFA00CA0E52 /* Image+Utilities.swift */,
+			);
+			path = ImageUtilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -448,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B495DACE1C38671100CA0E52 /* EditorMap.h in Headers */,
+				B495DB0D1C395EDD00CA0E52 /* ImageUtilities.h in Headers */,
 				B495DAA61C38666300CA0E52 /* Map.h in Headers */,
 				B495DAF81C38850800CA0E52 /* CrossPlatform.h in Headers */,
 			);
@@ -474,6 +519,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DB071C395EDD00CA0E52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -493,6 +545,7 @@
 				B495DAB71C38666300CA0E52 /* PBXTargetDependency */,
 				B495DADF1C38671100CA0E52 /* PBXTargetDependency */,
 				B495DAFB1C38850800CA0E52 /* PBXTargetDependency */,
+				B495DB101C395EDD00CA0E52 /* PBXTargetDependency */,
 			);
 			name = "Link Against the World Studio";
 			productName = "Link Against the World Studio";
@@ -646,6 +699,24 @@
 			productReference = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B495DB091C395EDD00CA0E52 /* ImageUtilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B495DB131C395EDD00CA0E52 /* Build configuration list for PBXNativeTarget "ImageUtilities" */;
+			buildPhases = (
+				B495DB051C395EDD00CA0E52 /* Sources */,
+				B495DB061C395EDD00CA0E52 /* Frameworks */,
+				B495DB071C395EDD00CA0E52 /* Headers */,
+				B495DB081C395EDD00CA0E52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageUtilities;
+			productName = ImageUtilities;
+			productReference = B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -687,6 +758,9 @@
 					B495DAF41C38850800CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					B495DB091C395EDD00CA0E52 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = B4522F561C38316F009B7314 /* Build configuration list for PBXProject "Link Against the World Studio" */;
@@ -711,6 +785,7 @@
 				B495DACA1C38671100CA0E52 /* EditorMap */,
 				B495DAD31C38671100CA0E52 /* EditorMapTests */,
 				B495DAF41C38850800CA0E52 /* CrossPlatform */,
+				B495DB091C395EDD00CA0E52 /* ImageUtilities */,
 			);
 		};
 /* End PBXProject section */
@@ -776,6 +851,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DAF31C38850800CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B495DB081C395EDD00CA0E52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -785,6 +874,7 @@
 			files = (
 				B4522F611C38316F009B7314 /* ViewController.swift in Sources */,
 				B4522F5F1C38316F009B7314 /* AppDelegate.swift in Sources */,
+				B495DAED1C387FCA00CA0E52 /* Map+TileMapImport.swift in Sources */,
 				B4522F631C38316F009B7314 /* MapDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -805,6 +895,7 @@
 				B495DA9A1C38637C00CA0E52 /* TileMapLoader.swift in Sources */,
 				B495DA8D1C38637C00CA0E52 /* BlockData.swift in Sources */,
 				B495DA8C1C38637C00CA0E52 /* Author.swift in Sources */,
+				B495DAEF1C38837B00CA0E52 /* TileMap+Textures.swift in Sources */,
 				B495DA951C38637C00CA0E52 /* Layer.swift in Sources */,
 				B495DA8E1C38637C00CA0E52 /* BlockGraphics.swift in Sources */,
 				B495DA961C38637C00CA0E52 /* Loadable.swift in Sources */,
@@ -875,6 +966,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B495DB051C395EDD00CA0E52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B495DB171C395EFA00CA0E52 /* Image+Utilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -932,6 +1031,11 @@
 			isa = PBXTargetDependency;
 			target = B495DAF41C38850800CA0E52 /* CrossPlatform */;
 			targetProxy = B495DAFA1C38850800CA0E52 /* PBXContainerItemProxy */;
+		};
+		B495DB101C395EDD00CA0E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B495DB091C395EDD00CA0E52 /* ImageUtilities */;
+			targetProxy = B495DB0F1C395EDD00CA0E52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1334,6 +1438,51 @@
 			};
 			name = Release;
 		};
+		B495DB141C395EDD00CA0E52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ImageUtilities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.ImageUtilities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B495DB151C395EDD00CA0E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ImageUtilities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.ImageUtilities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1417,6 +1566,14 @@
 			buildConfigurations = (
 				B495DAFF1C38850800CA0E52 /* Debug */,
 				B495DB001C38850800CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B495DB131C395EDD00CA0E52 /* Build configuration list for PBXNativeTarget "ImageUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B495DB141C395EDD00CA0E52 /* Debug */,
+				B495DB151C395EDD00CA0E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
