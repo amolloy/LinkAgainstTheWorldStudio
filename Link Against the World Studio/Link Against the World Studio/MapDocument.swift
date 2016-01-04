@@ -12,7 +12,7 @@ import Map
 
 class MapDocument: NSDocument {
 
-	let standardFileType = "com.amolloy.tilemap"
+	let standardFileType = "com.amolloy.latwmap"
 
 	override init()
 	{
