@@ -3,6 +3,7 @@
 The Link Against the World Studio editor map is represented on disk by an OS X bundle. While there is a tendency to want to use plist files within a bundle, JSON will be used instead.  The bundle contains a control file and one or more of the following:
 
 - [Tile Sets](#tile-sets)
+- Animated Tiles (TBD)
 - [Brush Sets](#brush-sets)
 - [Terrain Sets](#terrain-sets)
 - [Tile Layers](#tile-layers)
