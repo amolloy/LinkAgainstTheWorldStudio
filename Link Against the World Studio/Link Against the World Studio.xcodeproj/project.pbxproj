@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5DB1921A8E3EAF462040227B /* Pods_EditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F95C8D7CC9C2D61047F516 /* Pods_EditorMap.framework */; };
+		B41366CC1C3C0DE300B2344A /* TileLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41366CB1C3C0DE300B2344A /* TileLayer.swift */; };
+		B41366CE1C3C0F1A00B2344A /* StaticTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41366CD1C3C0F1A00B2344A /* StaticTile.swift */; };
 		B4522F5F1C38316F009B7314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F5E1C38316F009B7314 /* AppDelegate.swift */; };
 		B4522F611C38316F009B7314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F601C38316F009B7314 /* ViewController.swift */; };
 		B4522F631C38316F009B7314 /* MapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F621C38316F009B7314 /* MapDocument.swift */; };
@@ -15,7 +17,7 @@
 		B4522F681C38316F009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F661C38316F009B7314 /* Main.storyboard */; };
 		B4522F731C38316F009B7314 /* Link_Against_the_World_StudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F721C38316F009B7314 /* Link_Against_the_World_StudioTests.swift */; };
 		B46740131C3AC26700293C9B /* TileSet+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46740121C3AC26700293C9B /* TileSet+EditorMap.swift */; };
-		B46740151C3AC2F000293C9B /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; };
+		B46740151C3AC2F000293C9B /* LATWMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* LATWMap.framework */; };
 		B495DA321C38484A00CA0E52 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; };
 		B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; };
 		B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DA281C38484A00CA0E52 /* TileMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,9 +47,9 @@
 		B495DA9C1C38637C00CA0E52 /* TlleMapSKRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */; };
 		B495DA9D1C38637C00CA0E52 /* Unknown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DA8A1C38637C00CA0E52 /* Unknown.swift */; };
 		B495DAA61C38666300CA0E52 /* Map.h in Headers */ = {isa = PBXBuildFile; fileRef = B495DAA51C38666300CA0E52 /* Map.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B495DAAD1C38666300CA0E52 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; };
-		B495DAB81C38666300CA0E52 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; };
-		B495DAB91C38666300CA0E52 /* Map.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* Map.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B495DAAD1C38666300CA0E52 /* LATWMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* LATWMap.framework */; };
+		B495DAB81C38666300CA0E52 /* LATWMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* LATWMap.framework */; };
+		B495DAB91C38666300CA0E52 /* LATWMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* LATWMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B495DAC41C38667B00CA0E52 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAC11C38667B00CA0E52 /* Map.swift */; };
 		B495DAC51C38667B00CA0E52 /* TileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DAC21C38667B00CA0E52 /* TileSet.swift */; };
 		B495DACE1C38671100CA0E52 /* EditorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B495DACD1C38671100CA0E52 /* EditorMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -169,7 +171,7 @@
 				B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */,
 				B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */,
 				B495DAFD1C38850800CA0E52 /* CrossPlatform.framework in Embed Frameworks */,
-				B495DAB91C38666300CA0E52 /* Map.framework in Embed Frameworks */,
+				B495DAB91C38666300CA0E52 /* LATWMap.framework in Embed Frameworks */,
 				B495DB121C395EDD00CA0E52 /* ImageUtilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -181,6 +183,8 @@
 		41F95C8D7CC9C2D61047F516 /* Pods_EditorMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EditorMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5A0E7D93C6D075F081316C /* Pods-EditorMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EditorMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-EditorMap/Pods-EditorMap.release.xcconfig"; sourceTree = "<group>"; };
 		AB1A42F726AB96D6CFC1BC00 /* Pods-EditorMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EditorMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EditorMap/Pods-EditorMap.debug.xcconfig"; sourceTree = "<group>"; };
+		B41366CB1C3C0DE300B2344A /* TileLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayer.swift; sourceTree = "<group>"; };
+		B41366CD1C3C0F1A00B2344A /* StaticTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTile.swift; sourceTree = "<group>"; };
 		B4522F5B1C38316F009B7314 /* Link Against the World Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Link Against the World Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4522F5E1C38316F009B7314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4522F601C38316F009B7314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -221,10 +225,10 @@
 		B495DA881C38637C00CA0E52 /* TileMapSKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapSKNode.swift; sourceTree = "<group>"; };
 		B495DA891C38637C00CA0E52 /* TlleMapSKRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TlleMapSKRenderer.swift; sourceTree = "<group>"; };
 		B495DA8A1C38637C00CA0E52 /* Unknown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unknown.swift; sourceTree = "<group>"; };
-		B495DAA31C38666300CA0E52 /* Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DAA31C38666300CA0E52 /* LATWMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LATWMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B495DAA51C38666300CA0E52 /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		B495DAA71C38666300CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B495DAAC1C38666300CA0E52 /* MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B495DAAC1C38666300CA0E52 /* LATWMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LATWMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B495DAB51C38666300CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B495DAC11C38667B00CA0E52 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B495DAC21C38667B00CA0E52 /* TileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSet.swift; sourceTree = "<group>"; };
@@ -256,7 +260,7 @@
 				B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */,
 				B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */,
 				B495DAFC1C38850800CA0E52 /* CrossPlatform.framework in Frameworks */,
-				B495DAB81C38666300CA0E52 /* Map.framework in Frameworks */,
+				B495DAB81C38666300CA0E52 /* LATWMap.framework in Frameworks */,
 				B495DB111C395EDD00CA0E52 /* ImageUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B495DAAD1C38666300CA0E52 /* Map.framework in Frameworks */,
+				B495DAAD1C38666300CA0E52 /* LATWMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +308,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B46740151C3AC2F000293C9B /* Map.framework in Frameworks */,
+				B46740151C3AC2F000293C9B /* LATWMap.framework in Frameworks */,
 				5DB1921A8E3EAF462040227B /* Pods_EditorMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,8 +363,8 @@
 				B4522F711C38316F009B7314 /* Link Against the World StudioTests */,
 				B495DA291C38484A00CA0E52 /* TileMap */,
 				B495DA371C38484A00CA0E52 /* TileMapTests */,
-				B495DAA41C38666300CA0E52 /* Map */,
-				B495DAB21C38666300CA0E52 /* MapTests */,
+				B495DAA41C38666300CA0E52 /* LATWMap */,
+				B495DAB21C38666300CA0E52 /* LATWMapTests */,
 				B495DACC1C38671100CA0E52 /* EditorMap */,
 				B495DADA1C38671100CA0E52 /* EditorMapTests */,
 				B495DAF61C38850800CA0E52 /* CrossPlatform */,
@@ -378,8 +382,8 @@
 				B4522F6E1C38316F009B7314 /* Link Against the World StudioTests.xctest */,
 				B495DA281C38484A00CA0E52 /* TileMap.framework */,
 				B495DA311C38484A00CA0E52 /* TileMapTests.xctest */,
-				B495DAA31C38666300CA0E52 /* Map.framework */,
-				B495DAAC1C38666300CA0E52 /* MapTests.xctest */,
+				B495DAA31C38666300CA0E52 /* LATWMap.framework */,
+				B495DAAC1C38666300CA0E52 /* LATWMapTests.xctest */,
 				B495DACB1C38671100CA0E52 /* EditorMap.framework */,
 				B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */,
 				B495DAF51C38850800CA0E52 /* CrossPlatform.framework */,
@@ -453,25 +457,27 @@
 			path = TileMapTests;
 			sourceTree = "<group>";
 		};
-		B495DAA41C38666300CA0E52 /* Map */ = {
+		B495DAA41C38666300CA0E52 /* LATWMap */ = {
 			isa = PBXGroup;
 			children = (
 				B495DAC11C38667B00CA0E52 /* Map.swift */,
 				B495DAC21C38667B00CA0E52 /* TileSet.swift */,
 				B495DAA51C38666300CA0E52 /* Map.h */,
 				B495DAA71C38666300CA0E52 /* Info.plist */,
+				B41366CB1C3C0DE300B2344A /* TileLayer.swift */,
+				B41366CD1C3C0F1A00B2344A /* StaticTile.swift */,
 			);
-			path = Map;
+			path = LATWMap;
 			sourceTree = "<group>";
 		};
-		B495DAB21C38666300CA0E52 /* MapTests */ = {
+		B495DAB21C38666300CA0E52 /* LATWMapTests */ = {
 			isa = PBXGroup;
 			children = (
 				B495DAB51C38666300CA0E52 /* Info.plist */,
 				B495DAE81C38677500CA0E52 /* Map.swift */,
 				B495DAEA1C3867BF00CA0E52 /* TileSet.swift */,
 			);
-			path = MapTests;
+			path = LATWMapTests;
 			sourceTree = "<group>";
 		};
 		B495DACC1C38671100CA0E52 /* EditorMap */ = {
@@ -636,9 +642,9 @@
 			productReference = B495DA311C38484A00CA0E52 /* TileMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B495DAA21C38666300CA0E52 /* Map */ = {
+		B495DAA21C38666300CA0E52 /* LATWMap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "Map" */;
+			buildConfigurationList = B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "LATWMap" */;
 			buildPhases = (
 				B495DA9E1C38666300CA0E52 /* Sources */,
 				B495DA9F1C38666300CA0E52 /* Frameworks */,
@@ -649,14 +655,14 @@
 			);
 			dependencies = (
 			);
-			name = Map;
+			name = LATWMap;
 			productName = Map;
-			productReference = B495DAA31C38666300CA0E52 /* Map.framework */;
+			productReference = B495DAA31C38666300CA0E52 /* LATWMap.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B495DAAB1C38666300CA0E52 /* MapTests */ = {
+		B495DAAB1C38666300CA0E52 /* LATWMapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "MapTests" */;
+			buildConfigurationList = B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "LATWMapTests" */;
 			buildPhases = (
 				B495DAA81C38666300CA0E52 /* Sources */,
 				B495DAA91C38666300CA0E52 /* Frameworks */,
@@ -668,9 +674,9 @@
 				B495DAAF1C38666300CA0E52 /* PBXTargetDependency */,
 				B495DAB11C38666300CA0E52 /* PBXTargetDependency */,
 			);
-			name = MapTests;
+			name = LATWMapTests;
 			productName = MapTests;
-			productReference = B495DAAC1C38666300CA0E52 /* MapTests.xctest */;
+			productReference = B495DAAC1C38666300CA0E52 /* LATWMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B495DACA1C38671100CA0E52 /* EditorMap */ = {
@@ -811,8 +817,8 @@
 				B4522F6D1C38316F009B7314 /* Link Against the World StudioTests */,
 				B495DA271C38484A00CA0E52 /* TileMap */,
 				B495DA301C38484A00CA0E52 /* TileMapTests */,
-				B495DAA21C38666300CA0E52 /* Map */,
-				B495DAAB1C38666300CA0E52 /* MapTests */,
+				B495DAA21C38666300CA0E52 /* LATWMap */,
+				B495DAAB1C38666300CA0E52 /* LATWMapTests */,
 				B495DACA1C38671100CA0E52 /* EditorMap */,
 				B495DAD31C38671100CA0E52 /* EditorMapTests */,
 				B495DAF41C38850800CA0E52 /* CrossPlatform */,
@@ -994,6 +1000,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B495DAC41C38667B00CA0E52 /* Map.swift in Sources */,
+				B41366CE1C3C0F1A00B2344A /* StaticTile.swift in Sources */,
+				B41366CC1C3C0DE300B2344A /* TileLayer.swift in Sources */,
 				B495DAC51C38667B00CA0E52 /* TileSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1064,7 +1072,7 @@
 		};
 		B495DAAF1C38666300CA0E52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B495DAA21C38666300CA0E52 /* Map */;
+			target = B495DAA21C38666300CA0E52 /* LATWMap */;
 			targetProxy = B495DAAE1C38666300CA0E52 /* PBXContainerItemProxy */;
 		};
 		B495DAB11C38666300CA0E52 /* PBXTargetDependency */ = {
@@ -1074,7 +1082,7 @@
 		};
 		B495DAB71C38666300CA0E52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B495DAA21C38666300CA0E52 /* Map */;
+			target = B495DAA21C38666300CA0E52 /* LATWMap */;
 			targetProxy = B495DAB61C38666300CA0E52 /* PBXContainerItemProxy */;
 		};
 		B495DAD71C38671100CA0E52 /* PBXTargetDependency */ = {
@@ -1601,7 +1609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "Map" */ = {
+		B495DABA1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "LATWMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B495DABB1C38666300CA0E52 /* Debug */,
@@ -1610,7 +1618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "MapTests" */ = {
+		B495DABD1C38666300CA0E52 /* Build configuration list for PBXNativeTarget "LATWMapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B495DABE1C38666300CA0E52 /* Debug */,
