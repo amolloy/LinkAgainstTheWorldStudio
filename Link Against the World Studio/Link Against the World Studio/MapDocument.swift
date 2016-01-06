@@ -64,6 +64,15 @@ class MapDocument: NSDocument {
 			}
 		}
 
+		for tileLayer in map.tileLayers
+		{
+			if let fileWrapper = tileLayer.fileWrapper()
+			{
+				fileWrapper.preferredFilename = (tileLayer.name as NSString).stringByAppendingPathExtension("tilelayer")
+				documentFileWrapper.addFileWrapper(fileWrapper)
+			}
+		}
+
 		return documentFileWrapper
 	}
 

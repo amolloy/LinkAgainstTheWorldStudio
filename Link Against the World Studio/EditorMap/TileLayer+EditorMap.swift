@@ -1,10 +1,11 @@
 //
-//  TileSet+EditorMap.swift
+//  TileLayer+EditorMap.swift
 //  Link Against the World Studio
 //
-//  Created by Andrew Molloy on 1/4/16.
+//  Created by Andrew Molloy on 1/6/16.
 //  Copyright © 2016 Andy Molloy. All rights reserved.
 //
+
 
 import Foundation
 import LATWMap
@@ -13,7 +14,7 @@ import CrossPlatform
 
 private let version = "1.0"
 
-public extension TileSet
+public extension TileLayer
 {
 	public func fileWrapper() -> NSFileWrapper?
 	{
@@ -33,63 +34,54 @@ public extension TileSet
 		}
 
 		let controlFile = NSFileWrapper(regularFileWithContents: jsonData)
-		var imageFile : NSFileWrapper? = nil
-		if let image = image
-		{
-			if let imageData = image.TIFFRepresentation
-			{
-				imageFile = NSFileWrapper(regularFileWithContents: imageData)
-			}
-		}
 
-		var wrapperDict = ["Info.json": controlFile]
-		if let imageFile = imageFile
-		{
-			wrapperDict[imageName] = imageFile
-		}
-
-		return NSFileWrapper(directoryWithFileWrappers: wrapperDict)
+		return NSFileWrapper(directoryWithFileWrappers: ["Info.json": controlFile])
 	}
 
 	public convenience init?(fileWrapper: NSFileWrapper) throws
 	{
-		guard let fileWrappers = fileWrapper.fileWrappers else { return nil }
-		guard let controlFile = fileWrappers["Info.json"] else { return nil }
-		guard let jsonData = controlFile.regularFileContents else { return nil }
+		guard let fileWrappers = fileWrapper.fileWrappers,
+			  let controlFile = fileWrappers["Info.json"],
+			  let jsonData = controlFile.regularFileContents else { return nil }
+
 		let jsonDict = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions(rawValue: 0))
 		self.init(JSONDictionary: jsonDict as! JSONObject)
-
-		guard let imageWrapper = fileWrappers[imageName] else { return nil }
-		guard let imageData = imageWrapper.regularFileContents else { return nil }
-		guard let image = Image(data: imageData) else { return nil }
-
-		self.image = image
 	}
 }
 
 private let versionKey = "version"
 private let nameKey = "name"
-private let imageNameKey = "imageName"
-private let tileCountKey = "tileCount"
-private let tileWidthKey = "tileWidth"
-private let tileHeightKey = "tileHeight"
+private let tileSetKey = "tileSet"
+private let terrainsKey = "terrains"
+private let layerDataKey = "layerData"
+private let zIndexKey = "zIndex"
 
-extension TileSet : JSONEncodable
+extension TileLayer : JSONEncodable
 {
 	public func toJSON() throws -> AnyObject
 	{
 		return try JSONEncoder.create({ (encoder) -> Void in
 			try encoder.encode(version, key: versionKey)
-			try encoder.encode(imageName, key: imageNameKey)
 			try encoder.encode(name, key: nameKey)
-			try encoder.encode(tileCount, key: tileCountKey)
-			try encoder.encode(tileWidth, key: tileWidthKey)
-			try encoder.encode(tileHeight, key: tileHeightKey)
+			if let tileSet = tileSet
+			{
+				try encoder.encode(tileSetKey, key: tileSet.name)
+			}
+			// TODO Add terrains support
+			try encoder.encode(zIndex, key: zIndexKey)
+
+			let layerData = tiles.flatMap { row in
+				return row.reduce(String(), combine: { (accum, tile : Tileable) -> String in
+					return accum + "," + tile.editorMapRepresentation()
+				})
+			}
+
+			try encoder.encode(layerData, key: layerDataKey)
 		})
 	}
 }
 
-extension TileSet : JSONDecodable
+extension TileLayer : JSONDecodable
 {
 	public convenience init?(JSONDictionary: JSONObject)
 	{
@@ -103,12 +95,7 @@ extension TileSet : JSONDecodable
 				print("TileSet \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
 			}
 
-			self.init(image: nil,
-				imageName: try decoder.decode(imageNameKey),
-				name: name,
-				tileCount: try decoder.decode(tileCountKey),
-				tileWidth: try decoder.decode(tileWidthKey),
-				tileHeight: try decoder.decode(tileHeightKey))
+			self.init(name: name, tiles: [[Tileable]]())
 		}
 		catch
 		{

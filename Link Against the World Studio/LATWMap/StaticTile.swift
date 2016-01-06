@@ -16,4 +16,9 @@ public class StaticTile : Tileable
 	{
 		self.index = index
 	}
+
+	public func editorMapRepresentation() -> String
+	{
+		return String(index)
+	}
 }

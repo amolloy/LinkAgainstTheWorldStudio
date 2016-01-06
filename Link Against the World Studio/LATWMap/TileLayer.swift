@@ -8,24 +8,31 @@
 
 import Foundation
 
-public protocol Tileable {}
+public protocol Tileable
+{
+	// UGH Because of protocol extension dispatch rules, this MUST be here and cannot be in the EditorMap framework where it belongs.
+	func editorMapRepresentation() -> String
+}
 
-public class TileLayer
+final public class TileLayer
 {
 	public private(set) var tiles: [[Tileable]]
 	public var name: String
 	public private(set) var tileSet : TileSet?
+	public var zIndex: Int
 
 	public init()
 	{
 		self.name = ""
 		self.tiles = [[Tileable]]()
+		self.zIndex = 0
 	}
 
 	public init(name: String, tiles: [[Tileable]])
 	{
 		self.name = name
 		self.tiles = tiles
+		self.zIndex = 0
 	}
 
 	public func setTileAtX(x: Int, y: Int, tile: Tileable)
@@ -37,4 +44,8 @@ public class TileLayer
 public class EmptyTile : Tileable
 {
 	public init() {}
+	public func editorMapRepresentation() -> String
+	{
+		return "-"
+	}
 }

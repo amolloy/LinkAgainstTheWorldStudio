@@ -165,6 +165,7 @@ extension Map
 
 		self.addTileSet(tileSet)
 
+		var zIndex = 0
 		for layer in tileMap.layers
 		{
 			let baseLayerName = layer.chunkType.rawValue.rawValue
@@ -174,6 +175,8 @@ extension Map
 				{
 					let layerName = baseLayerName + "_" + String(i)
 					tileLayer.name = layerName
+					tileLayer.zIndex = zIndex
+					zIndex = zIndex + 1
 					self.addTileLayer(tileLayer)
 				}
 			}
