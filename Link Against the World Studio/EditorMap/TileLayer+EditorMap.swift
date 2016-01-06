@@ -101,7 +101,7 @@ extension TileLayer : JSONDecodable
 			let jsonVersion : String = try decoder.decode(versionKey)
 			if jsonVersion.compare(version, options: .NumericSearch, range: nil, locale: nil) == .OrderedDescending
 			{
-				print("TileSet \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
+				print("TileLayer \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
 			}
 
 			self.init(name: name, tiles: [[Tileable]]())
