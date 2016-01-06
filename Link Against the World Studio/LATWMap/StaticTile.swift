@@ -10,12 +10,10 @@ import Foundation
 
 public class StaticTile : Tileable
 {
-	unowned var tileSet : TileSet
 	var index : Int
 
-	public init(tileSet: TileSet, index: Int)
+	public init(index: Int)
 	{
-		self.tileSet = tileSet
 		self.index = index
 	}
 }

@@ -64,12 +64,14 @@ extension TileMap
 			var used : Bool
 			let size : Size
 			var tileLayer : TileLayer?
+			var tileSet : TileSet
 
-			init(origin: Layer, size: Size)
+			init(origin: Layer, size: Size, tileSet: TileSet)
 			{
 				self.origin = origin
-				used = false
+				self.used = false
 				self.size = size
+				self.tileSet = tileSet
 			}
 
 			func setTileAtX(x: Int, y: Int, tile: LATWMap.Tileable)
@@ -89,10 +91,10 @@ extension TileMap
 			}
 		}
 
-		var workTileLayers = [TileLayerWork(origin: layer, size:mapHeader.mapSize),
-						  TileLayerWork(origin: layer, size:mapHeader.mapSize),
-						  TileLayerWork(origin: layer, size:mapHeader.mapSize),
-						  TileLayerWork(origin: layer, size:mapHeader.mapSize)]
+		var workTileLayers = [TileLayerWork(origin: layer, size:mapHeader.mapSize, tileSet: tileSet),
+						  TileLayerWork(origin: layer, size:mapHeader.mapSize, tileSet: tileSet),
+						  TileLayerWork(origin: layer, size:mapHeader.mapSize, tileSet: tileSet),
+						  TileLayerWork(origin: layer, size:mapHeader.mapSize, tileSet: tileSet)]
 
 		for y in 0..<mapHeader.mapSize.height
 		{
@@ -101,14 +103,14 @@ extension TileMap
 				let tile = layer.tiles[mapHeader.mapSize.height - 1 - y][x]
 				if let tile = tile as? BlockData.BlockStructure
 				{
-					let bgTile = StaticTile(tileSet: tileSet, index: tile.backgroundIndex)
+					let bgTile = StaticTile(index: tile.backgroundIndex)
 					workTileLayers[0].setTileAtX(x, y: y, tile: bgTile)
 
 					for i in 0..<3
 					{
 						if tile.foregroundIndices[i] != 0
 						{
-							let fgTile = StaticTile(tileSet: tileSet, index: tile.foregroundIndices[i])
+							let fgTile = StaticTile(index: tile.foregroundIndices[i])
 							workTileLayers[i + 1].setTileAtX(x, y: y, tile: fgTile)
 						}
 					}

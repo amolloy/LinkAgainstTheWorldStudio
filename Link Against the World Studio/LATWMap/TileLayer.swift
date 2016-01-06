@@ -14,6 +14,7 @@ public class TileLayer
 {
 	public private(set) var tiles: [[Tileable]]
 	public var name: String
+	public private(set) var tileSet : TileSet?
 
 	public init()
 	{
