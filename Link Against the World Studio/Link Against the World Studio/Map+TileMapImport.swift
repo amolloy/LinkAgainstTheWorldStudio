@@ -8,7 +8,7 @@
 
 import Foundation
 import TileMap
-import Map
+import LATWMap
 import CrossPlatform
 import ImageUtilities
 
@@ -49,6 +49,96 @@ func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Im
 	return Image(CGImage: cgImage, size: NSSize(atlasSize))
 }
 
+extension TileMap
+{
+	func tileLayersForLayer(layer : Layer, tileSet: TileSet) -> [TileLayer]?
+	{
+		guard let mapHeader = mapHeader else
+		{
+			return nil
+		}
+
+		class TileLayerWork
+		{
+			var origin : Layer
+			var used : Bool
+			let size : Size
+			var tileLayer : TileLayer?
+
+			init(origin: Layer, size: Size)
+			{
+				self.origin = origin
+				used = false
+				self.size = size
+			}
+
+			func setTileAtX(x: Int, y: Int, tile: LATWMap.Tileable)
+			{
+				if tileLayer == nil
+				{
+					let emptyTile : LATWMap.Tileable = EmptyTile()
+					let tiles = Array(count: size.height, repeatedValue:
+						Array(count: size.width, repeatedValue:emptyTile))
+
+					used = true
+
+					tileLayer = TileLayer(name: "", tiles: tiles)
+				}
+				guard let tileLayer = tileLayer else { return }
+				tileLayer.setTileAtX(x, y: y, tile: tile)
+			}
+		}
+
+		var workTileLayers = [TileLayerWork(origin: layer, size:mapHeader.mapSize),
+						  TileLayerWork(origin: layer, size:mapHeader.mapSize),
+						  TileLayerWork(origin: layer, size:mapHeader.mapSize),
+						  TileLayerWork(origin: layer, size:mapHeader.mapSize)]
+
+		for y in 0..<mapHeader.mapSize.height
+		{
+			for x in 0..<mapHeader.mapSize.width
+			{
+				let tile = layer.tiles[mapHeader.mapSize.height - 1 - y][x]
+				if let tile = tile as? BlockData.BlockStructure
+				{
+					let bgTile = StaticTile(tileSet: tileSet, index: tile.backgroundIndex)
+					workTileLayers[0].setTileAtX(x, y: y, tile: bgTile)
+
+					for i in 0..<3
+					{
+						if tile.foregroundIndices[i] != 0
+						{
+							let fgTile = StaticTile(tileSet: tileSet, index: tile.foregroundIndices[i])
+							workTileLayers[i + 1].setTileAtX(x, y: y, tile: fgTile)
+						}
+					}
+				}
+				else if let _ = tile as? AnimationData.AnimationStructure
+				{
+					// TODO
+				}
+				else
+				{
+					assertionFailure()
+				}
+			}
+		}
+
+		guard let bgLayer = workTileLayers[0].tileLayer else { return nil }
+		var tileLayers = [bgLayer]
+
+		for workLayer in workTileLayers.dropFirst()
+		{
+			if let fgLayer = workLayer.tileLayer where workLayer.used
+			{
+				tileLayers.append(fgLayer)
+			}
+		}
+
+		return tileLayers
+	}
+}
+
 extension Map
 {
 	convenience init?(tileMap: TileMap) throws
@@ -72,5 +162,20 @@ extension Map
 			tileHeight: blockSize.height)
 
 		self.addTileSet(tileSet)
+
+		for layer in tileMap.layers
+		{
+			let baseLayerName = layer.chunkType.rawValue.rawValue
+			if let tileLayers = tileMap.tileLayersForLayer(layer, tileSet: tileSet)
+			{
+				for (i, tileLayer) in tileLayers.enumerate()
+				{
+					let layerName = baseLayerName + "_" + String(i)
+					tileLayer.name = layerName
+					self.addTileLayer(tileLayer)
+				}
+			}
+		}
+
 	}
 }

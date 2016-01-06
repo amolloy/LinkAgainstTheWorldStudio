@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Map
+import LATWMap
 import JSONCodable
 import CrossPlatform
 

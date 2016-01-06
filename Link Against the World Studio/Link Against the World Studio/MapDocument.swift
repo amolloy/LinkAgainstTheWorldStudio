@@ -8,7 +8,7 @@
 
 import Cocoa
 import TileMap
-import Map
+import LATWMap
 import EditorMap
 
 class MapDocument: NSDocument {
