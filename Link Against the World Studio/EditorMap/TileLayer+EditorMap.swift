@@ -72,7 +72,16 @@ extension TileLayer : JSONEncodable
 
 			let layerData = tiles.flatMap { row in
 				return row.reduce(String(), combine: { (accum, tile : Tileable) -> String in
-					return accum + "," + tile.editorMapRepresentation()
+					let r : String
+					if accum.isEmpty
+					{
+						r = tile.editorMapRepresentation()
+					}
+					else
+					{
+						r = accum + "," + tile.editorMapRepresentation()
+					}
+					return r
 				})
 			}
 
