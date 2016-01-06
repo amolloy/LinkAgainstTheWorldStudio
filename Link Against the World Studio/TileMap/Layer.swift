@@ -12,11 +12,13 @@ public protocol Tileable {}
 
 public class Layer : Loadable
 {
-	var chunkType : ChunkType?
+	public private(set) var chunkType : ChunkType
 	public let tiles : [[Tileable]]
 
 	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
+		self.chunkType = chunkType
+		
 		guard let mapHeader = tileMap.mapHeader,
 		let blockData = tileMap.blockData,
 		let animationData = tileMap.animationData else
