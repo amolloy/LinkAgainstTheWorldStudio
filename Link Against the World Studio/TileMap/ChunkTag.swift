@@ -9,19 +9,19 @@
 import Foundation
 
 // Represents a FourCC chunk tag
-struct ChunkTag : Equatable, RawRepresentable
+public struct ChunkTag : Equatable, RawRepresentable
 {
-	typealias RawValue = String
+	public typealias RawValue = String
 
 	var tag : [Char]
 
-	init?(characters: [Char])
+	public init?(characters: [Char])
 	{
 		guard characters.count == 4 else { return nil }
 		tag = characters
 	}
 
-	init?(rawValue: RawValue)
+	public init?(rawValue: RawValue)
 	{
 		let fourCCStringUTF8 = rawValue.utf8
 		var chars = [Char]()
@@ -41,7 +41,7 @@ struct ChunkTag : Equatable, RawRepresentable
 		tag = [Char](chars)
 	}
 
-	var rawValue: RawValue
+	public var rawValue: RawValue
 	{
 		get
 		{
@@ -59,21 +59,21 @@ struct ChunkTag : Equatable, RawRepresentable
 
 extension ChunkTag : StringLiteralConvertible
 {
-	typealias StringLiteralType = RawValue
-	typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
-	typealias UnicodeScalarLiteralType = StringLiteralType
+	public typealias StringLiteralType = RawValue
+	public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+	public typealias UnicodeScalarLiteralType = StringLiteralType
 
-	init(stringLiteral value: StringLiteralType)
+	public init(stringLiteral value: StringLiteralType)
 	{
 		self = ChunkTag(someString: value)
 	}
 
-	init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType)
+	public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType)
 	{
 		self = ChunkTag(someString: value)
 	}
 
-	init(unicodeScalarLiteral value: UnicodeScalarLiteralType)
+	public init(unicodeScalarLiteral value: UnicodeScalarLiteralType)
 	{
 		self = ChunkTag(someString: value)
 	}
@@ -89,7 +89,7 @@ extension ChunkTag : StringLiteralConvertible
 	}
 }
 
-func ==(lhs: ChunkTag, rhs: ChunkTag) -> Bool
+public func ==(lhs: ChunkTag, rhs: ChunkTag) -> Bool
 {
 	return lhs.tag == rhs.tag
 }

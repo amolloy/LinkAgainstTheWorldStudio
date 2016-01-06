@@ -8,11 +8,11 @@
 
 import Foundation
 
-class ColorMap : Loadable
+public class ColorMap : Loadable
 {
 	let palette : [TileMap.Color]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		if dataLength % 3 != 0
 		{

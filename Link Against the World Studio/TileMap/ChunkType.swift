@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ChunkType : ChunkTag
+public enum ChunkType : ChunkTag
 {
 	case ATHR = "ATHR"
 	case MPHD = "MPHD"
@@ -27,7 +27,7 @@ enum ChunkType : ChunkTag
 	case LYR6 = "LYR6"
 	case LYR7 = "LYR7"
 
-	func layer() -> Int
+	public func layer() -> Int
 	{
 		let layer : Int
 		switch(self)
@@ -64,7 +64,7 @@ enum ChunkType : ChunkTag
 	}
 }
 
-func ~=(pattern: String, value: ChunkType) -> Bool
+public func ~=(pattern: String, value: ChunkType) -> Bool
 {
 	let match = value.rawValue.rawValue.rangeOfString(pattern, options: .RegularExpressionSearch)
 	return match != nil

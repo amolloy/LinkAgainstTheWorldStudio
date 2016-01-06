@@ -8,9 +8,9 @@
 
 import Foundation
 
-class BlockData : Loadable
+public class BlockData : Loadable
 {
-	class BlockStructure : Tileable
+	public class BlockStructure : Tileable
 	{
 		struct CollisionSet : OptionSetType
 		{
@@ -27,8 +27,8 @@ class BlockData : Loadable
 			static var br : CollisionSet { return CollisionSet(rawValue: 1 << 3) }
 		}
 
-		let backgroundIndex : Int
-		let foregroundIndices : [Int]
+		public let backgroundIndex : Int
+		public let foregroundIndices : [Int]
 		let user1 : Int
 		let user2 : Int
 		let user3 : Int16
@@ -68,9 +68,9 @@ class BlockData : Loadable
 		}
 	}
 
-	let blockStructures : [BlockStructure]
+	public let blockStructures : [BlockStructure]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		var blockStructures = [BlockStructure]()
 

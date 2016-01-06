@@ -8,17 +8,14 @@
 
 import Foundation
 
-protocol Tileable
-{
+public protocol Tileable {}
 
-}
-
-class Layer : Loadable
+public class Layer : Loadable
 {
 	var chunkType : ChunkType?
-	let tiles : [[Tileable]]
+	public let tiles : [[Tileable]]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let mapHeader = tileMap.mapHeader,
 		let blockData = tileMap.blockData,

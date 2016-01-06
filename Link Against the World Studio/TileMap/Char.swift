@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Char : UInt8
+public enum Char : UInt8
 {
 	case NULL = 0x00
 	case Space = 0x20
@@ -28,32 +28,32 @@ enum Char : UInt8
 
 extension Char : StringLiteralConvertible
 {
-	typealias StringLiteralType = String
-	typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
-	typealias UnicodeScalarLiteralType = ExtendedGraphemeClusterLiteralType
+	public typealias StringLiteralType = String
+	public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+	public typealias UnicodeScalarLiteralType = ExtendedGraphemeClusterLiteralType
 
-	init(someString value: String)
+	public init(someString value: String)
 	{
 		self = Char(rawValue: UInt8(value.utf8.first!.value)) ?? Char.NULL
 	}
 
-	init(stringLiteral value: StringLiteralType)
+	public init(stringLiteral value: StringLiteralType)
 	{
 		self = Char(someString: value)
 	}
 
-	init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType)
+	public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType)
 	{
 		self = Char(someString: value)
 	}
 
-	init(unicodeScalarLiteral value: UnicodeScalarLiteralType)
+	public init(unicodeScalarLiteral value: UnicodeScalarLiteralType)
 	{
 		self = Char(someString: value)
 	}
 }
 
-extension NSInputStream
+public extension NSInputStream
 {
 	func read(buffer: UnsafeMutablePointer<Char>, maxLength len: Int) -> Int
 	{

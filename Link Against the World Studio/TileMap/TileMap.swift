@@ -33,14 +33,14 @@ public class TileMap
 
 	var inputStream : NSInputStream
 
-	var animationData : AnimationData?
-	var author : Author?
-	var blockData : BlockData?
-	var blockGraphics : BlockGraphics?
-	var colorMap : ColorMap?
-	var editorInfo : EditorInfo?
-	var layers : [Layer]
-	var mapHeader : MapHeader?
+	public internal(set) var animationData : AnimationData?
+	public internal(set) var author : Author?
+	public internal(set) var blockData : BlockData?
+	public internal(set) var blockGraphics : BlockGraphics?
+	public internal(set) var colorMap : ColorMap?
+	public internal(set) var editorInfo : EditorInfo?
+	public internal(set) var layers : [Layer]
+	public internal(set) var mapHeader : MapHeader?
 	var unknownChunks : [Unknown]
 
 	public convenience init?(path : String)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapHeader : Loadable
+public class MapHeader : Loadable
 {
 	enum MapType : UInt8, Comparable
 	{
@@ -17,15 +17,15 @@ class MapHeader : Loadable
 		case FMP10RLE
 	}
 
-	typealias Size = TileMap.Size
+	public  typealias Size = TileMap.Size
 
 	let mapVersion : NSDecimalNumber
 	let swapBytes : Bool
 	let mapType : MapType
-	let mapSize : Size
+	public let mapSize : Size
 	let reserved1 : Int
 	let reserved2 : Int
-	let blockSize : Size
+	public let blockSize : Size
 	let blockColorDepth : Int
 	let blockStructureSize : Int
 	let blockStructureCount : Int
@@ -37,7 +37,7 @@ class MapHeader : Loadable
 	let clickMask : Int
 	let pillars : Int
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let versionHigh = inputStream.readUInt8(),
 			let versionLow = inputStream.readUInt8() else

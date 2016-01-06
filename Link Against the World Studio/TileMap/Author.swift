@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Author : Loadable
+public class Author : Loadable
 {
 	let authorInfo : [String]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		// ATHR chunk is up to 4 NULL-separated C-strings
 		var bytes = [UInt8](count: dataLength, repeatedValue: 0)

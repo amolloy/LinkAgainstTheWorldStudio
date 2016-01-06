@@ -8,9 +8,9 @@
 
 import Foundation
 
-class AnimationData : Loadable
+public class AnimationData : Loadable
 {
-	class AnimationStructure : Tileable
+	public class AnimationStructure : Tileable
 	{
 		enum AnimType : Int8
 		{
@@ -52,7 +52,7 @@ class AnimationData : Loadable
 
 	let animationStructures : [AnimationStructure]
 
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let mapHeader = tileMap.mapHeader else
 		{
