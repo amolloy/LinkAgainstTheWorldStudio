@@ -72,6 +72,7 @@
 		B495DB121C395EDD00CA0E52 /* ImageUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B495DB171C395EFA00CA0E52 /* Image+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495DB161C395EFA00CA0E52 /* Image+Utilities.swift */; };
 		B495DB181C395F0600CA0E52 /* CrossPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; };
+		B4AA2E9C1C3EA8E100C40A51 /* Map+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */; };
 		B4D890851C3DA173007317AD /* TileLayer+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +252,7 @@
 		B495DB0C1C395EDD00CA0E52 /* ImageUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUtilities.h; sourceTree = "<group>"; };
 		B495DB0E1C395EDD00CA0E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B495DB161C395EFA00CA0E52 /* Image+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Utilities.swift"; sourceTree = "<group>"; };
+		B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+EditorMap.swift"; sourceTree = "<group>"; };
 		B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TileLayer+EditorMap.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -489,6 +491,7 @@
 				B495DACF1C38671100CA0E52 /* Info.plist */,
 				B46740121C3AC26700293C9B /* TileSet+EditorMap.swift */,
 				B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */,
+				B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */,
 			);
 			path = EditorMap;
 			sourceTree = "<group>";
@@ -1024,6 +1027,7 @@
 			files = (
 				B46740131C3AC26700293C9B /* TileSet+EditorMap.swift in Sources */,
 				B4D890851C3DA173007317AD /* TileLayer+EditorMap.swift in Sources */,
+				B4AA2E9C1C3EA8E100C40A51 /* Map+EditorMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

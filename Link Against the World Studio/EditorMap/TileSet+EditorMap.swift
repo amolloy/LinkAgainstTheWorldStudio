@@ -116,3 +116,26 @@ extension TileSet : JSONDecodable
 		}
 	}
 }
+
+typealias EditorMapTileSetLoader = TileSet
+extension EditorMapTileSetLoader : EditorMapSegment
+{
+	static func loadSegmentFromFileWrapper(fileWrapper: NSFileWrapper, owner: Map) throws
+	{
+		if let tileSet = try TileSet(fileWrapper: fileWrapper)
+		{
+			owner.addTileSet(tileSet)
+		}
+
+	}
+
+	static func segmentDependencies() -> [EditorMapSegment.Type]
+	{
+		return []
+	}
+
+	static func segmentExtension() -> String
+	{
+		return "tileset"
+	}
+}

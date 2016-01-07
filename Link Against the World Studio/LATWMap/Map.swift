@@ -18,7 +18,11 @@ public class Map
 		self.tileSets = [String: TileSet]()
 		self.tileLayers = [TileLayer]()
 	}
+}
 
+private typealias MapTileSets = Map
+extension MapTileSets
+{
 	public func addTileSet(tileSet: TileSet) -> Bool
 	{
 		if let _ = tileSets[tileSet.name]
@@ -28,7 +32,11 @@ public class Map
 		tileSets[tileSet.name] = tileSet
 		return true
 	}
+}
 
+private typealias MapTileLayers = Map
+extension MapTileLayers
+{
 	public func addTileLayer(tileLayer: TileLayer)
 	{
 		tileLayers.append(tileLayer)

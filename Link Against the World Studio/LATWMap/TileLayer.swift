@@ -28,11 +28,12 @@ final public class TileLayer
 		self.zIndex = 0
 	}
 
-	public init(name: String, tiles: [[Tileable]])
+	public init(name: String, tiles: [[Tileable]], tileSet: TileSet)
 	{
 		self.name = name
 		self.tiles = tiles
 		self.zIndex = 0
+		self.tileSet = tileSet
 	}
 
 	public func setTileAtX(x: Int, y: Int, tile: Tileable)

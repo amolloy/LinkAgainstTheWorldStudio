@@ -84,7 +84,7 @@ extension TileMap
 
 					used = true
 
-					tileLayer = TileLayer(name: "", tiles: tiles)
+					tileLayer = TileLayer(name: "", tiles: tiles, tileSet: tileSet)
 				}
 				guard let tileLayer = tileLayer else { return }
 				tileLayer.setTileAtX(x, y: y, tile: tile)

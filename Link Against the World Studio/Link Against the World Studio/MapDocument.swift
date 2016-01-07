@@ -11,8 +11,8 @@ import TileMap
 import LATWMap
 import EditorMap
 
-class MapDocument: NSDocument {
-
+class MapDocument: NSDocument
+{
 	let standardFileType = "com.amolloy.latwmap"
 	var map : Map?
 	var documentFileWrapper : NSFileWrapper?
@@ -94,30 +94,7 @@ class MapDocument: NSDocument {
 		}
 		else if (NSWorkspace.sharedWorkspace().type(standardFileType, conformsToType: typeName))
 		{
-			map = Map()
-			guard let map = map else { return }
-
-			// TODO error handling
-			guard let fileWrappers = fileWrapper.fileWrappers else { return }
-			for key in fileWrappers.keys
-			{
-				if let wrapper = fileWrappers[key]
-				{
-					let ext = (key as NSString).pathExtension.lowercaseString as String
-					switch ext
-					{
-					case "tileset":
-						if let tileset = try TileSet(fileWrapper: wrapper)
-						{
-							map.addTileSet(tileset)
-						}
-						break
-					default:
-						print("Unknown file in LATW Map: \(key)")
-						break
-					}
-				}
-			}
+			map = try mapFromFileWrapper(fileWrapper)
 		}
 	}
 
