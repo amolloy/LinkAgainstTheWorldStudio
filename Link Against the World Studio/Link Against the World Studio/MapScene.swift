@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import SpriteKit
+
+class MapScene : SKScene
+{
+	override func mouseDragged(theEvent: NSEvent)
+	{
+		if let node = children.first
+		{
+			node.position = CGPoint(x: node.position.x + theEvent.deltaX, y: node.position.y - theEvent.deltaY)
+		}
+	}
+}
