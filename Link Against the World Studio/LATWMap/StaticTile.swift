@@ -10,7 +10,7 @@ import Foundation
 
 public class StaticTile : Tileable
 {
-	var index : Int
+	public private(set) var index : Int
 
 	public init(index: Int)
 	{
