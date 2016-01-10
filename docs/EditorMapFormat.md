@@ -3,6 +3,7 @@
 The Link Against the World Studio editor map is represented on disk by an OS X bundle. While there is a tendency to want to use plist files within a bundle, JSON will be used instead.  The bundle contains a control file and one or more of the following:
 
 - [Tile Sets](#tile-sets)
+- Animated Tiles (TBD)
 - [Brush Sets](#brush-sets)
 - [Terrain Sets](#terrain-sets)
 - [Tile Layers](#tile-layers)
@@ -103,7 +104,7 @@ A tile layer is represented by a JSON file with the following keys:
 -----|-------------------
 version | Currently always 1.0
 name | A string uniquely identifying the layer within the map
-tileset | The name of the tile set used by the layer
+tileSet | The name of the tile set used by the layer
 terrains | An array of terrain names used by the layer
 layerData | An array of strings representing the layer data. Each entry in the array represents a row in the layer, from top to bottom. The string is a comma separated list of values. Each value represents a cell in a column of the layer, from left to right. Definitions of these values are found in the table below.
 zIndex | The z-index for this tile layer. Higher numbers are "closer" to the user.
