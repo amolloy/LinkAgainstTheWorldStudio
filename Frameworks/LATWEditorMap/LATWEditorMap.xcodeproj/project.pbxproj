@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4366F1D1C381BDE009EF222 /* LATWEditorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B4366F1C1C381BDE009EF222 /* LATWEditorMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4366F241C381BDE009EF222 /* LATWEditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4366F191C381BDE009EF222 /* LATWEditorMap.framework */; };
+		B4366F291C381BDE009EF222 /* LATWEditorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4366F281C381BDE009EF222 /* LATWEditorMapTests.swift */; };
+		B4C86D461C381C55002B5F3B /* MapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C86D451C381C55002B5F3B /* MapDocument.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4366F251C381BDE009EF222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4366F101C381BDE009EF222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4366F181C381BDE009EF222;
+			remoteInfo = LATWEditorMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B4366F191C381BDE009EF222 /* LATWEditorMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LATWEditorMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4366F1C1C381BDE009EF222 /* LATWEditorMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LATWEditorMap.h; sourceTree = "<group>"; };
+		B4366F1E1C381BDE009EF222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4366F231C381BDE009EF222 /* LATWEditorMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LATWEditorMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4366F281C381BDE009EF222 /* LATWEditorMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATWEditorMapTests.swift; sourceTree = "<group>"; };
+		B4366F2A1C381BDE009EF222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4C86D451C381C55002B5F3B /* MapDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDocument.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4366F151C381BDE009EF222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4366F201C381BDE009EF222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4366F241C381BDE009EF222 /* LATWEditorMap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4366F0F1C381BDE009EF222 = {
+			isa = PBXGroup;
+			children = (
+				B4366F1B1C381BDE009EF222 /* LATWEditorMap */,
+				B4366F271C381BDE009EF222 /* LATWEditorMapTests */,
+				B4366F1A1C381BDE009EF222 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4366F1A1C381BDE009EF222 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4366F191C381BDE009EF222 /* LATWEditorMap.framework */,
+				B4366F231C381BDE009EF222 /* LATWEditorMapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4366F1B1C381BDE009EF222 /* LATWEditorMap */ = {
+			isa = PBXGroup;
+			children = (
+				B4366F1C1C381BDE009EF222 /* LATWEditorMap.h */,
+				B4366F1E1C381BDE009EF222 /* Info.plist */,
+				B4C86D451C381C55002B5F3B /* MapDocument.swift */,
+			);
+			path = LATWEditorMap;
+			sourceTree = "<group>";
+		};
+		B4366F271C381BDE009EF222 /* LATWEditorMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4366F281C381BDE009EF222 /* LATWEditorMapTests.swift */,
+				B4366F2A1C381BDE009EF222 /* Info.plist */,
+			);
+			path = LATWEditorMapTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B4366F161C381BDE009EF222 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4366F1D1C381BDE009EF222 /* LATWEditorMap.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B4366F181C381BDE009EF222 /* LATWEditorMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4366F2D1C381BDE009EF222 /* Build configuration list for PBXNativeTarget "LATWEditorMap" */;
+			buildPhases = (
+				B4366F141C381BDE009EF222 /* Sources */,
+				B4366F151C381BDE009EF222 /* Frameworks */,
+				B4366F161C381BDE009EF222 /* Headers */,
+				B4366F171C381BDE009EF222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LATWEditorMap;
+			productName = LATWEditorMap;
+			productReference = B4366F191C381BDE009EF222 /* LATWEditorMap.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4366F221C381BDE009EF222 /* LATWEditorMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4366F301C381BDE009EF222 /* Build configuration list for PBXNativeTarget "LATWEditorMapTests" */;
+			buildPhases = (
+				B4366F1F1C381BDE009EF222 /* Sources */,
+				B4366F201C381BDE009EF222 /* Frameworks */,
+				B4366F211C381BDE009EF222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4366F261C381BDE009EF222 /* PBXTargetDependency */,
+			);
+			name = LATWEditorMapTests;
+			productName = LATWEditorMapTests;
+			productReference = B4366F231C381BDE009EF222 /* LATWEditorMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4366F101C381BDE009EF222 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Andy Molloy";
+				TargetAttributes = {
+					B4366F181C381BDE009EF222 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B4366F221C381BDE009EF222 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = B4366F131C381BDE009EF222 /* Build configuration list for PBXProject "LATWEditorMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B4366F0F1C381BDE009EF222;
+			productRefGroup = B4366F1A1C381BDE009EF222 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4366F181C381BDE009EF222 /* LATWEditorMap */,
+				B4366F221C381BDE009EF222 /* LATWEditorMapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4366F171C381BDE009EF222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4366F211C381BDE009EF222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4366F141C381BDE009EF222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4C86D461C381C55002B5F3B /* MapDocument.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4366F1F1C381BDE009EF222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4366F291C381BDE009EF222 /* LATWEditorMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4366F261C381BDE009EF222 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4366F181C381BDE009EF222 /* LATWEditorMap */;
+			targetProxy = B4366F251C381BDE009EF222 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B4366F2B1C381BDE009EF222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B4366F2C1C381BDE009EF222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B4366F2E1C381BDE009EF222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LATWEditorMap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWEditorMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4366F2F1C381BDE009EF222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LATWEditorMap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWEditorMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B4366F311C381BDE009EF222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATWEditorMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWEditorMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B4366F321C381BDE009EF222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LATWEditorMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWEditorMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4366F131C381BDE009EF222 /* Build configuration list for PBXProject "LATWEditorMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4366F2B1C381BDE009EF222 /* Debug */,
+				B4366F2C1C381BDE009EF222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4366F2D1C381BDE009EF222 /* Build configuration list for PBXNativeTarget "LATWEditorMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4366F2E1C381BDE009EF222 /* Debug */,
+				B4366F2F1C381BDE009EF222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4366F301C381BDE009EF222 /* Build configuration list for PBXNativeTarget "LATWEditorMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4366F311C381BDE009EF222 /* Debug */,
+				B4366F321C381BDE009EF222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4366F101C381BDE009EF222 /* Project object */;
+}
