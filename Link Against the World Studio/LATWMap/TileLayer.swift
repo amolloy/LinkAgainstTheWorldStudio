@@ -21,6 +21,18 @@ final public class TileLayer
 	public private(set) var tileSet : TileSet?
 	public var zIndex: Int
 
+	public struct Coordinate
+	{
+		public let x : Int
+		public let y : Int
+
+		public init(x: Int, y: Int)
+		{
+			self.x = x
+			self.y = y
+		}
+	}
+
 	public init()
 	{
 		self.name = ""
@@ -36,9 +48,23 @@ final public class TileLayer
 		self.tileSet = tileSet
 	}
 
-	public func setTileAtX(x: Int, y: Int, tile: Tileable)
+	public func setTileAt(coordinate: Coordinate, tile: Tileable)
 	{
-		tiles[y][x] = tile
+		tiles[coordinate.y][coordinate.x] = tile
+	}
+
+	public struct Size
+	{
+		public let width : Int
+		public let height : Int
+	}
+
+	public var size : Size
+	{
+		get
+		{
+			return Size(width: tiles[0].count, height: tiles.count)
+		}
 	}
 }
 

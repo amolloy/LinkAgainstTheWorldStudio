@@ -87,7 +87,7 @@ extension TileMap
 					tileLayer = TileLayer(name: "", tiles: tiles, tileSet: tileSet)
 				}
 				guard let tileLayer = tileLayer else { return }
-				tileLayer.setTileAtX(x, y: y, tile: tile)
+				tileLayer.setTileAt(TileLayer.Coordinate(x: x, y: y), tile: tile)
 			}
 		}
 

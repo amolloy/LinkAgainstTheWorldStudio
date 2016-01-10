@@ -18,6 +18,19 @@ public final class TileSet
 	public let tileWidth : Int
 	public let tileHeight : Int
 
+	public func coordinatesForTileAtIndex(index: Int) -> CGRect
+	{
+		guard let image = image else
+		{
+			return CGRectZero
+		}
+		let tilesWide = Int(image.size.width) / tileWidth
+		let row = index / tilesWide
+		let col = index % tilesWide
+
+		return CGRect(x: col * tileWidth, y: row * tileHeight, width: tileWidth, height: tileHeight)
+	}
+
 	public init(image: Image?, imageName: String, name: String, tileCount: Int, tileWidth: Int, tileHeight: Int)
 	{
 		self.image = image
