@@ -10,8 +10,15 @@
 		5DB1921A8E3EAF462040227B /* Pods_EditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F95C8D7CC9C2D61047F516 /* Pods_EditorMap.framework */; };
 		B41366CC1C3C0DE300B2344A /* TileLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41366CB1C3C0DE300B2344A /* TileLayer.swift */; };
 		B41366CE1C3C0F1A00B2344A /* StaticTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41366CD1C3C0F1A00B2344A /* StaticTile.swift */; };
+		B415ED391C41528400412CF3 /* LATWMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* LATWMap.framework */; };
+		B415ED3B1C42883700412CF3 /* TileMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415ED3A1C42883700412CF3 /* TileMapNode.swift */; };
+		B415ED3F1C428FF100412CF3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B415ED3E1C428FF100412CF3 /* GameScene.sks */; };
+		B439A2E91C4144DB008F545A /* LATWMapSKRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = B439A2E81C4144DB008F545A /* LATWMapSKRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B439A2ED1C4144DB008F545A /* LATWMapSKRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B439A2E61C4144DB008F545A /* LATWMapSKRenderer.framework */; };
+		B439A2EE1C4144DB008F545A /* LATWMapSKRenderer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B439A2E61C4144DB008F545A /* LATWMapSKRenderer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B439A2F31C414521008F545A /* TileLayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439A2F21C414521008F545A /* TileLayerNode.swift */; };
 		B4522F5F1C38316F009B7314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F5E1C38316F009B7314 /* AppDelegate.swift */; };
-		B4522F611C38316F009B7314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F601C38316F009B7314 /* ViewController.swift */; };
+		B4522F611C38316F009B7314 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F601C38316F009B7314 /* MapViewController.swift */; };
 		B4522F631C38316F009B7314 /* MapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4522F621C38316F009B7314 /* MapDocument.swift */; };
 		B4522F651C38316F009B7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4522F641C38316F009B7314 /* Assets.xcassets */; };
 		B4522F681C38316F009B7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4522F661C38316F009B7314 /* Main.storyboard */; };
@@ -74,9 +81,17 @@
 		B495DB181C395F0600CA0E52 /* CrossPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAF51C38850800CA0E52 /* CrossPlatform.framework */; };
 		B4AA2E9C1C3EA8E100C40A51 /* Map+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */; };
 		B4D890851C3DA173007317AD /* TileLayer+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */; };
+		B4F444101C42940000A74403 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4440F1C42940000A74403 /* MapScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B439A2EB1C4144DB008F545A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B439A2E51C4144DB008F545A;
+			remoteInfo = LATWMapSKRenderer;
+		};
 		B4522F6F1C38316F009B7314 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4522F531C38316F009B7314 /* Project object */;
@@ -172,6 +187,7 @@
 			files = (
 				B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */,
 				B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */,
+				B439A2EE1C4144DB008F545A /* LATWMapSKRenderer.framework in Embed Frameworks */,
 				B495DAFD1C38850800CA0E52 /* CrossPlatform.framework in Embed Frameworks */,
 				B495DAB91C38666300CA0E52 /* LATWMap.framework in Embed Frameworks */,
 				B495DB121C395EDD00CA0E52 /* ImageUtilities.framework in Embed Frameworks */,
@@ -187,9 +203,15 @@
 		AB1A42F726AB96D6CFC1BC00 /* Pods-EditorMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EditorMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EditorMap/Pods-EditorMap.debug.xcconfig"; sourceTree = "<group>"; };
 		B41366CB1C3C0DE300B2344A /* TileLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayer.swift; sourceTree = "<group>"; };
 		B41366CD1C3C0F1A00B2344A /* StaticTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTile.swift; sourceTree = "<group>"; };
+		B415ED3A1C42883700412CF3 /* TileMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapNode.swift; sourceTree = "<group>"; };
+		B415ED3E1C428FF100412CF3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B439A2E61C4144DB008F545A /* LATWMapSKRenderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LATWMapSKRenderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B439A2E81C4144DB008F545A /* LATWMapSKRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LATWMapSKRenderer.h; sourceTree = "<group>"; };
+		B439A2EA1C4144DB008F545A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B439A2F21C414521008F545A /* TileLayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerNode.swift; sourceTree = "<group>"; };
 		B4522F5B1C38316F009B7314 /* Link Against the World Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Link Against the World Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4522F5E1C38316F009B7314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4522F601C38316F009B7314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4522F601C38316F009B7314 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B4522F621C38316F009B7314 /* MapDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDocument.swift; sourceTree = "<group>"; };
 		B4522F641C38316F009B7314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4522F671C38316F009B7314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,15 +276,25 @@
 		B495DB161C395EFA00CA0E52 /* Image+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Utilities.swift"; sourceTree = "<group>"; };
 		B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+EditorMap.swift"; sourceTree = "<group>"; };
 		B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TileLayer+EditorMap.swift"; sourceTree = "<group>"; };
+		B4F4440F1C42940000A74403 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B439A2E21C4144DB008F545A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B415ED391C41528400412CF3 /* LATWMap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4522F581C38316F009B7314 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */,
 				B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */,
+				B439A2ED1C4144DB008F545A /* LATWMapSKRenderer.framework in Frameworks */,
 				B495DAFC1C38850800CA0E52 /* CrossPlatform.framework in Frameworks */,
 				B495DAB81C38666300CA0E52 /* LATWMap.framework in Frameworks */,
 				B495DB111C395EDD00CA0E52 /* ImageUtilities.framework in Frameworks */,
@@ -360,22 +392,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B439A2E71C4144DB008F545A /* LATWMapSKRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				B439A2E81C4144DB008F545A /* LATWMapSKRenderer.h */,
+				B439A2EA1C4144DB008F545A /* Info.plist */,
+				B439A2F21C414521008F545A /* TileLayerNode.swift */,
+				B415ED3A1C42883700412CF3 /* TileMapNode.swift */,
+			);
+			path = LATWMapSKRenderer;
+			sourceTree = "<group>";
+		};
 		B4522F521C38316F009B7314 = {
 			isa = PBXGroup;
 			children = (
-				B4522F5D1C38316F009B7314 /* Link Against the World Studio */,
-				B4522F711C38316F009B7314 /* Link Against the World StudioTests */,
-				B495DA291C38484A00CA0E52 /* TileMap */,
-				B495DA371C38484A00CA0E52 /* TileMapTests */,
-				B495DAA41C38666300CA0E52 /* LATWMap */,
-				B495DAB21C38666300CA0E52 /* LATWMapTests */,
+				B495DAF61C38850800CA0E52 /* CrossPlatform */,
 				B495DACC1C38671100CA0E52 /* EditorMap */,
 				B495DADA1C38671100CA0E52 /* EditorMapTests */,
-				B495DAF61C38850800CA0E52 /* CrossPlatform */,
-				B495DB0B1C395EDD00CA0E52 /* ImageUtilities */,
-				B4522F5C1C38316F009B7314 /* Products */,
-				46F47A944F973414FCD4AC5F /* Pods */,
 				44ECB0108B62F050D7365B09 /* Frameworks */,
+				B495DB0B1C395EDD00CA0E52 /* ImageUtilities */,
+				B495DAA41C38666300CA0E52 /* LATWMap */,
+				B439A2E71C4144DB008F545A /* LATWMapSKRenderer */,
+				B495DAB21C38666300CA0E52 /* LATWMapTests */,
+				B4522F5D1C38316F009B7314 /* Link Against the World Studio */,
+				B4522F711C38316F009B7314 /* Link Against the World StudioTests */,
+				46F47A944F973414FCD4AC5F /* Pods */,
+				B4522F5C1C38316F009B7314 /* Products */,
+				B495DA291C38484A00CA0E52 /* TileMap */,
+				B495DA371C38484A00CA0E52 /* TileMapTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -392,6 +436,7 @@
 				B495DAD41C38671100CA0E52 /* EditorMapTests.xctest */,
 				B495DAF51C38850800CA0E52 /* CrossPlatform.framework */,
 				B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */,
+				B439A2E61C4144DB008F545A /* LATWMapSKRenderer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,13 +444,15 @@
 		B4522F5D1C38316F009B7314 /* Link Against the World Studio */ = {
 			isa = PBXGroup;
 			children = (
+				B415ED3E1C428FF100412CF3 /* GameScene.sks */,
 				B4522F5E1C38316F009B7314 /* AppDelegate.swift */,
 				B4522F641C38316F009B7314 /* Assets.xcassets */,
 				B4522F691C38316F009B7314 /* Info.plist */,
 				B4522F661C38316F009B7314 /* Main.storyboard */,
 				B4522F621C38316F009B7314 /* MapDocument.swift */,
-				B4522F601C38316F009B7314 /* ViewController.swift */,
+				B4522F601C38316F009B7314 /* MapViewController.swift */,
 				B495DAEC1C387FCA00CA0E52 /* Map+TileMapImport.swift */,
+				B4F4440F1C42940000A74403 /* MapScene.swift */,
 			);
 			path = "Link Against the World Studio";
 			sourceTree = "<group>";
@@ -528,6 +575,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B439A2E31C4144DB008F545A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B439A2E91C4144DB008F545A /* LATWMapSKRenderer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B495DA251C38484A00CA0E52 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +625,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B439A2E51C4144DB008F545A /* LATWMapSKRenderer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B439A2F11C4144DB008F545A /* Build configuration list for PBXNativeTarget "LATWMapSKRenderer" */;
+			buildPhases = (
+				B439A2E11C4144DB008F545A /* Sources */,
+				B439A2E21C4144DB008F545A /* Frameworks */,
+				B439A2E31C4144DB008F545A /* Headers */,
+				B439A2E41C4144DB008F545A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LATWMapSKRenderer;
+			productName = LATWMapSKRenderer;
+			productReference = B439A2E61C4144DB008F545A /* LATWMapSKRenderer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		B4522F5A1C38316F009B7314 /* Link Against the World Studio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4522F771C38316F009B7314 /* Build configuration list for PBXNativeTarget "Link Against the World Studio" */;
@@ -587,6 +660,7 @@
 				B495DADF1C38671100CA0E52 /* PBXTargetDependency */,
 				B495DAFB1C38850800CA0E52 /* PBXTargetDependency */,
 				B495DB101C395EDD00CA0E52 /* PBXTargetDependency */,
+				B439A2EC1C4144DB008F545A /* PBXTargetDependency */,
 			);
 			name = "Link Against the World Studio";
 			productName = "Link Against the World Studio";
@@ -770,6 +844,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Andy Molloy";
 				TargetAttributes = {
+					B439A2E51C4144DB008F545A = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					B4522F5A1C38316F009B7314 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -829,16 +906,25 @@
 				B495DAD31C38671100CA0E52 /* EditorMapTests */,
 				B495DAF41C38850800CA0E52 /* CrossPlatform */,
 				B495DB091C395EDD00CA0E52 /* ImageUtilities */,
+				B439A2E51C4144DB008F545A /* LATWMapSKRenderer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B439A2E41C4144DB008F545A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4522F591C38316F009B7314 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B4522F651C38316F009B7314 /* Assets.xcassets in Resources */,
+				B415ED3F1C428FF100412CF3 /* GameScene.sks in Resources */,
 				B4522F681C38316F009B7314 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -944,11 +1030,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B439A2E11C4144DB008F545A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B415ED3B1C42883700412CF3 /* TileMapNode.swift in Sources */,
+				B439A2F31C414521008F545A /* TileLayerNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4522F571C38316F009B7314 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4522F611C38316F009B7314 /* ViewController.swift in Sources */,
+				B4F444101C42940000A74403 /* MapScene.swift in Sources */,
+				B4522F611C38316F009B7314 /* MapViewController.swift in Sources */,
 				B4522F5F1C38316F009B7314 /* AppDelegate.swift in Sources */,
 				B495DAED1C387FCA00CA0E52 /* Map+TileMapImport.swift in Sources */,
 				B4522F631C38316F009B7314 /* MapDocument.swift in Sources */,
@@ -1058,6 +1154,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B439A2EC1C4144DB008F545A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B439A2E51C4144DB008F545A /* LATWMapSKRenderer */;
+			targetProxy = B439A2EB1C4144DB008F545A /* PBXContainerItemProxy */;
+		};
 		B4522F701C38316F009B7314 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B4522F5A1C38316F009B7314 /* Link Against the World Studio */;
@@ -1132,6 +1233,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B439A2EF1C4144DB008F545A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LATWMapSKRenderer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWMapSKRenderer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B439A2F01C4144DB008F545A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LATWMapSKRenderer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWMapSKRenderer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B4522F751C38316F009B7314 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1572,6 +1718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B439A2F11C4144DB008F545A /* Build configuration list for PBXNativeTarget "LATWMapSKRenderer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B439A2EF1C4144DB008F545A /* Debug */,
+				B439A2F01C4144DB008F545A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B4522F561C38316F009B7314 /* Build configuration list for PBXProject "Link Against the World Studio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
