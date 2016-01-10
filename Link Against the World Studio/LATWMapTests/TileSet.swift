@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Map
+@testable import LATWMap
 import CrossPlatform
 
 class TileSetTests: XCTestCase

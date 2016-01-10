@@ -1532,7 +1532,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MapTests/Info.plist;
+				INFOPLIST_FILE = LATWMapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1546,7 +1546,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MapTests/Info.plist;
+				INFOPLIST_FILE = LATWMapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
