@@ -25,25 +25,21 @@ struct SurroundingTiles
 
 protocol SpriteKitTileable : Tileable
 {
-	func nodeAt(coordinate: TileLayer.Coordinate, textures: [SKTexture], surroundingTiles: SurroundingTiles) -> SKNode?
+	func nodeAt(coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
 }
 
 extension TileSet
 {
-	func textureCoordinatesForTileAtIndex(index: Int) -> CGRect
+	func textureAtlas() -> SKTextureAtlas?
 	{
-		guard let image = image else
+		var textureInfos = [String : Image]()
+		for i in 0..<tileCount
 		{
-			return CGRectZero
+			let image = imageForTileAtIndex(i)
+			textureInfos[String(i)] = image
 		}
-		let xFactor = 1.0 / image.size.width
-		let yFactor = 1.0 / image.size.height
-		let unnormalizedCoordinates = self.coordinatesForTileAtIndex(index)
 
-		return CGRect(x: unnormalizedCoordinates.origin.x * xFactor,
-			y: unnormalizedCoordinates.origin.y * yFactor,
-			width: unnormalizedCoordinates.size.width * xFactor,
-			height: unnormalizedCoordinates.size.height * yFactor)
+		return SKTextureAtlas(dictionary: textureInfos)
 	}
 }
 
@@ -58,29 +54,21 @@ extension Array
 public class TileLayerNode : SKNode
 {
 	let tileLayer : TileLayer
-	let textures : [SKTexture]
+	let textureAtlas : SKTextureAtlas
 
 	public init?(tileLayer: TileLayer)
 	{
 		self.tileLayer = tileLayer
 
 		guard let tileSet = self.tileLayer.tileSet,
-			  let masterImage = tileSet.image?.cgImage else
+			  let textureAtlas = tileSet.textureAtlas() else
 		{
-			self.textures = [SKTexture]()
+			self.textureAtlas = SKTextureAtlas()
 			super.init()
 			return nil
 		}
-		let masterTexture = SKTexture(CGImage: masterImage)
-		var newTextures = [SKTexture]()
-		newTextures.reserveCapacity(tileSet.tileCount)
-		for i in 0..<tileSet.tileCount
-		{
-			let coords = tileSet.textureCoordinatesForTileAtIndex(i)
-			let texture = SKTexture(rect: coords, inTexture: masterTexture)
-			newTextures.append(texture)
-		}
-		self.textures = newTextures
+
+		self.textureAtlas = textureAtlas
 
 		super.init()
 
@@ -91,7 +79,7 @@ public class TileLayerNode : SKNode
 	{
 		assertionFailure()
 		self.tileLayer = TileLayer()
-		self.textures = [SKTexture]()
+		self.textureAtlas = SKTextureAtlas()
 		super.init()
 		return nil
 	}
@@ -129,7 +117,7 @@ public class TileLayerNode : SKNode
 					)
 
 					if let tileNode = tile.nodeAt(TileLayer.Coordinate(x: x, y: y),
-						textures: textures,
+						textureAtlas: textureAtlas,
 						surroundingTiles: surroundingTiles)
 					{
 						tileNode.position = CGPoint(x: xPos, y: yPos)
@@ -147,7 +135,7 @@ public class TileLayerNode : SKNode
 
 extension EmptyTile : SpriteKitTileable
 {
-	func nodeAt(coordinate: TileLayer.Coordinate, textures: [SKTexture], surroundingTiles: SurroundingTiles) -> SKNode?
+	func nodeAt(coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
 	{
 		return nil
 	}
@@ -155,8 +143,9 @@ extension EmptyTile : SpriteKitTileable
 
 extension StaticTile : SpriteKitTileable
 {
-	func nodeAt(coordinate: TileLayer.Coordinate, textures: [SKTexture], surroundingTiles: SurroundingTiles) -> SKNode?
+	func nodeAt(coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
 	{
-		return SKSpriteNode(texture: textures[index])
+		let texture = textureAtlas.textureNamed(String(index))
+		return SKSpriteNode(texture: texture)
 	}
 }
