@@ -72,6 +72,8 @@ public class TileLayerNode : SKNode
 
 		super.init()
 
+		self.zPosition = CGFloat(tileLayer.zIndex)
+		
 		buildMapNodes()
 	}
 
