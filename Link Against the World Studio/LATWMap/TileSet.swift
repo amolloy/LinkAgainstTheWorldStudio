@@ -40,4 +40,23 @@ public final class TileSet
 		self.tileWidth = tileWidth
 		self.tileHeight = tileHeight
 	}
+
+	public func imageForTileAtIndex(index: Int) -> Image?
+	{
+		var coordinates = coordinatesForTileAtIndex(index)
+		if coordinates == CGRectZero
+		{
+			return nil
+		}
+		guard let image = image else { return nil }
+		coordinates.origin.y = image.size.height - coordinates.origin.y
+		coordinates.size.height = -coordinates.size.height
+		guard let cgImage = image.cgImage,
+			  let subImage = CGImageCreateWithImageInRect(cgImage, coordinates) else
+		{
+			return nil
+		}
+
+		return Image(CGImage: subImage, size: coordinates.size)
+	}
 }
