@@ -12,7 +12,7 @@ public class BlockData : Loadable
 {
 	public class BlockStructure : Tileable
 	{
-		struct CollisionSet : OptionSetType
+		struct CollisionSet : OptionSet
 		{
 			let rawValue : UInt8
 			init(rawValue: UInt8)
@@ -70,7 +70,7 @@ public class BlockData : Loadable
 
 	public let blockStructures : [BlockStructure]
 
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		var blockStructures = [BlockStructure]()
 
@@ -114,7 +114,7 @@ public class BlockData : Loadable
 			}
 			let bgIndex : Int
 			let fgIndices : [Int]
-			if (mapHeader.mapType > .FMP05)
+			if (mapHeader.mapType > .fmp05)
 			{
 				bgIndex = bgoff
 				fgIndices = [fgoff1, fgoff2, fgoff3]
@@ -200,8 +200,8 @@ public class BlockData : Loadable
 		tileMap.blockData = self
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.BKDT)
+		tileMap.registerLoadable(self, chunkType: ChunkType.bkdt)
 	}
 }

@@ -23,12 +23,12 @@ class MapViewController: NSViewController {
 			let skView = SKView(frame: view.bounds)
 			skView.translatesAutoresizingMaskIntoConstraints = false
 			view.addSubview(skView)
-			skView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-			skView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
-			skView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
-			skView.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
+			skView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+			skView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+			skView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+			skView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 
-			scene.scaleMode = .AspectFill
+			scene.scaleMode = .aspectFill
 
 			skView.presentScene(scene)
 
@@ -44,7 +44,7 @@ class MapViewController: NSViewController {
 	var mapDocument : MapDocument? {
 		get {
 			guard let window = self.view.window else { return nil }
-			return NSDocumentController.sharedDocumentController().documentForWindow(window) as? MapDocument
+			return NSDocumentController.shared().document(for: window) as? MapDocument
 		}
 	}
 

@@ -18,11 +18,11 @@ public final class TileSet
 	public let tileWidth : Int
 	public let tileHeight : Int
 
-	public func coordinatesForTileAtIndex(index: Int) -> CGRect
+	public func coordinatesForTileAtIndex(_ index: Int) -> CGRect
 	{
 		guard let image = image else
 		{
-			return CGRectZero
+			return CGRect.zero
 		}
 		let tilesWide = Int(image.size.width) / tileWidth
 		let row = index / tilesWide
@@ -41,10 +41,10 @@ public final class TileSet
 		self.tileHeight = tileHeight
 	}
 
-	public func imageForTileAtIndex(index: Int) -> Image?
+	public func imageForTileAtIndex(_ index: Int) -> Image?
 	{
 		var coordinates = coordinatesForTileAtIndex(index)
-		if coordinates == CGRectZero
+		if coordinates == CGRect.zero
 		{
 			return nil
 		}
@@ -52,11 +52,11 @@ public final class TileSet
 		coordinates.origin.y = image.size.height - coordinates.origin.y
 		coordinates.size.height = -coordinates.size.height
 		guard let cgImage = image.cgImage,
-			  let subImage = CGImageCreateWithImageInRect(cgImage, coordinates) else
+			  let subImage = cgImage.cropping(to: coordinates) else
 		{
 			return nil
 		}
 
-		return Image(CGImage: subImage, size: coordinates.size)
+		return Image(cgImage: subImage, size: coordinates.size)
 	}
 }

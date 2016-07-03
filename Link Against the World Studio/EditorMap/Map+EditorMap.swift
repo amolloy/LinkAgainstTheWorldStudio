@@ -15,17 +15,17 @@ private let version = "1.0"
 
 protocol EditorMapSegment
 {
-	static func loadSegmentFromFileWrapper(fileWrapper: NSFileWrapper, owner: Map) throws
+	static func loadSegmentFromFileWrapper(_ fileWrapper: FileWrapper, owner: Map) throws
 	static func segmentDependencies() -> [EditorMapSegment.Type]
 	static func segmentExtension() -> String
 }
 
 private let segmentLoaders : [EditorMapSegment.Type] = [TileSet.self, TileLayer.self]
 
-func dependencySortSegments(segments: [NSFileWrapper], loaderMap:[String: EditorMapSegment.Type]) -> [NSFileWrapper]
+func dependencySortSegments(_ segments: [FileWrapper], loaderMap:[String: EditorMapSegment.Type]) -> [FileWrapper]
 {
 	print("sorting")
-	return segments.sort({ (a, b) -> Bool in
+	return segments.sorted(isOrderedBefore: { (a, b) -> Bool in
 		var isOrderedBefore = true
 		print("Getting extensions and loaders")
 		if let aExtension = (a.filename as NSString?)?.pathExtension,
@@ -46,14 +46,20 @@ func dependencySortSegments(segments: [NSFileWrapper], loaderMap:[String: Editor
 	})
 }
 
-public func mapFromFileWrapper(fileWrapper: NSFileWrapper) throws -> Map?
+public func mapFromFileWrapper(_ fileWrapper: FileWrapper) throws -> Map?
 {
 	let map = Map()
 
-	let loaderMap = segmentLoaders.reduce([String: EditorMapSegment.Type]()) { (var dictionary, e) in
-		dictionary[e.segmentExtension()] = e
+	let loaderMap : [String: EditorMapSegment.Type] = {
+		var dictionary = [String: EditorMapSegment.Type]()
+
+		for e in segmentLoaders
+		{
+			dictionary[e.segmentExtension()] = e
+		}
+
 		return dictionary
-	}
+	}()
 
 	guard let fileWrappers = fileWrapper.fileWrappers else { return nil }
 	let sortedWrappers = dependencySortSegments(Array(fileWrappers.values), loaderMap: loaderMap)

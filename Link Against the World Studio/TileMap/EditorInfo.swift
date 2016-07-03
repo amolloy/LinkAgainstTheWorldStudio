@@ -13,9 +13,9 @@ import Foundation
 // etc. We'll just ignore it since we won't be using it even in our editor.
 public class EditorInfo : Loadable
 {
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
-		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
+		var bytes = [UInt8](repeating: 0, count: dataLength)
 		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
 		{
 			return nil
@@ -24,8 +24,8 @@ public class EditorInfo : Loadable
 		tileMap.editorInfo = self
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.EDHD)
+		tileMap.registerLoadable(self, chunkType: ChunkType.edhd)
 	}
 }

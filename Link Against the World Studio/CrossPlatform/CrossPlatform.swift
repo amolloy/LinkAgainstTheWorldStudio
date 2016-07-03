@@ -35,7 +35,7 @@
 		{
 			get
 			{
-				return CGImageForProposedRect(nil, context: nil, hints: nil)
+				return self.cgImage(forProposedRect: nil, context: nil, hints: nil)
 			}
 		}
 	}

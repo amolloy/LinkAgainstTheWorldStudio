@@ -23,8 +23,8 @@ class TileMapFileInt: XCTestCase {
 
 	func testTooShortBuffer() {
 		var tooShort = [UInt8(0x20)];
-		let short = NSData(bytes: &tooShort, length: tooShort.count)
-		let inputStream = NSInputStream(data: short)
+		let short = Data(bytes: UnsafePointer<UInt8>(&tooShort), count: tooShort.count)
+		let inputStream = InputStream(data: short)
 		inputStream.open()
 		let int = inputStream.readBigInt()
 		XCTAssertTrue(int == nil)
@@ -32,8 +32,8 @@ class TileMapFileInt: XCTestCase {
 
 	func testReadBuffer() {
 		var valid = [UInt8(0x00), UInt8(0x00), UInt8(0xB3), UInt8(0x14)]
-		let validData = NSData(bytes: &valid, length: valid.count)
-		let inputStream = NSInputStream(data: validData)
+		let validData = Data(bytes: UnsafePointer<UInt8>(&valid), count: valid.count)
+		let inputStream = InputStream(data: validData)
 		inputStream.open()
 		guard let int = inputStream.readBigInt() else
 		{

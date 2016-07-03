@@ -10,50 +10,50 @@ import Foundation
 
 public enum ChunkType : ChunkTag
 {
-	case ATHR = "ATHR"
-	case MPHD = "MPHD"
-	case EDHD = "EDHD"
-	case CMAP = "CMAP"
-	case BKDT = "BKDT"
-	case ANDT = "ANDT"
-	case BGFX = "BGFX"
+	case athr = "ATHR"
+	case mphd = "MPHD"
+	case edhd = "EDHD"
+	case cmap = "CMAP"
+	case bkdt = "BKDT"
+	case andt = "ANDT"
+	case bgfx = "BGFX"
 
-	case BODY = "BODY"
-	case LYR1 = "LYR1"
-	case LYR2 = "LYR2"
-	case LYR3 = "LYR3"
-	case LYR4 = "LYR4"
-	case LYR5 = "LYR5"
-	case LYR6 = "LYR6"
-	case LYR7 = "LYR7"
+	case body = "BODY"
+	case lyr1 = "LYR1"
+	case lyr2 = "LYR2"
+	case lyr3 = "LYR3"
+	case lyr4 = "LYR4"
+	case lyr5 = "LYR5"
+	case lyr6 = "LYR6"
+	case lyr7 = "LYR7"
 
 	public func layer() -> Int
 	{
 		let layer : Int
 		switch(self)
 		{
-		case BODY:
+		case body:
 			layer = 0
 			break
-		case LYR1:
+		case lyr1:
 			layer = 1
 			break
-		case LYR2:
+		case lyr2:
 			layer = 2
 			break
-		case LYR3:
+		case lyr3:
 			layer = 3
 			break
-		case LYR4:
+		case lyr4:
 			layer = 4
 			break
-		case LYR5:
+		case lyr5:
 			layer = 5
 			break
-		case LYR6:
+		case lyr6:
 			layer = 6
 			break
-		case LYR7:
+		case lyr7:
 			layer = 7
 			break
 		default:
@@ -66,6 +66,6 @@ public enum ChunkType : ChunkTag
 
 public func ~=(pattern: String, value: ChunkType) -> Bool
 {
-	let match = value.rawValue.rawValue.rangeOfString(pattern, options: .RegularExpressionSearch)
+	let match = value.rawValue.rawValue.range(of: pattern, options: .regularExpressionSearch)
 	return match != nil
 }

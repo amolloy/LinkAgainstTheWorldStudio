@@ -12,9 +12,9 @@ public class MapHeader : Loadable
 {
 	enum MapType : UInt8, Comparable
 	{
-		case FMP05
-		case FMP10
-		case FMP10RLE
+		case fmp05
+		case fmp10
+		case fmp10RLE
 	}
 
 	public  typealias Size = TileMap.Size
@@ -37,7 +37,7 @@ public class MapHeader : Loadable
 	let clickMask : Int
 	let pillars : Int
 
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let versionHigh = inputStream.readUInt8(),
 			let versionLow = inputStream.readUInt8() else
@@ -47,7 +47,7 @@ public class MapHeader : Loadable
 			// https://devforums.apple.com/thread/251388?start=0&tstart=0#1062922
 			mapVersion = NSDecimalNumber()
 			swapBytes = true
-			mapType = .FMP05
+			mapType = .fmp05
 			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -69,7 +69,7 @@ public class MapHeader : Loadable
 		guard let lsb = inputStream.readUInt8() else
 		{
 			swapBytes = true
-			mapType = .FMP05
+			mapType = .fmp05
 			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -94,7 +94,7 @@ public class MapHeader : Loadable
 		/* 0 for 32 offset still, -16 offset anim shorts in BODY added FMP0.5*/
 		guard let mapTypeChar = inputStream.readUInt8() else
 		{
-			mapType = .FMP05
+			mapType = .fmp05
 			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -115,7 +115,7 @@ public class MapHeader : Loadable
 		guard let theMapType = MapType(rawValue: mapTypeChar) else
 		{
 			// TODO throw too new
-			mapType = .FMP05
+			mapType = .fmp05
 			mapSize = Size()
 			self.reserved1 = 0
 			self.reserved2 = 0
@@ -330,9 +330,9 @@ public class MapHeader : Loadable
 		tileMap.mapHeader = self
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.MPHD)
+		tileMap.registerLoadable(self, chunkType: ChunkType.mphd)
 	}
 }
 

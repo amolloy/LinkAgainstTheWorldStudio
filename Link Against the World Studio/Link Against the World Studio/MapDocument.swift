@@ -15,7 +15,7 @@ class MapDocument: NSDocument
 {
 	let standardFileType = "com.amolloy.latwmap"
 	var map : Map?
-	var documentFileWrapper : NSFileWrapper?
+	var documentFileWrapper : FileWrapper?
 
 	override init()
 	{
@@ -23,7 +23,7 @@ class MapDocument: NSDocument
 		map = nil
 	}
 
-	override func windowControllerDidLoadNib(aController: NSWindowController)
+	override func windowControllerDidLoadNib(_ aController: NSWindowController)
 	{
 		super.windowControllerDidLoadNib(aController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
@@ -38,24 +38,24 @@ class MapDocument: NSDocument
 	{
 		// Returns the Storyboard that contains your Document window.
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		let windowController = storyboard.instantiateControllerWithIdentifier("Document Window Controller") as! NSWindowController
+		let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
 		self.addWindowController(windowController)
 	}
 
-	override func fileWrapperOfType(typeName: String) throws -> NSFileWrapper
+	override func fileWrapper(ofType typeName: String) throws -> FileWrapper
 	{
-		guard let map = map else { return NSFileWrapper() }
+		guard let map = map else { return FileWrapper() }
 
 		if self.documentFileWrapper == nil
 		{
-			documentFileWrapper = NSFileWrapper(directoryWithFileWrappers: [String: NSFileWrapper]())
+			documentFileWrapper = FileWrapper(directoryWithFileWrappers: [String: FileWrapper]())
 		}
 
-		guard let documentFileWrapper = documentFileWrapper else { return NSFileWrapper() }
+		guard let documentFileWrapper = documentFileWrapper else { return FileWrapper() }
 
 		for tileSetName : NSString in map.tileSets.keys
 		{
-			let wrapperName = tileSetName.stringByAppendingPathExtension("tileset") ?? "" as String
+			let wrapperName = tileSetName.appendingPathExtension("tileset") ?? "" as String
 
 			if let fileWrapper = map.tileSets[tileSetName as String]?.fileWrapper()
 			{
@@ -68,7 +68,7 @@ class MapDocument: NSDocument
 		{
 			if let fileWrapper = tileLayer.fileWrapper()
 			{
-				fileWrapper.preferredFilename = (tileLayer.name as NSString).stringByAppendingPathExtension("tilelayer")
+				fileWrapper.preferredFilename = (tileLayer.name as NSString).appendingPathExtension("tilelayer")
 				documentFileWrapper.addFileWrapper(fileWrapper)
 			}
 		}
@@ -76,29 +76,29 @@ class MapDocument: NSDocument
 		return documentFileWrapper
 	}
 
-	override func readFromFileWrapper(fileWrapper: NSFileWrapper, ofType typeName: String) throws
+	override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws
 	{
-		if (NSWorkspace.sharedWorkspace().type("com.amolloy.tilemap", conformsToType: typeName))
+		if (NSWorkspace.shared().type("com.amolloy.tilemap", conformsToType: typeName))
 		{
 			// import...
 			self.fileURL = nil
 			self.fileType = standardFileType
 
 			guard let fileContents = fileWrapper.regularFileContents else { return }
-			let tileMapInputStream = NSInputStream(data: fileContents)
+			let tileMapInputStream = InputStream(data: fileContents)
 			guard let tileMap = TileMap(inputStream: tileMapInputStream) else { return }
-			try tileMap.open()
+			_ = try tileMap.open()
 			try tileMap.loadChunks()
 
 			map = try Map(tileMap: tileMap)
 		}
-		else if (NSWorkspace.sharedWorkspace().type(standardFileType, conformsToType: typeName))
+		else if (NSWorkspace.shared().type(standardFileType, conformsToType: typeName))
 		{
 			map = try mapFromFileWrapper(fileWrapper)
 		}
 	}
 
-	override class func canConcurrentlyReadDocumentsOfType(typename: String) -> Bool
+	override class func canConcurrentlyReadDocuments(ofType typename: String) -> Bool
 	{
 		return true
 	}

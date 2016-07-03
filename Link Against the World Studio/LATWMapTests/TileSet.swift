@@ -14,7 +14,7 @@ class TileSetTests: XCTestCase
 {
 	func testInit()
 	{
-		let image = Image()
+		let image = CrossPlatform.Image()
 		let tileset = TileSet(image: image, imageName: "image", name: "name", tileCount: 16, tileWidth: 8, tileHeight: 8)
 
 		XCTAssertEqual(tileset.image, image)

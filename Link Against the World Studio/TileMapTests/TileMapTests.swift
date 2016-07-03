@@ -15,7 +15,7 @@ class TileMapTests: XCTestCase
 	{
 		get
 		{
-			let bundle = NSBundle(forClass: TileMapTests.self)
+			let bundle = Bundle(for: TileMapTests.self)
 			let testMapPath = bundle.pathForResource("Test", ofType: "fmp")
 			return testMapPath ?? ""
 		}

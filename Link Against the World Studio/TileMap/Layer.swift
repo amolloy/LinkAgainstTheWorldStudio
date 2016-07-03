@@ -15,7 +15,7 @@ public class Layer : Loadable
 	public private(set) var chunkType : ChunkType
 	public let tiles : [[Tileable]]
 
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		self.chunkType = chunkType
 		
@@ -29,7 +29,7 @@ public class Layer : Loadable
 		let swapBytes = mapHeader.swapBytes
 
 		var tileRows = [[Tileable]]()
-		if mapHeader.mapType == .FMP05
+		if mapHeader.mapType == .fmp05
 		{
 			for _ in 0..<mapHeader.mapSize.height
 			{
@@ -50,7 +50,7 @@ public class Layer : Loadable
 					else
 					{
 						let divisor : Int
-						if .FMP05 == mapHeader.mapType
+						if .fmp05 == mapHeader.mapType
 						{
 							divisor = 16
 						}
@@ -65,12 +65,12 @@ public class Layer : Loadable
 				tileRows.append(tileColumns)
 			}
 		}
-		else if mapHeader.mapType == .FMP10
+		else if mapHeader.mapType == .fmp10
 		{
 			// TODO
 			assert(false, "FMP 1.0 Maps not yet implemented")
 		}
-		else if mapHeader.mapType == .FMP10RLE
+		else if mapHeader.mapType == .fmp10RLE
 		{
 			// TODO
 			assert(false, "FMP 1.0RLE Maps not yet implemented")
@@ -87,15 +87,15 @@ public class Layer : Loadable
 		tileMap.addLayer(self, index: chunkType.layer())
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.BODY)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR1)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR2)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR3)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR4)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR5)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR6)
-		tileMap.registerLoadable(self, chunkType: ChunkType.LYR7)
+		tileMap.registerLoadable(self, chunkType: ChunkType.body)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr1)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr2)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr3)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr4)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr5)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr6)
+		tileMap.registerLoadable(self, chunkType: ChunkType.lyr7)
 	}
 }

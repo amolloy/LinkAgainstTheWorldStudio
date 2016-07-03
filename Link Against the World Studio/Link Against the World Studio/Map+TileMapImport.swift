@@ -12,7 +12,7 @@ import LATWMap
 import CrossPlatform
 import ImageUtilities
 
-func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Image?
+func textureAtlasWithBlockSize(_ blockSize: TileMap.Size, textures: [Image]) -> Image?
 {
 	let textureCount = textures.count
 	let texturesWide = Int(ceil(sqrt(CGFloat(textureCount))))
@@ -22,36 +22,41 @@ func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Im
 
 	let cs = CGColorSpaceCreateDeviceRGB()
 
-	let ctx = CGBitmapContextCreate(nil,
-		atlasSize.width,
-		atlasSize.height,
-		8,
-		atlasSize.width * 4,
-		cs,
-		CGImageAlphaInfo.PremultipliedLast.rawValue)
+	guard let ctx = CGContext(data: nil,
+		width: atlasSize.width,
+		height: atlasSize.height,
+		bitsPerComponent: 8,
+		bytesPerRow: atlasSize.width * 4,
+		space: cs,
+		bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)
+	else
+	{
+		return nil
+	}
 
-	CGContextClearRect(ctx, CGRect(x: 0, y: 0, width: CGFloat(atlasSize.width), height: CGFloat(atlasSize.height)))
+	ctx.clear(CGRect(x: 0, y: 0, width: CGFloat(atlasSize.width), height: CGFloat(atlasSize.height)))
 
 	for i in 0..<textureCount
 	{
 		let texture = textures[i]
+		guard let textureImage = texture.cgImage else { return nil }
 		let column = i % texturesWide
 		let row = i / texturesWide
 		let textureRect = CGRect(x: CGFloat(column * blockSize.width),
 			y: CGFloat(row * blockSize.height),
 			width: CGFloat(blockSize.width),
 			height: CGFloat(blockSize.height))
-		CGContextDrawImage(ctx, textureRect, texture.cgImage)
+		ctx.draw(in: textureRect, image: textureImage)
 	}
 
 	guard let cgImage = CGImageCreateWithCGContext(ctx) else { return nil }
 	
-	return Image(CGImage: cgImage, size: NSSize(atlasSize))
+	return Image(cgImage: cgImage, size: NSSize(atlasSize))
 }
 
 extension TileMap
 {
-	func tileLayersForLayer(layer : Layer, tileSet: TileSet) -> [TileLayer]?
+	func tileLayersForLayer(_ layer : Layer, tileSet: TileSet) -> [TileLayer]?
 	{
 		guard let mapHeader = mapHeader else
 		{
@@ -74,13 +79,13 @@ extension TileMap
 				self.tileSet = tileSet
 			}
 
-			func setTileAtX(x: Int, y: Int, tile: LATWMap.Tileable)
+			func setTileAtX(_ x: Int, y: Int, tile: LATWMap.Tileable)
 			{
 				if tileLayer == nil
 				{
 					let emptyTile : LATWMap.Tileable = EmptyTile()
-					let tiles = Array(count: size.height, repeatedValue:
-						Array(count: size.width, repeatedValue:emptyTile))
+					let tiles = Array(repeating:Array(repeating:emptyTile, count: size.width),
+					                  count: size.height)
 
 					used = true
 
@@ -163,7 +168,7 @@ extension Map
 			tileWidth: blockSize.width,
 			tileHeight: blockSize.height)
 
-		self.addTileSet(tileSet)
+		_ = self.addTileSet(tileSet)
 
 		var zIndex = 0
 		for layer in tileMap.layers
@@ -171,7 +176,7 @@ extension Map
 			let baseLayerName = layer.chunkType.rawValue.rawValue
 			if let tileLayers = tileMap.tileLayersForLayer(layer, tileSet: tileSet)
 			{
-				for (i, tileLayer) in tileLayers.enumerate()
+				for (i, tileLayer) in tileLayers.enumerated()
 				{
 					let layerName = baseLayerName + "_" + String(i)
 					tileLayer.name = layerName

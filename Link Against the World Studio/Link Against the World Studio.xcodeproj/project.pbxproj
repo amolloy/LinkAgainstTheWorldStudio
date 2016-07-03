@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5DB1921A8E3EAF462040227B /* Pods_EditorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F95C8D7CC9C2D61047F516 /* Pods_EditorMap.framework */; };
 		B41366CC1C3C0DE300B2344A /* TileLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41366CB1C3C0DE300B2344A /* TileLayer.swift */; };
 		B41366CE1C3C0F1A00B2344A /* StaticTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41366CD1C3C0F1A00B2344A /* StaticTile.swift */; };
 		B415ED391C41528400412CF3 /* LATWMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495DAA31C38666300CA0E52 /* LATWMap.framework */; };
@@ -82,6 +81,14 @@
 		B4AA2E9C1C3EA8E100C40A51 /* Map+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */; };
 		B4D890851C3DA173007317AD /* TileLayer+EditorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */; };
 		B4F444101C42940000A74403 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4440F1C42940000A74403 /* MapScene.swift */; };
+		B4FEE43C1D2970F500816EA0 /* JSONCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FEE4351D2970F500816EA0 /* JSONCodable.framework */; };
+		B4FEE43D1D2970F500816EA0 /* JSONCodable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FEE4351D2970F500816EA0 /* JSONCodable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4FEE4471D29710C00816EA0 /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE4411D29710C00816EA0 /* JSONCodable.swift */; };
+		B4FEE4481D29710C00816EA0 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE4421D29710C00816EA0 /* JSONDecodable.swift */; };
+		B4FEE4491D29710C00816EA0 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE4431D29710C00816EA0 /* JSONEncodable.swift */; };
+		B4FEE44A1D29710C00816EA0 /* JSONHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE4441D29710C00816EA0 /* JSONHelpers.swift */; };
+		B4FEE44B1D29710C00816EA0 /* JSONString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE4451D29710C00816EA0 /* JSONString.swift */; };
+		B4FEE44C1D29710C00816EA0 /* JSONTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE4461D29710C00816EA0 /* JSONTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +183,13 @@
 			remoteGlobalIDString = B495DB091C395EDD00CA0E52;
 			remoteInfo = ImageUtilities;
 		};
+		B4FEE43A1D2970F500816EA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4522F531C38316F009B7314 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FEE4341D2970F500816EA0;
+			remoteInfo = JSONCodable;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -188,6 +202,7 @@
 				B495DA3E1C38484A00CA0E52 /* TileMap.framework in Embed Frameworks */,
 				B495DAE11C38671100CA0E52 /* EditorMap.framework in Embed Frameworks */,
 				B439A2EE1C4144DB008F545A /* LATWMapSKRenderer.framework in Embed Frameworks */,
+				B4FEE43D1D2970F500816EA0 /* JSONCodable.framework in Embed Frameworks */,
 				B495DAFD1C38850800CA0E52 /* CrossPlatform.framework in Embed Frameworks */,
 				B495DAB91C38666300CA0E52 /* LATWMap.framework in Embed Frameworks */,
 				B495DB121C395EDD00CA0E52 /* ImageUtilities.framework in Embed Frameworks */,
@@ -198,9 +213,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		41F95C8D7CC9C2D61047F516 /* Pods_EditorMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EditorMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C5A0E7D93C6D075F081316C /* Pods-EditorMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EditorMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-EditorMap/Pods-EditorMap.release.xcconfig"; sourceTree = "<group>"; };
-		AB1A42F726AB96D6CFC1BC00 /* Pods-EditorMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EditorMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EditorMap/Pods-EditorMap.debug.xcconfig"; sourceTree = "<group>"; };
 		B41366CB1C3C0DE300B2344A /* TileLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayer.swift; sourceTree = "<group>"; };
 		B41366CD1C3C0F1A00B2344A /* StaticTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTile.swift; sourceTree = "<group>"; };
 		B415ED3A1C42883700412CF3 /* TileMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapNode.swift; sourceTree = "<group>"; };
@@ -277,6 +289,14 @@
 		B4AA2E9B1C3EA8E100C40A51 /* Map+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+EditorMap.swift"; sourceTree = "<group>"; };
 		B4D890841C3DA173007317AD /* TileLayer+EditorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TileLayer+EditorMap.swift"; sourceTree = "<group>"; };
 		B4F4440F1C42940000A74403 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
+		B4FEE4351D2970F500816EA0 /* JSONCodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FEE4391D2970F500816EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4FEE4411D29710C00816EA0 /* JSONCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCodable.swift; sourceTree = "<group>"; };
+		B4FEE4421D29710C00816EA0 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		B4FEE4431D29710C00816EA0 /* JSONEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodable.swift; sourceTree = "<group>"; };
+		B4FEE4441D29710C00816EA0 /* JSONHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelpers.swift; sourceTree = "<group>"; };
+		B4FEE4451D29710C00816EA0 /* JSONString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONString.swift; sourceTree = "<group>"; };
+		B4FEE4461D29710C00816EA0 /* JSONTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +315,7 @@
 				B495DA3D1C38484A00CA0E52 /* TileMap.framework in Frameworks */,
 				B495DAE01C38671100CA0E52 /* EditorMap.framework in Frameworks */,
 				B439A2ED1C4144DB008F545A /* LATWMapSKRenderer.framework in Frameworks */,
+				B4FEE43C1D2970F500816EA0 /* JSONCodable.framework in Frameworks */,
 				B495DAFC1C38850800CA0E52 /* CrossPlatform.framework in Frameworks */,
 				B495DAB81C38666300CA0E52 /* LATWMap.framework in Frameworks */,
 				B495DB111C395EDD00CA0E52 /* ImageUtilities.framework in Frameworks */,
@@ -345,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B46740151C3AC2F000293C9B /* LATWMap.framework in Frameworks */,
-				5DB1921A8E3EAF462040227B /* Pods_EditorMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,26 +392,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4FEE4311D2970F500816EA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44ECB0108B62F050D7365B09 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				41F95C8D7CC9C2D61047F516 /* Pods_EditorMap.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		46F47A944F973414FCD4AC5F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AB1A42F726AB96D6CFC1BC00 /* Pods-EditorMap.debug.xcconfig */,
-				4C5A0E7D93C6D075F081316C /* Pods-EditorMap.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		B439A2E71C4144DB008F545A /* LATWMapSKRenderer */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,14 +419,13 @@
 				B495DAF61C38850800CA0E52 /* CrossPlatform */,
 				B495DACC1C38671100CA0E52 /* EditorMap */,
 				B495DADA1C38671100CA0E52 /* EditorMapTests */,
-				44ECB0108B62F050D7365B09 /* Frameworks */,
+				B4FEE4361D2970F500816EA0 /* JSONCodable */,
 				B495DB0B1C395EDD00CA0E52 /* ImageUtilities */,
 				B495DAA41C38666300CA0E52 /* LATWMap */,
 				B439A2E71C4144DB008F545A /* LATWMapSKRenderer */,
 				B495DAB21C38666300CA0E52 /* LATWMapTests */,
 				B4522F5D1C38316F009B7314 /* Link Against the World Studio */,
 				B4522F711C38316F009B7314 /* Link Against the World StudioTests */,
-				46F47A944F973414FCD4AC5F /* Pods */,
 				B4522F5C1C38316F009B7314 /* Products */,
 				B495DA291C38484A00CA0E52 /* TileMap */,
 				B495DA371C38484A00CA0E52 /* TileMapTests */,
@@ -437,6 +446,7 @@
 				B495DAF51C38850800CA0E52 /* CrossPlatform.framework */,
 				B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */,
 				B439A2E61C4144DB008F545A /* LATWMapSKRenderer.framework */,
+				B4FEE4351D2970F500816EA0 /* JSONCodable.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -572,6 +582,20 @@
 			path = ImageUtilities;
 			sourceTree = "<group>";
 		};
+		B4FEE4361D2970F500816EA0 /* JSONCodable */ = {
+			isa = PBXGroup;
+			children = (
+				B4FEE4411D29710C00816EA0 /* JSONCodable.swift */,
+				B4FEE4421D29710C00816EA0 /* JSONDecodable.swift */,
+				B4FEE4431D29710C00816EA0 /* JSONEncodable.swift */,
+				B4FEE4441D29710C00816EA0 /* JSONHelpers.swift */,
+				B4FEE4451D29710C00816EA0 /* JSONString.swift */,
+				B4FEE4461D29710C00816EA0 /* JSONTransformer.swift */,
+				B4FEE4391D2970F500816EA0 /* Info.plist */,
+			);
+			path = JSONCodable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -622,6 +646,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4FEE4321D2970F500816EA0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -661,6 +692,7 @@
 				B495DAFB1C38850800CA0E52 /* PBXTargetDependency */,
 				B495DB101C395EDD00CA0E52 /* PBXTargetDependency */,
 				B439A2EC1C4144DB008F545A /* PBXTargetDependency */,
+				B4FEE43B1D2970F500816EA0 /* PBXTargetDependency */,
 			);
 			name = "Link Against the World Studio";
 			productName = "Link Against the World Studio";
@@ -763,12 +795,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B495DAE21C38671100CA0E52 /* Build configuration list for PBXNativeTarget "EditorMap" */;
 			buildPhases = (
-				12004BF3F30C4BBF234D935E /* Check Pods Manifest.lock */,
 				B495DAC61C38671100CA0E52 /* Sources */,
 				B495DAC71C38671100CA0E52 /* Frameworks */,
 				B495DAC81C38671100CA0E52 /* Headers */,
 				B495DAC91C38671100CA0E52 /* Resources */,
-				1512F67EFDF402621177CABB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -834,6 +864,24 @@
 			productReference = B495DB0A1C395EDD00CA0E52 /* ImageUtilities.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B4FEE4341D2970F500816EA0 /* JSONCodable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4FEE4401D2970F500816EA0 /* Build configuration list for PBXNativeTarget "JSONCodable" */;
+			buildPhases = (
+				B4FEE4301D2970F500816EA0 /* Sources */,
+				B4FEE4311D2970F500816EA0 /* Frameworks */,
+				B4FEE4321D2970F500816EA0 /* Headers */,
+				B4FEE4331D2970F500816EA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONCodable;
+			productName = JSONCodable;
+			productReference = B4FEE4351D2970F500816EA0 /* JSONCodable.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -841,45 +889,61 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Andy Molloy";
 				TargetAttributes = {
 					B439A2E51C4144DB008F545A = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B4522F5A1C38316F009B7314 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B4522F6D1C38316F009B7314 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = B4522F5A1C38316F009B7314;
 					};
 					B495DA271C38484A00CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B495DA301C38484A00CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = B4522F5A1C38316F009B7314;
 					};
 					B495DAA21C38666300CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B495DAAB1C38666300CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = B4522F5A1C38316F009B7314;
 					};
 					B495DACA1C38671100CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B495DAD31C38671100CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = B4522F5A1C38316F009B7314;
 					};
 					B495DAF41C38850800CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B495DB091C395EDD00CA0E52 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
+					};
+					B4FEE4341D2970F500816EA0 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -907,6 +971,7 @@
 				B495DAF41C38850800CA0E52 /* CrossPlatform */,
 				B495DB091C395EDD00CA0E52 /* ImageUtilities */,
 				B439A2E51C4144DB008F545A /* LATWMapSKRenderer */,
+				B4FEE4341D2970F500816EA0 /* JSONCodable */,
 			);
 		};
 /* End PBXProject section */
@@ -994,40 +1059,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4FEE4331D2970F500816EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		12004BF3F30C4BBF234D935E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1512F67EFDF402621177CABB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EditorMap/Pods-EditorMap-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B439A2E11C4144DB008F545A /* Sources */ = {
@@ -1151,6 +1190,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4FEE4301D2970F500816EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FEE44B1D29710C00816EA0 /* JSONString.swift in Sources */,
+				B4FEE4471D29710C00816EA0 /* JSONCodable.swift in Sources */,
+				B4FEE44A1D29710C00816EA0 /* JSONHelpers.swift in Sources */,
+				B4FEE4481D29710C00816EA0 /* JSONDecodable.swift in Sources */,
+				B4FEE4491D29710C00816EA0 /* JSONEncodable.swift in Sources */,
+				B4FEE44C1D29710C00816EA0 /* JSONTransformer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1219,6 +1271,11 @@
 			target = B495DB091C395EDD00CA0E52 /* ImageUtilities */;
 			targetProxy = B495DB0F1C395EDD00CA0E52 /* PBXContainerItemProxy */;
 		};
+		B4FEE43B1D2970F500816EA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4FEE4341D2970F500816EA0 /* JSONCodable */;
+			targetProxy = B4FEE43A1D2970F500816EA0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1251,6 +1308,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1273,6 +1331,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.LATWMapSKRenderer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1361,26 +1421,29 @@
 		B4522F781C38316F009B7314 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Link Against the World Studio/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amolloy.Link-Against-the-World-Studio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		B4522F791C38316F009B7314 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Link Against the World Studio/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amolloy.Link-Against-the-World-Studio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1393,6 +1456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amolloy.Link-Against-the-World-StudioTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Debug;
@@ -1406,6 +1470,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amolloy.Link-Against-the-World-StudioTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Release;
@@ -1428,6 +1494,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1450,6 +1517,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1465,6 +1534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Debug;
@@ -1478,6 +1548,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.TileMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Release;
@@ -1500,6 +1572,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1522,6 +1595,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.Map;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1537,6 +1612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Debug;
@@ -1550,13 +1626,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.MapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Release;
 		};
 		B495DAE31C38671100CA0E52 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB1A42F726AB96D6CFC1BC00 /* Pods-EditorMap.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1573,6 +1650,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1580,7 +1658,6 @@
 		};
 		B495DAE41C38671100CA0E52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C5A0E7D93C6D075F081316C /* Pods-EditorMap.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1596,6 +1673,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1609,6 +1688,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Debug;
@@ -1621,6 +1701,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.EditorMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Link Against the World Studio.app/Contents/MacOS/Link Against the World Studio";
 			};
 			name = Release;
@@ -1643,6 +1725,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1665,6 +1748,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.CrossPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1688,6 +1773,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1710,6 +1796,61 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.ImageUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B4FEE43E1D2970F500816EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = JSONCodable/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.JSONCodable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B4FEE43F1D2970F500816EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = JSONCodable/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amolloy.JSONCodable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1822,6 +1963,15 @@
 			buildConfigurations = (
 				B495DB141C395EDD00CA0E52 /* Debug */,
 				B495DB151C395EDD00CA0E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4FEE4401D2970F500816EA0 /* Build configuration list for PBXNativeTarget "JSONCodable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4FEE43E1D2970F500816EA0 /* Debug */,
+				B4FEE43F1D2970F500816EA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

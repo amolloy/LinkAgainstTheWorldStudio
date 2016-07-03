@@ -15,16 +15,16 @@ private let version = "1.0"
 
 public extension TileSet
 {
-	public func fileWrapper() -> NSFileWrapper?
+	public func fileWrapper() -> FileWrapper?
 	{
-		let jsonData : NSData
+		let jsonData : Data
 		do
 		{
 			guard let jsonDict = try toJSON() as? JSONObject else
 			{
 				return nil
 			}
-			jsonData = try NSJSONSerialization.dataWithJSONObject(jsonDict, options: .PrettyPrinted)
+			jsonData = try JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
 		}
 		catch let e
 		{
@@ -32,13 +32,13 @@ public extension TileSet
 			return nil
 		}
 
-		let controlFile = NSFileWrapper(regularFileWithContents: jsonData)
-		var imageFile : NSFileWrapper? = nil
+		let controlFile = FileWrapper(regularFileWithContents: jsonData)
+		var imageFile : FileWrapper? = nil
 		if let image = image
 		{
-			if let imageData = image.TIFFRepresentation
+			if let imageData = image.tiffRepresentation
 			{
-				imageFile = NSFileWrapper(regularFileWithContents: imageData)
+				imageFile = FileWrapper(regularFileWithContents: imageData)
 			}
 		}
 
@@ -48,20 +48,20 @@ public extension TileSet
 			wrapperDict[imageName] = imageFile
 		}
 
-		return NSFileWrapper(directoryWithFileWrappers: wrapperDict)
+		return FileWrapper(directoryWithFileWrappers: wrapperDict)
 	}
 
-	public convenience init?(fileWrapper: NSFileWrapper) throws
+	public convenience init?(fileWrapper: FileWrapper) throws
 	{
 		guard let fileWrappers = fileWrapper.fileWrappers else { return nil }
 		guard let controlFile = fileWrappers["Info.json"] else { return nil }
 		guard let jsonData = controlFile.regularFileContents else { return nil }
-		let jsonDict = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions(rawValue: 0))
-		self.init(JSONDictionary: jsonDict as! JSONObject)
+		let jsonDict = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0))
+		try self.init(object: jsonDict as! JSONObject)
 
 		guard let imageWrapper = fileWrappers[imageName] else { return nil }
 		guard let imageData = imageWrapper.regularFileContents else { return nil }
-		guard let image = Image(data: imageData) else { return nil }
+		guard let image = CrossPlatform.Image(data: imageData) else { return nil }
 
 		self.image = image
 	}
@@ -78,7 +78,7 @@ extension TileSet : JSONEncodable
 {
 	public func toJSON() throws -> AnyObject
 	{
-		return try JSONEncoder.create({ (encoder) -> Void in
+		return try JSONEncoder.create(setup: { (encoder) -> Void in
 			try encoder.encode(version, key: versionKey)
 			try encoder.encode(imageName, key: imageNameKey)
 			try encoder.encode(name, key: nameKey)
@@ -91,42 +91,34 @@ extension TileSet : JSONEncodable
 
 extension TileSet : JSONDecodable
 {
-	public convenience init?(JSONDictionary: JSONObject)
+	public convenience init(object: JSONObject) throws
 	{
-		let decoder = JSONDecoder(object: JSONDictionary)
-		do
+		let decoder = JSONDecoder(object: object)
+		let name : String = try decoder.decode(nameKey)
+		let jsonVersion : String = try decoder.decode(versionKey)
+		if jsonVersion.compare(version, options: .numericSearch, range: nil, locale: nil) == .orderedDescending
 		{
-			let name : String = try decoder.decode(nameKey)
-			let jsonVersion : String = try decoder.decode(versionKey)
-			if jsonVersion.compare(version, options: .NumericSearch, range: nil, locale: nil) == .OrderedDescending
-			{
-				print("TileSet \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
-			}
+			print("TileSet \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
+		}
 
-			self.init(image: nil,
-				imageName: try decoder.decode(imageNameKey),
-				name: name,
-				tileCount: try decoder.decode(tileCountKey),
-				tileWidth: try decoder.decode(tileWidthKey),
-				tileHeight: try decoder.decode(tileHeightKey))
-		}
-		catch
-		{
-			return nil
-		}
+		self.init(image: nil,
+		          imageName: try decoder.decode(imageNameKey),
+		          name: name,
+		          tileCount: try decoder.decode(tileCountKey),
+		          tileWidth: try decoder.decode(tileWidthKey),
+		          tileHeight: try decoder.decode(tileHeightKey))
 	}
 }
 
 typealias EditorMapTileSetLoader = TileSet
 extension EditorMapTileSetLoader : EditorMapSegment
 {
-	static func loadSegmentFromFileWrapper(fileWrapper: NSFileWrapper, owner: Map) throws
+	static func loadSegmentFromFileWrapper(_ fileWrapper: FileWrapper, owner: Map) throws
 	{
 		if let tileSet = try TileSet(fileWrapper: fileWrapper)
 		{
-			owner.addTileSet(tileSet)
+			_ = owner.addTileSet(tileSet)
 		}
-
 	}
 
 	static func segmentDependencies() -> [EditorMapSegment.Type]

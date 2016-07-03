@@ -12,8 +12,8 @@ import XCTest
 class ChunkTagTests: XCTestCase {
 	func testTooShortBuffer() {
 		var tooShort = [UInt8(0x20)];
-		let short = NSData(bytes: &tooShort, length: tooShort.count)
-		let inputStream = NSInputStream(data: short)
+		let short = Data(bytes: UnsafePointer<UInt8>(&tooShort), count: tooShort.count)
+		let inputStream = InputStream(data: short)
 		inputStream.open()
 
 		let chunkTag = inputStream.readChunkTag()
@@ -57,8 +57,8 @@ class ChunkTagTests: XCTestCase {
 
 	func testReadBuffer() {
 		var valid = [Char.F.rawValue, Char.M.rawValue, Char.A.rawValue, Char.P.rawValue]
-		let validData = NSData(bytes: &valid, length: valid.count)
-		let inputStream = NSInputStream(data: validData)
+		let validData = Data(bytes: &valid, length: valid.count)
+		let inputStream = InputStream(data: validData)
 		inputStream.open()
 
 		guard let chunkTag = inputStream.readChunkTag() else { XCTFail(); return }

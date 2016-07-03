@@ -11,12 +11,12 @@ import SpriteKit
 
 protocol SpriteKitTileable : Tileable
 {
-	func spriteNodeAtX(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
+	func spriteNodeAtX(_ x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
 }
 
 extension SpriteKitTileable
 {
-	func spriteNode(index: Int, textureAtlas: SKTextureAtlas) -> SKSpriteNode
+	func spriteNode(_ index: Int, textureAtlas: SKTextureAtlas) -> SKSpriteNode
 	{
 		let texture = textureAtlas.textureNamed(String(index))
 		return SKSpriteNode(texture: texture)
@@ -25,12 +25,12 @@ extension SpriteKitTileable
 
 extension BlockData.BlockStructure : SpriteKitTileable
 {
-	func spriteNodeAtX(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
+	func spriteNodeAtX(_ x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
 	{
 		let node = SKNode()
 
 		let bgNode = spriteNode(backgroundIndex, textureAtlas: textureAtlas)
-		bgNode.anchorPoint = CGPointZero
+		bgNode.anchorPoint = CGPoint.zero
 		bgNode.position = CGPoint(x: x, y: y)
 		bgNode.zPosition = CGFloat(baseZ)
 
@@ -39,11 +39,11 @@ extension BlockData.BlockStructure : SpriteKitTileable
 		var z = baseZ
 		for fgIndex in foregroundIndices
 		{
-			++z
+			z += 1
 			if fgIndex != 0
 			{
 				let fgNode = spriteNode(fgIndex, textureAtlas: textureAtlas)
-				fgNode.anchorPoint = CGPointZero
+				fgNode.anchorPoint = CGPoint.zero
 				fgNode.position = CGPoint(x: x, y: y)
 				fgNode.zPosition = CGFloat(z)
 
@@ -57,7 +57,7 @@ extension BlockData.BlockStructure : SpriteKitTileable
 
 extension AnimationData.AnimationStructure : SpriteKitTileable
 {
-	func spriteNodeAtX(x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
+	func spriteNodeAtX(_ x: Int, y: Int, baseZ: Int, textureAtlas: SKTextureAtlas, blocks: [BlockData.BlockStructure]) -> SKNode
 	{
 		// TODO Actual animation
 		let block = blocks[frames[frameIndex]]
@@ -86,7 +86,7 @@ public class TileMapSKNode : SKNode
 		return nil
 	}
 
-	func buildTilesForLayer(layer: Layer) -> SKNode?
+	func buildTilesForLayer(_ layer: Layer) -> SKNode?
 	{
 		guard let mapHeader = tileMap.mapHeader else
 		{
