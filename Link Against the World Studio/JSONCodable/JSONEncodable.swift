@@ -56,7 +56,7 @@ public extension JSONEncodable {
             throw JSONEncodableError.incompatibleTypeError(elementType: self.dynamicType)
         }
         
-        return try JSONEncoder.create({ (encoder) -> Void in
+        return try JSONEncoder.create(setup: { (encoder) -> Void in
             // loop through all properties (instance variables)
             for (labelMaybe, valueMaybe) in mirror.children {
                 guard let label = labelMaybe else {
@@ -130,7 +130,7 @@ public extension Dictionary {//where Key: String, Value: JSONEncodable {
 public class JSONEncoder {
     var object = JSONObject()
     
-    public static func create(@noescape setup: (encoder: JSONEncoder) throws -> Void) rethrows -> JSONObject {
+    public static func create( setup: @noescape(encoder: JSONEncoder) throws -> Void) rethrows -> JSONObject {
         let encoder = JSONEncoder()
         try setup(encoder: encoder)
         return encoder.object

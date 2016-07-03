@@ -8,6 +8,8 @@
 
 // Decoding Errors
 
+import Foundation
+
 public enum JSONDecodableError: ErrorProtocol, CustomStringConvertible {
     case missingTypeError(
         key: String
