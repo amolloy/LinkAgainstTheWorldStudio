@@ -34,7 +34,7 @@ extension Char : StringLiteralConvertible
 
 	public init(someString value: String)
 	{
-		self = Char(rawValue: UInt8(value.utf8.first!.value)) ?? Char.NULL
+		self = Char(rawValue: UInt8(value.utf8.first!)) ?? Char.null
 	}
 
 	public init(stringLiteral value: StringLiteralType)

@@ -120,7 +120,7 @@ extension TileMap
 			}
 		}
 
-		let rgbData = Data(bytes: UnsafePointer<UInt8>(&rgbBuffer), count: rgbBuffer.count)
+		let rgbData = Data(bytes: rgbBuffer)
 		guard let provider = CGDataProvider(data: rgbData) else
 		{
 			throw TileMapTexturesError.cannotCreateDataProvider
@@ -175,7 +175,7 @@ extension TileMap
 			}
 		}
 
-		let rgbData = Data(bytes: UnsafePointer<UInt8>(&rgbBuffer), count: rgbBuffer.count)
+		let rgbData = Data(bytes: rgbBuffer)
 		guard let provider = CGDataProvider(data: rgbData) else
 		{
 			throw TileMapTexturesError.cannotCreateDataProvider

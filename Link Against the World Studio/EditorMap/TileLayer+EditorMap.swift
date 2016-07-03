@@ -63,7 +63,7 @@ extension TileLayer : JSONEncodable
 {
 	public func toJSON() throws -> AnyObject
 	{
-		return try JSONEncoder.create({ (encoder) -> Void in
+		return try JSONEncoder.create(setup: { (encoder) -> Void in
 			try encoder.encode(version, key: versionKey)
 			try encoder.encode(name, key: nameKey)
 			if let tileSet = tileSet

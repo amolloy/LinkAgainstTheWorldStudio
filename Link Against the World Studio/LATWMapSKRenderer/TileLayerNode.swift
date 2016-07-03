@@ -32,7 +32,8 @@ extension TileSet
 {
 	func textureAtlas() -> SKTextureAtlas?
 	{
-		var textureInfos = [String : CrossPlatform.Image]()
+		typealias Image = CrossPlatform.Image
+		var textureInfos = [String : Image]()
 		for i in 0..<tileCount
 		{
 			let image = imageForTileAtIndex(i)

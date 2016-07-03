@@ -73,7 +73,8 @@ public class TileMapSKRenderer
 	func createTextureAtlas() throws
 	{
 		let textures = try tileMap.textures()
-		var textureAtlasInfo = [String: CrossPlatform.Image]()
+		typealias Image = CrossPlatform.Image
+		var textureAtlasInfo = [String: Image]()
 
 		for i in 0..<textures.count
 		{

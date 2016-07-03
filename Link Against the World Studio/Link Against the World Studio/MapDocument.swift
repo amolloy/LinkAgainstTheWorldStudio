@@ -87,7 +87,7 @@ class MapDocument: NSDocument
 			guard let fileContents = fileWrapper.regularFileContents else { return }
 			let tileMapInputStream = InputStream(data: fileContents)
 			guard let tileMap = TileMap(inputStream: tileMapInputStream) else { return }
-			try tileMap.open()
+			_ = try tileMap.open()
 			try tileMap.loadChunks()
 
 			map = try Map(tileMap: tileMap)

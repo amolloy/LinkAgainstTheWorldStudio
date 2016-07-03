@@ -50,10 +50,16 @@ public func mapFromFileWrapper(_ fileWrapper: FileWrapper) throws -> Map?
 {
 	let map = Map()
 
-	let loaderMap = segmentLoaders.reduce([String: EditorMapSegment.Type]()) { (dictionary, e) in
-		dictionary[e.segmentExtension()] = e
+	let loaderMap : [String: EditorMapSegment.Type] = {
+		var dictionary = [String: EditorMapSegment.Type]()
+
+		for e in segmentLoaders
+		{
+			dictionary[e.segmentExtension()] = e
+		}
+
 		return dictionary
-	}
+	}()
 
 	guard let fileWrappers = fileWrapper.fileWrappers else { return nil }
 	let sortedWrappers = dependencySortSegments(Array(fileWrappers.values), loaderMap: loaderMap)

@@ -27,7 +27,7 @@ public struct ChunkTag : Equatable, RawRepresentable
 		var chars = [Char]()
 		for char in fourCCStringUTF8
 		{
-			let charValue = UInt8(char.value)
+			let charValue = UInt8(char)
 			if let char = Char(rawValue: charValue)
 			{
 				chars.append(char)
