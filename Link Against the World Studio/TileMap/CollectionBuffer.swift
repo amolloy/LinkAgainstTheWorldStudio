@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BufferContentsType: Comparable, IntegerLiteralConvertible, IntegerArithmeticType {
+protocol BufferContentsType: Comparable, IntegerLiteralConvertible, IntegerArithmetic {
 	init(_: Int8)
 }
 
@@ -16,12 +16,12 @@ extension Int8: BufferContentsType {}
 
 extension Array where Element : BufferContentsType
 {
-	func getIntAtIndex(index: Int, swapBytes: Bool) -> Int
+	func getIntAtIndex(_ index: Int, swapBytes: Bool) -> Int
 	{
-		let b1 = UInt32(unsafeBitCast(self[index + 0], UInt8.self))
-		let b2 = UInt32(unsafeBitCast(self[index + 1], UInt8.self))
-		let b3 = UInt32(unsafeBitCast(self[index + 2], UInt8.self))
-		let b4 = UInt32(unsafeBitCast(self[index + 3], UInt8.self))
+		let b1 = UInt32(unsafeBitCast(self[index + 0], to: UInt8.self))
+		let b2 = UInt32(unsafeBitCast(self[index + 1], to: UInt8.self))
+		let b3 = UInt32(unsafeBitCast(self[index + 2], to: UInt8.self))
+		let b4 = UInt32(unsafeBitCast(self[index + 3], to: UInt8.self))
 
 		let i : UInt32
 		if swapBytes
@@ -38,6 +38,6 @@ extension Array where Element : BufferContentsType
 				(b3 << 16) +
 				(b4 << 24)
 		}
-		return Int(unsafeBitCast(i, Int32.self))
+		return Int(unsafeBitCast(i, to: Int32.self))
 	}
 }

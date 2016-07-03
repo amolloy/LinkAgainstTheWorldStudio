@@ -12,7 +12,7 @@ public class ColorMap : Loadable
 {
 	let palette : [TileMap.Color]
 
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		if dataLength % 3 != 0
 		{
@@ -41,8 +41,8 @@ public class ColorMap : Loadable
 		tileMap.colorMap = self
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.CMAP)
+		tileMap.registerLoadable(self, chunkType: ChunkType.cmap)
 	}
 }

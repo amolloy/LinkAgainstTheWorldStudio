@@ -12,7 +12,7 @@ import LATWMap
 import CrossPlatform
 import ImageUtilities
 
-func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Image?
+func textureAtlasWithBlockSize(_ blockSize: TileMap.Size, textures: [Image]) -> Image?
 {
 	let textureCount = textures.count
 	let texturesWide = Int(ceil(sqrt(CGFloat(textureCount))))
@@ -22,15 +22,15 @@ func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Im
 
 	let cs = CGColorSpaceCreateDeviceRGB()
 
-	let ctx = CGBitmapContextCreate(nil,
-		atlasSize.width,
-		atlasSize.height,
-		8,
-		atlasSize.width * 4,
-		cs,
-		CGImageAlphaInfo.PremultipliedLast.rawValue)
+	let ctx = CGContext(data: nil,
+		width: atlasSize.width,
+		height: atlasSize.height,
+		bitsPerComponent: 8,
+		bytesPerRow: atlasSize.width * 4,
+		space: cs,
+		bitmapInfo: CGImageAlphaInfo.PremultipliedLast.rawValue)
 
-	CGContextClearRect(ctx, CGRect(x: 0, y: 0, width: CGFloat(atlasSize.width), height: CGFloat(atlasSize.height)))
+	ctx.clear(CGRect(x: 0, y: 0, width: CGFloat(atlasSize.width), height: CGFloat(atlasSize.height)))
 
 	for i in 0..<textureCount
 	{
@@ -41,7 +41,7 @@ func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Im
 			y: CGFloat(row * blockSize.height),
 			width: CGFloat(blockSize.width),
 			height: CGFloat(blockSize.height))
-		CGContextDrawImage(ctx, textureRect, texture.cgImage)
+		ctx.draw(in: textureRect, image: texture.cgImage)
 	}
 
 	guard let cgImage = CGImageCreateWithCGContext(ctx) else { return nil }
@@ -51,7 +51,7 @@ func textureAtlasWithBlockSize(blockSize: TileMap.Size, textures: [Image]) -> Im
 
 extension TileMap
 {
-	func tileLayersForLayer(layer : Layer, tileSet: TileSet) -> [TileLayer]?
+	func tileLayersForLayer(_ layer : Layer, tileSet: TileSet) -> [TileLayer]?
 	{
 		guard let mapHeader = mapHeader else
 		{
@@ -74,7 +74,7 @@ extension TileMap
 				self.tileSet = tileSet
 			}
 
-			func setTileAtX(x: Int, y: Int, tile: LATWMap.Tileable)
+			func setTileAtX(_ x: Int, y: Int, tile: LATWMap.Tileable)
 			{
 				if tileLayer == nil
 				{

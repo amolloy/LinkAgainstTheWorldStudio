@@ -48,7 +48,7 @@ final public class TileLayer
 		self.tileSet = tileSet
 	}
 
-	public func setTileAt(coordinate: Coordinate, tile: Tileable)
+	public func setTileAt(_ coordinate: Coordinate, tile: Tileable)
 	{
 		tiles[coordinate.y][coordinate.x] = tile
 	}

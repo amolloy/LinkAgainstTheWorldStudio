@@ -52,7 +52,7 @@ public class AnimationData : Loadable
 
 	let animationStructures : [AnimationStructure]
 
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		guard let mapHeader = tileMap.mapHeader else
 		{
@@ -61,18 +61,18 @@ public class AnimationData : Loadable
 		}
 		let swapBytes = mapHeader.swapBytes
 
-		var uChunkData = [UInt8](count: dataLength, repeatedValue: 0)
+		var uChunkData = [UInt8](repeating: 0, count: dataLength)
 		if inputStream.read(&uChunkData, maxLength: dataLength) != dataLength
 		{
 			animationStructures = [AnimationStructure]()
 			return nil
 		}
-		let chunkData = unsafeBitCast(uChunkData, [Int8].self)
+		let chunkData = unsafeBitCast(uChunkData, to: [Int8].self)
 
 		let intSize : Int
 		let imageSize : Int
 
-		if mapHeader.mapType == .FMP05
+		if mapHeader.mapType == .fmp05
 		{
 			intSize = 4
 			imageSize = mapHeader.blockStructureSize
@@ -105,7 +105,7 @@ public class AnimationData : Loadable
 				frameIndex = startFrame
 			}
 
-			if mapHeader.mapType != .FMP05
+			if mapHeader.mapType != .fmp05
 			{
 				offset1 = (offset1 * 4) - dataLength
 			}
@@ -134,8 +134,8 @@ public class AnimationData : Loadable
 		tileMap.animationData = self
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.ANDT)
+		tileMap.registerLoadable(self, chunkType: ChunkType.andt)
 	}
 }

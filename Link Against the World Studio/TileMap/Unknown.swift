@@ -10,9 +10,9 @@ import Foundation
 
 class Unknown : Loadable
 {
-	required init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
-		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
+		var bytes = [UInt8](repeating: 0, count: dataLength)
 		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
 		{
 			return nil
@@ -21,7 +21,7 @@ class Unknown : Loadable
 		tileMap.addUnknownChunk(self)
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
 		// Do nothing
 	}

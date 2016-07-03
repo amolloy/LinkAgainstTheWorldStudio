@@ -8,34 +8,34 @@
 
 import Foundation
 
-public func CGImageCreateWithCGContext(ctx: CGContext?) -> CGImage?
+public func CGImageCreateWithCGContext(_ ctx: CGContext?) -> CGImage?
 {
 	guard let ctx = ctx else { return nil }
 
-	let ctxBytes = CGBitmapContextGetData(ctx)
+	let ctxBytes = ctx.data
 	if ctxBytes == nil
 	{
 		// Not a bitmap context
 		return nil;
 	}
 	
-	let width = CGBitmapContextGetWidth(ctx)
-	let stride = CGBitmapContextGetBytesPerRow(ctx)
-	let height = CGBitmapContextGetHeight(ctx)
+	let width = ctx.width
+	let stride = ctx.bytesPerRow
+	let height = ctx.height
 
-	let ctxData = NSData(bytes: ctxBytes, length:stride *  height)
-	let provider = CGDataProviderCreateWithCFData(ctxData)
+	let ctxData = Data(bytes: UnsafePointer<UInt8>(ctxBytes!), count:stride *  height)
+	let provider = CGDataProvider(data: ctxData)
 
-	let image = CGImageCreate(width, height,
-		CGBitmapContextGetBitsPerComponent(ctx),
-		CGBitmapContextGetBitsPerPixel(ctx),
-		stride,
-		CGBitmapContextGetColorSpace(ctx),
-		CGBitmapContextGetBitmapInfo(ctx),
-		provider,
-		nil,
-		false,
-		.RenderingIntentDefault)
+	let image = CGImage(width: width, height: height,
+		bitsPerComponent: ctx.bitsPerComponent,
+		bitsPerPixel: ctx.bitsPerPixel,
+		bytesPerRow: stride,
+		space: ctx.colorSpace!,
+		bitmapInfo: ctx.bitmapInfo,
+		provider: provider!,
+		decode: nil,
+		shouldInterpolate: false,
+		intent: .defaultIntent)
 
 	return image
 }

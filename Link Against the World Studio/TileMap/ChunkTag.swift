@@ -80,7 +80,7 @@ extension ChunkTag : StringLiteralConvertible
 
 	private init()
 	{
-		tag = [Char](count: 4, repeatedValue: Char.NULL)
+		tag = [Char](repeating: Char.null, count: 4)
 	}
 
 	private init(someString value: String)
@@ -94,11 +94,11 @@ public func ==(lhs: ChunkTag, rhs: ChunkTag) -> Bool
 	return lhs.tag == rhs.tag
 }
 
-extension NSInputStream
+extension InputStream
 {
 	func readChunkTag() -> ChunkTag?
 	{
-		var formTag = [Char](count: 4, repeatedValue: Char.NULL)
+		var formTag = [Char](repeating: Char.null, count: 4)
 		if read(&formTag, maxLength: 4) == 4
 		{
 			return ChunkTag(characters: formTag)

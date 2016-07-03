@@ -10,6 +10,6 @@ import Foundation
 
 protocol Loadable
 {
-	static func registerWithTileMap(tileMap: TileMap)
-	init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	static func registerWithTileMap(_ tileMap: TileMap)
+	init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 }

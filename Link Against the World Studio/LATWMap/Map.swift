@@ -23,7 +23,7 @@ public class Map
 private typealias MapTileSets = Map
 extension MapTileSets
 {
-	public func addTileSet(tileSet: TileSet) -> Bool
+	public func addTileSet(_ tileSet: TileSet) -> Bool
 	{
 		if let _ = tileSets[tileSet.name]
 		{
@@ -37,7 +37,7 @@ extension MapTileSets
 private typealias MapTileLayers = Map
 extension MapTileLayers
 {
-	public func addTileLayer(tileLayer: TileLayer)
+	public func addTileLayer(_ tileLayer: TileLayer)
 	{
 		tileLayers.append(tileLayer)
 	}

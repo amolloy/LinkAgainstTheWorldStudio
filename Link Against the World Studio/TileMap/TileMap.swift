@@ -31,7 +31,7 @@ public class TileMap
 		}
 	}
 
-	var inputStream : NSInputStream
+	var inputStream : InputStream
 
 	public internal(set) var animationData : AnimationData?
 	public internal(set) var author : Author?
@@ -45,7 +45,7 @@ public class TileMap
 
 	public convenience init?(path : String)
 	{
-		guard let inputStream = NSInputStream(fileAtPath: path) else
+		guard let inputStream = InputStream(fileAtPath: path) else
 		{
 			return nil
 		}
@@ -53,7 +53,7 @@ public class TileMap
 		self.init(inputStream: inputStream)
 	}
 
-	public init?(inputStream : NSInputStream)
+	public init?(inputStream : InputStream)
 	{
 		loaders = [ChunkType: Loadable.Type]()
 
@@ -85,7 +85,7 @@ public class TileMap
 	}
 
 	var loaders : [ChunkType: Loadable.Type]
-	func registerLoadable(loadable: Loadable.Type, chunkType: ChunkType)
+	func registerLoadable(_ loadable: Loadable.Type, chunkType: ChunkType)
 	{
 		loaders[chunkType] = loadable
 	}

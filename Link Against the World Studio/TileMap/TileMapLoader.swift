@@ -10,9 +10,9 @@ import Foundation
 
 extension TileMap
 {
-	enum Error : ErrorType
+	enum Error : ErrorProtocol
 	{
-		case InvalidHeaderError
+		case invalidHeaderError
 	}
 
 	public func open() throws -> Bool
@@ -28,36 +28,36 @@ extension TileMap
 		try loadChunks(inputStream)
 	}
 
-	private func loadFileHeader(inputStream : NSInputStream) throws
+	private func loadFileHeader(_ inputStream : InputStream) throws
 	{
 		guard let formTag = inputStream.readChunkTag() else
 		{
-			throw Error.InvalidHeaderError
+			throw Error.invalidHeaderError
 		}
 
 		if (formTag != "FORM")
 		{
-			throw Error.InvalidHeaderError
+			throw Error.invalidHeaderError
 		}
 
 		// Skip past the data length
 		guard let _ = inputStream.readBigInt() else
 		{
-			throw Error.InvalidHeaderError
+			throw Error.invalidHeaderError
 		}
 
 		guard let fmapTag = inputStream.readChunkTag() else
 		{
-			throw Error.InvalidHeaderError
+			throw Error.invalidHeaderError
 		}
 
 		if (fmapTag != "FMAP")
 		{
-			throw Error.InvalidHeaderError
+			throw Error.invalidHeaderError
 		}
 	}
 
-	private func loadChunks(inputStream : NSInputStream) throws
+	private func loadChunks(_ inputStream : InputStream) throws
 	{
 		while let chunk = try loadChunk(inputStream)
 		{
@@ -65,7 +65,7 @@ extension TileMap
 		}
 	}
 
-	private func loadChunk(inputStream: NSInputStream) throws -> Loadable?
+	private func loadChunk(_ inputStream: InputStream) throws -> Loadable?
 	{
 		guard let chunkTag = inputStream.readChunkTag() else
 		{
@@ -100,13 +100,13 @@ extension TileMap
 		return chunk
 	}
 
-	func addLayer(layer: Layer, index: Int)
+	func addLayer(_ layer: Layer, index: Int)
 	{
 		assert(index == layers.count, "Layers must appear in the file in order")
 		layers.append(layer)
 	}
 
-	func addUnknownChunk(chunk: Unknown)
+	func addUnknownChunk(_ chunk: Unknown)
 	{
 		unknownChunks.append(chunk)
 	}

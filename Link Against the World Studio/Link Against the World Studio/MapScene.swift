@@ -11,7 +11,7 @@ import SpriteKit
 
 class MapScene : SKScene
 {
-	override func mouseDragged(theEvent: NSEvent)
+	override func mouseDragged(_ theEvent: NSEvent)
 	{
 		if let node = children.first
 		{

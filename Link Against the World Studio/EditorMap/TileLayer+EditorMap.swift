@@ -16,16 +16,16 @@ private let version = "1.0"
 
 public extension TileLayer
 {
-	public func fileWrapper() -> NSFileWrapper?
+	public func fileWrapper() -> FileWrapper?
 	{
-		let jsonData : NSData
+		let jsonData : Data
 		do
 		{
 			guard let jsonDict = try toJSON() as? JSONObject else
 			{
 				return nil
 			}
-			jsonData = try NSJSONSerialization.dataWithJSONObject(jsonDict, options: .PrettyPrinted)
+			jsonData = try JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
 		}
 		catch let e
 		{
@@ -33,12 +33,12 @@ public extension TileLayer
 			return nil
 		}
 
-		let controlFile = NSFileWrapper(regularFileWithContents: jsonData)
+		let controlFile = FileWrapper(regularFileWithContents: jsonData)
 
-		return NSFileWrapper(directoryWithFileWrappers: ["Info.json": controlFile])
+		return FileWrapper(directoryWithFileWrappers: ["Info.json": controlFile])
 	}
 
-	public convenience init?(fileWrapper: NSFileWrapper, owner: Map) throws
+	public convenience init?(fileWrapper: FileWrapper, owner: Map) throws
 	{
 		guard let fileWrappers = fileWrapper.fileWrappers,
 			  let controlFile = fileWrappers["Info.json"],
@@ -47,7 +47,7 @@ public extension TileLayer
 			return nil
 		}
 
-		let jsonDict = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions(rawValue: 0))
+		let jsonDict = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0))
 		self.init(JSONDictionary: jsonDict as! JSONObject, owner: owner)
 	}
 }
@@ -93,7 +93,7 @@ extension TileLayer : JSONEncodable
 	}
 }
 
-func tileableWithTileReference(tileRef : String) -> Tileable?
+func tileableWithTileReference(_ tileRef : String) -> Tileable?
 {
 	var tile : Tileable?
 
@@ -101,7 +101,7 @@ func tileableWithTileReference(tileRef : String) -> Tileable?
 	{
 		tile = EmptyTile()
 	}
-	else if tileRef.containsString(":")
+	else if tileRef.contains(":")
 	{
 		// TODO Terrain Ref
 		tile = EmptyTile()
@@ -123,7 +123,7 @@ extension TileLayer
 		{
 			let name : String = try decoder.decode(nameKey)
 			let jsonVersion : String = try decoder.decode(versionKey)
-			if jsonVersion.compare(version, options: .NumericSearch, range: nil, locale: nil) == .OrderedDescending
+			if jsonVersion.compare(version, options: .numericSearch, range: nil, locale: nil) == .orderedDescending
 			{
 				print("TileLayer \(name) too new (got \(jsonVersion) expected \(version)). Going to try to load anyways.")
 			}
@@ -136,7 +136,7 @@ extension TileLayer
 
 			let layerData : [String] = try decoder.decode(layerDataKey)
 			let tiles = layerData.map() { row in
-				return row.componentsSeparatedByString(",").map() { tileRef -> Tileable in
+				return row.components(separatedBy: ",").map() { tileRef -> Tileable in
 					guard let tile = tileableWithTileReference(tileRef) else
 					{
 						print("Unknown tile reference: \(tileRef), inserting empty tile instead")
@@ -158,7 +158,7 @@ extension TileLayer
 typealias EditorMapTileLayerLoader = TileLayer
 extension EditorMapTileLayerLoader : EditorMapSegment
 {
-	static func loadSegmentFromFileWrapper(fileWrapper: NSFileWrapper, owner: Map) throws
+	static func loadSegmentFromFileWrapper(_ fileWrapper: FileWrapper, owner: Map) throws
 	{
 		if let layer = try TileLayer(fileWrapper: fileWrapper, owner: owner)
 		{

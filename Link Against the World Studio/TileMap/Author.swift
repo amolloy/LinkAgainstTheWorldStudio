@@ -12,10 +12,10 @@ public class Author : Loadable
 {
 	let authorInfo : [String]
 
-	required public init?(inputStream: NSInputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
+	required public init?(inputStream: InputStream, dataLength: Int, tileMap: TileMap, chunkType: ChunkType)
 	{
 		// ATHR chunk is up to 4 NULL-separated C-strings
-		var bytes = [UInt8](count: dataLength, repeatedValue: 0)
+		var bytes = [UInt8](repeating: 0, count: dataLength)
 		guard inputStream.read(&bytes, maxLength: dataLength) == dataLength else
 		{
 			self.authorInfo = [String]()
@@ -43,8 +43,8 @@ public class Author : Loadable
 		tileMap.author = self
 	}
 
-	static func registerWithTileMap(tileMap: TileMap)
+	static func registerWithTileMap(_ tileMap: TileMap)
 	{
-		tileMap.registerLoadable(self, chunkType: ChunkType.ATHR)
+		tileMap.registerLoadable(self, chunkType: ChunkType.athr)
 	}
 }

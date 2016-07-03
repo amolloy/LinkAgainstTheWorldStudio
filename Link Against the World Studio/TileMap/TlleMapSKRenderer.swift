@@ -15,17 +15,17 @@ public class TileMapSKRenderer
 	let tileMap : TileMap
 	var textureAtlas : SKTextureAtlas?
 
-	enum Error : ErrorType
+	enum Error : ErrorProtocol
 	{
-		case MissingTileMapHeader
-		case MissingBlockGraphics
-		case MissingBlockData
-		case MissingColorMap
-		case InvalidBlockImage
-		case UnsupportedColorDepth
-		case CannotCreateDataProvider
-		case CannotCreateImageFromData
-		case MissingTextureAtlas
+		case missingTileMapHeader
+		case missingBlockGraphics
+		case missingBlockData
+		case missingColorMap
+		case invalidBlockImage
+		case unsupportedColorDepth
+		case cannotCreateDataProvider
+		case cannotCreateImageFromData
+		case missingTextureAtlas
 	}
 
 	public init(tileMap: TileMap)
@@ -50,7 +50,7 @@ public class TileMapSKRenderer
 		}
 		guard let textureAtlas = self.textureAtlas else
 		{
-			throw Error.MissingTextureAtlas
+			throw Error.missingTextureAtlas
 		}
 		let node = TileMapSKNode(tileMap: tileMap, textureAtlas: textureAtlas)
 
@@ -64,7 +64,7 @@ public class TileMapSKRenderer
 				sn.zPosition = CGFloat(i * 100)
 				node.addChild(sn)
 			}
-			++i
+			i += 1
 		}
 
 		return node
@@ -73,7 +73,7 @@ public class TileMapSKRenderer
 	func createTextureAtlas() throws
 	{
 		let textures = try tileMap.textures()
-		var textureAtlasInfo = [String: Image]()
+		var textureAtlasInfo = [String: CrossPlatform.Image]()
 
 		for i in 0..<textures.count
 		{

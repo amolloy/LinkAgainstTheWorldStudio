@@ -25,14 +25,14 @@ struct SurroundingTiles
 
 protocol SpriteKitTileable : Tileable
 {
-	func nodeAt(coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
+	func nodeAt(_ coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
 }
 
 extension TileSet
 {
 	func textureAtlas() -> SKTextureAtlas?
 	{
-		var textureInfos = [String : Image]()
+		var textureInfos = [String : CrossPlatform.Image]()
 		for i in 0..<tileCount
 		{
 			let image = imageForTileAtIndex(i)
@@ -137,7 +137,7 @@ public class TileLayerNode : SKNode
 
 extension EmptyTile : SpriteKitTileable
 {
-	func nodeAt(coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
+	func nodeAt(_ coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
 	{
 		return nil
 	}
@@ -145,7 +145,7 @@ extension EmptyTile : SpriteKitTileable
 
 extension StaticTile : SpriteKitTileable
 {
-	func nodeAt(coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
+	func nodeAt(_ coordinate: TileLayer.Coordinate, textureAtlas: SKTextureAtlas, surroundingTiles: SurroundingTiles) -> SKNode?
 	{
 		let texture = textureAtlas.textureNamed(String(index))
 		return SKSpriteNode(texture: texture)

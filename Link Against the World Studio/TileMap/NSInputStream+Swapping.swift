@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSInputStream
+extension InputStream
 {
 	// Reads a big endian 4-byte signed integer from the stream and converts it to a native Int
 	func readBigInt() -> Int?
@@ -20,9 +20,9 @@ extension NSInputStream
 		return readInt32(Static.hostByteOrder == CFByteOrderLittleEndian)
 	}
 
-	func readInt32(swap: Bool) -> Int?
+	func readInt32(_ swap: Bool) -> Int?
 	{
-		var buf = [UInt8](count: 4, repeatedValue: 0)
+		var buf = [UInt8](repeating: 0, count: 4)
 		let readCount = read(&buf, maxLength: 4)
 		var int : Int?
 		if readCount == 4
@@ -46,9 +46,9 @@ extension NSInputStream
 		return int;
 	}
 
-	func readInt16(swap: Bool) -> Int16?
+	func readInt16(_ swap: Bool) -> Int16?
 	{
-		var buf = [UInt8](count: 2, repeatedValue: 0)
+		var buf = [UInt8](repeating: 0, count: 2)
 		let readCount = read(&buf, maxLength: 2)
 		var int : Int16?
 		if readCount == 2
@@ -70,7 +70,7 @@ extension NSInputStream
 
 	func readUInt8() -> UInt8?
 	{
-		var buf = [UInt8](count: 1, repeatedValue: 0)
+		var buf = [UInt8](repeating: 0, count: 1)
 		if read(&buf, maxLength: 1) == 1
 		{
 			return buf.first
